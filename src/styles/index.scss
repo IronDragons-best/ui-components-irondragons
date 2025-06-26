@@ -1,4 +1,4 @@
-@forward 'typography';
-@forward 'boilerplate';
-@forward 'colors';
-@forward 'fonts';
+@use 'typography';
+@use 'boilerplate';
+@use 'colors';
+@use 'fonts';

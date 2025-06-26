@@ -1,44 +1,41 @@
-:root {
   //accent
-  --Accent-100: #73a5ff;
-  --Accent-300: #4C8DFF;
-  --Accent-500: #397DF6;
-  --Accent-700: #2F68CC;
-  --Accent-900: #234E99;
+  $Accent-100: #73a5ff;
+  $Accent-300: #4C8DFF;
+  $Accent-500: #397DF6;
+  $Accent-700: #2F68CC;
+  $Accent-900: #234E99;
 
   //success
-  --Success-100: #80ffbf;
-  --Success-300: #22e584;
-  --Success-500: #14cc70;
-  --Success-700: #0f9954;
-  --Success-900: #0a6638;
+  $Success-100: #80ffbf;
+  $Success-300: #22e584;
+  $Success-500: #14cc70;
+  $Success-700: #0f9954;
+  $Success-900: #0a6638;
 
   //danger
-  --Danger-100: #FF8099;
-  --Danger-300: #F23D61;
-  --Danger-500: #CC1439;
-  --Danger-700: #990F2B;
-  --Danger-900: #660A1D;
+  $Danger-100: #FF8099;
+  $Danger-300: #F23D61;
+  $Danger-500: #CC1439;
+  $Danger-700: #990F2B;
+  $Danger-900: #660A1D;
 
   //warning
-  --Warning-100: #ffd073;
-  --Warning-300: #e5ac39;
-  --Warning-500: #d99000;
-  --Warning-700: #960;
-  --Warning-900: #664400;
+  $Warning-100: #ffd073;
+  $Warning-300: #e5ac39;
+  $Warning-500: #d99000;
+  $Warning-700: #960;
+  $Warning-900: #664400;
 
   //dark
-  --Dark-100: #4C4C4C;
-  --Dark-300: #333333;
-  --Dark-500: #171717;
-  --Dark-700: #0D0D0D;
-  --Dark-900: #000000;
+  $Dark-100: #4C4C4C;
+  $Dark-300: #333333;
+  $Dark-500: #171717;
+  $Dark-700: #0D0D0D;
+  $Dark-900: #000000;
 
   //light
-  --Light-100: #ffffff;
-  --Light-300: #F7FBFF;
-  --Light-500: #EDF3FA;
-  --Light-700: #D5DAE0;
-  --Light-900: #8D9094;
-
-}
+  $Light-100: #ffffff;
+  $Light-300: #F7FBFF;
+  $Light-500: #EDF3FA;
+  $Light-700: #D5DAE0;
+  $Light-900: #8D9094;

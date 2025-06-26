@@ -1,3 +1,6 @@
+@use 'colors' as *;
+@use 'typography' as *;
+
 html {
   box-sizing: border-box;
   font-size: 100%;
@@ -33,9 +36,9 @@ option {
 body {
   min-height: 100vh;
   min-width: 100vw;
-  font-family: var(--font-family);
-  line-height: var(--line-height-m);
-  background-color: var(--Dark-700);
+  font-family: $font-family;
+  line-height: $line-height-m;
+  background-color: $Dark-700;
 }
 
 /* Сброс для теней, используемых в фокусе */

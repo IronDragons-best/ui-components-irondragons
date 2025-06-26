@@ -1,5 +1,8 @@
+@use 'typography' as *;
+@use 'colors' as *;
+
 @font-face {
-  font-family: 'Inter';
+  font-family: Inter;
   src: url('../assets/fonts/Inter_18pt-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
@@ -7,7 +10,7 @@
 }
 
 @font-face {
-  font-family: 'Inter';
+  font-family: Inter;
   src: url('../assets/fonts/Inter_18pt-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
@@ -15,7 +18,7 @@
 }
 
 @font-face {
-  font-family: 'Inter';
+  font-family: Inter;
   src: url('../assets/fonts/Inter_18pt-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
@@ -23,7 +26,7 @@
 }
 
 @font-face {
-  font-family: 'Inter';
+  font-family: Inter;
   src: url('../assets/fonts/Inter_18pt-SemiBold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
@@ -31,85 +34,85 @@
 }
 
 .large {
- font-size: var(--font-size-xxl);
- line-height: var(--line-height-l);
- font-weight: var(--font-weight-semi-bold);
+ font-size: $font-size-xxl;
+ line-height: $line-height-l;
+ font-weight: $font-weight-semi-bold;
 }
 
 .h1 {
- font-size: var(--font-size-xl);
- line-height: var(--line-height-l);
- font-weight: var(--font-weight-bold);
+ font-size: $font-size-xl;
+ line-height: $line-height-l;
+ font-weight: $font-weight-bold;
 }
 
 .h2 {
- font-size: var(--font-size-l);
- line-height: var(--line-height-m);
- font-weight: var(--font-weight-bold);
+ font-size: $font-size-l;
+ line-height: $line-height-m;
+ font-weight: $font-weight-bold;
 }
 
 .h3 {
- font-size: var(--font-size-m);
- line-height: var(--line-height-m);
- font-weight: var(--font-weight-semi-bold);
+ font-size: $font-size-m;
+ line-height: $line-height-m;
+ font-weight: $font-weight-semi-bold;
 }
 
 .regular-text-16 {
- font-size: var(--font-size-m);
- line-height: var(--line-height-m);
- font-weight: var(--font-weight-regular);
+ font-size: $font-size-m;
+ line-height: $line-height-m;
+ font-weight: $font-weight-regular;
 }
 
 .bold-text-16 {
- font-size: var(--font-size-m);
- line-height: var(--line-height-m);
- font-weight: var(--font-weight-bold);
+ font-size: $font-size-m;
+ line-height: $line-height-m;
+ font-weight: $font-weight-bold;
 }
 
 .regular-text-14 {
- font-size: var(--font-size-s);
- line-height: var(--line-height-m);
- font-weight: var(--font-weight-regular);
+ font-size: $font-size-s;
+ line-height: $line-height-m;
+ font-weight: $font-weight-regular;
 }
 
 .medium-text-14 {
- font-size: var(--font-size-s);
- line-height: var(--line-height-m);
- font-weight: var(--font-weight-medium);
+ font-size: $font-size-s;
+ line-height: $line-height-m;
+ font-weight: $font-weight-medium;
 }
 
 .bold-text-14 {
- font-size: var(--font-size-s);
- line-height: var(--line-height-m);
- font-weight: var(--font-weight-bold);
+ font-size: $font-size-s;
+ line-height: $line-height-m;
+ font-weight: $font-weight-bold;
 }
 
 .small-text {
- font-size: var(--font-size-xs);
- line-height: var(--line-height-s);
- font-weight: var(--font-weight-regular);
+ font-size: $font-size-xs;
+ line-height: $line-height-s;
+ font-weight: $font-weight-regular;
 }
 
 .semi-bold-small-text {
- font-size: var(--font-size-xs);
- line-height: var(--line-height-s);
- font-weight: var(--font-weight-semi-bold);
+ font-size: $font-size-xs;
+ line-height: $line-height-s;
+ font-weight: $font-weight-semi-bold;
 }
 
 .regular-link,
 .regular-link:visited {
- color: var(--Accent-500);
- font-size: var(--font-size-s);
- line-height: var(--line-height-m);
- font-weight: var(--font-weight-regular);
+ color: $Accent-500;
+ font-size: $font-size-s;
+ line-height: $line-height-m;
+ font-weight: $font-weight-regular;
  text-decoration: underline;
 }
 
 .small-link,
 .small-link:visited {
- color: var(--Accent-500);
- font-size: var(--font-size-xs);
- line-height: var(--line-height-s);
- font-weight: var(--font-weight-regular);
+ color: $Accent-500;
+ font-size: $font-size-xs;
+ line-height: $line-height-s;
+ font-weight: $font-weight-regular;
  text-decoration: underline;
 }
