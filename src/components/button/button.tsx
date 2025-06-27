@@ -12,6 +12,7 @@ export type ButtonProps<T extends ElementType = 'button'> = {
   as?: T
   fullWidth?: boolean
   variant?: ButtonVariant
+  children: React.ReactNode
 } & ComponentPropsWithoutRef<T>
 
 export const Button = <T extends ElementType = 'button'>(props: ButtonProps<T>) => {
