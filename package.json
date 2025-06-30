@@ -14,8 +14,10 @@
     "start": "vite",
     "dev": "storybook dev -p 6006",
     "build": "vite build && tsc",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "lint:fix": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
+    "lint": "eslint \"src/**/*.{tsx,ts,jsx,js}\" && stylelint \"src/**/*.{scss,css}\" --allow-empty-input",
+    "lint:fix": "eslint --fix \"src/**/*.{tsx,ts,jsx,js}\" && stylelint --fix \"src/**/*.{scss,css}\" --allow-empty-input",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,scss,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,css,scss,md}\"",
     "preview": "vite preview",
     "build-storybook": "storybook build"
   },
