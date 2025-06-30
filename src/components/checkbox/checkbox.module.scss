@@ -117,8 +117,7 @@
 }
 
 .Label[aria-disabled='true'] {
+  pointer-events: none;
   user-select: none;
   color: $Light-900;
-
-  ointer-events: none;
 }

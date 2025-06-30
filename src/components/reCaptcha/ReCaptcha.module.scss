@@ -1,9 +1,9 @@
 @use '../../styles/typography' as *;
 
 .reCaptchaWrapper {
-    border: 1px solid;
     width: fit-content;
     padding: 8px 7px;
+    border: 1px solid;
 }
 
 .reCaptchaError {
@@ -11,7 +11,7 @@
 }
 
 .reCaptchaText {
-    font-family: "Roboto", sans-serif;
+    font-family: Roboto, sans-serif;
     font-size: 10px;
     font-weight: $font-weight-regular;
     color: #f00;

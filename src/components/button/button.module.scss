@@ -1,18 +1,24 @@
-@use '../../styles/fonts' as *;
+@use '../../styles/fonts' as typo;
 @use '../../styles/colors' as *;
 
-.common {
-  @extend .h3;
+@mixin common {
+  @include typo.h3;
+
   cursor: pointer;
+
   display: inline-flex;
-  justify-content: center;
-  text-align: center;
   align-items: center;
+  justify-content: center;
+
   width: fit-content;
   min-height: 36px;
   padding: 6px 24px;
+
+  text-align: center;
   text-decoration: none;
+
   border: none;
+
   &:disabled {
     cursor: initial;
   }
@@ -24,7 +30,8 @@
 }
 
 .primary {
-  @extend .common;
+  @include common;
+
   color: $Light-100;
   background-color: $Accent-500;
 
@@ -51,7 +58,8 @@
 }
 
 .secondary {
-  @extend .common;
+  @include common;
+
   color: $Light-100 ;
   background-color: $Dark-300 ;
 
@@ -79,7 +87,8 @@
 }
 
 .outline {
-  @extend .common;
+  @include common;
+
   color: $Accent-500 ;
   background-color: transparent;
   border: 1px solid $Accent-500 ;
@@ -106,7 +115,8 @@
 }
 
 .text_button {
-  @extend .common;
+  @include common;
+
   color: $Accent-500 ;
   background-color: transparent;
 
