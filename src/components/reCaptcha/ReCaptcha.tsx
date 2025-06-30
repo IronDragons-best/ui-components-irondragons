@@ -42,12 +42,9 @@ export const ReCaptcha = ({isCaptchaPassed, setCaptchaToken}: Props): ReactEleme
 				onChange={submitHandler}
 				theme={'dark'}
 			/>
-			
 			{!isCaptchaPassed && <span className={styles.reCaptchaText}>Please verify that you are not a robot</span>}
 		</div>
-	
 	)
-	
 };
 
 

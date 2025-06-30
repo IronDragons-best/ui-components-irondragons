@@ -1,5 +1,4 @@
 import type {Meta, StoryObj} from '@storybook/react'
-
 import {ReCaptcha} from './ReCaptcha'
 
 const meta = {
@@ -22,7 +21,6 @@ const meta = {
 
 export default meta
 type Story = StoryObj<typeof meta>
-
 
 /** Example of a standard google ReCaptcha */
 export const GoogleReCaptcha: Story = {

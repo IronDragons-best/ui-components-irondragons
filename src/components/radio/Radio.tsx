@@ -1,6 +1,6 @@
+import {ComponentProps, InputHTMLAttributes, ReactElement} from "react";
 import { RadioGroup } from "radix-ui";
 import styles from "./radio.module.scss";
-import {ComponentProps, InputHTMLAttributes, ReactElement} from "react";
 
 export type RadioOptionsType = {
 	id: string;
