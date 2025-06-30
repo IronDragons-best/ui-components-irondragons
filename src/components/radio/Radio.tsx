@@ -8,7 +8,9 @@ export type RadioOptionsType = {
 }
 
 type Props = ComponentProps<typeof RadioGroup.Root> & InputHTMLAttributes<HTMLInputElement> & {
+	/** **Required**:Array of radio button options*/
 	options: RadioOptionsType[],
+	/** Disables all radio buttons */
 	selectedOption?: string,
 }
 
