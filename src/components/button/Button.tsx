@@ -1,7 +1,6 @@
-import clsx from "clsx"
 import { ComponentPropsWithoutRef, ElementType, ReactNode } from "react"
+import clsx from "clsx"
 import s from './button.module.scss'
-
 
 export const buttonVariant = ['primary', 'secondary', 'outline', 'text_button'] as const
 export type ButtonVariant = (typeof buttonVariant)[number]
@@ -33,29 +32,6 @@ export const Button = <T extends ElementType = 'button'>({
 
   const classNames = clsx(s.button, s[variant], fullWidth && s.fullWidth, className)
   const Component = (as || 'button') as ElementType
+
   return <Component className={classNames} {...rest} >{children}</Component>
 }
-
-// import { ComponentPropsWithoutRef, ElementType } from 'react'
-
-// import { clsx } from 'clsx'
-
-// import s from './button.module.scss'
-
-// export const buttonVariant = ['icon', 'link', 'primary', 'secondary', 'tertiary'] as const
-
-// export type ButtonVariant = (typeof buttonVariant)[number]
-
-// export type ButtonProps<T extends ElementType = 'button'> = {
-//   as?: T
-//   fullWidth?: boolean
-//   variant?: ButtonVariant
-// } & ComponentPropsWithoutRef<T>
-
-// export const Button = <T extends ElementType = 'button'>({}: ButtonProps<T>) => {
-//   const { as: Component = 'button', className, fullWidth, variant = 'primary', ...rest } = props
-
-//   const classNames = clsx(s.button, s[variant], fullWidth && s.fullWidth, className)
-
-//   return <Component className={classNames} {...rest} />
-// }

@@ -1,7 +1,6 @@
 @use '../../styles/fonts' as *;
 @use '../../styles/colors' as *;
 
-
 .common {
   @extend .h3;
   cursor: pointer;
@@ -23,7 +22,6 @@
     width: 100%;
   }
 }
-
 
 .primary {
   @extend .common;
