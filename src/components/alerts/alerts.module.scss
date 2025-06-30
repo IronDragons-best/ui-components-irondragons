@@ -1,0 +1,43 @@
+@use '../../styles/colors' as *;
+@use '../../styles/typography' as *;
+
+.box {
+  box-sizing: border-box;
+  font-size: $font-size-m;
+  line-height: $line-height-m;
+  color: $Light-100;
+  width: fit-content;
+
+  > div {
+    padding: 12px 24px;
+  }
+}
+
+.error {
+  background-color: $Danger-900;
+  border: 1px solid $Danger-500 ;
+}
+
+.success {
+  background-color: $Success-900;
+  border: 1px solid $Success-500;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+.defaultIcon {
+    color: $Light-100;
+}

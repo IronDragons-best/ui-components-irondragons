@@ -37,5 +37,3 @@ const Checkbox = ({
 );
 
 export default Checkbox;
-
-// className={clsx(s.checkboxRoot, checked && s.checked)}
