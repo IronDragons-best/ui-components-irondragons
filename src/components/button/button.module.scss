@@ -1,44 +1,129 @@
-.button {
-  all: unset;
+@use '../../styles/fonts' as *;
+@use '../../styles/colors' as *;
 
+.common {
+  @extend .h3;
   cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: fit-content;
+  min-height: 36px;
+  padding: 6px 24px;
+  text-decoration: none;
+  border: none;
+  &:disabled {
+    cursor: initial;
+  }
 
-  box-sizing: border-box;
-  padding: 0.5rem 1rem;
-
-  border-radius: 0.25rem;
-
-  &:focus-visible {
-    outline: 2px solid lightcoral;
-    outline-offset: 2px;
+  &.fullWidth {
+    justify-content: center;
+    width: 100%;
   }
 }
 
-.fullWidth {
-  width: 100%;
-}
-
 .primary {
-  color: white;
-  background-color: blue;
+  @extend .common;
+  color: $Light-100;
+  background-color: $Accent-500;
+
+  &:hover {
+    color: $Light-100;
+    background-color: $Accent-100;
+  }
+
+  &:focus {
+    color: $Light-100 ;
+    background-color: $Accent-500 ;
+    outline: 2px solid $Accent-700 ;
+  }
+
+  &:active {
+    color: $Light-500;
+    background-color: $Accent-700;
+  }
+
+  &:disabled {
+    color: $Light-900 ;
+    background-color: $Accent-900 ;
+  }
 }
 
 .secondary {
-  color: black;
-  background-color: lightblue;
+  @extend .common;
+  color: $Light-100 ;
+  background-color: $Dark-300 ;
+
+  &:hover {
+    color: $Light-100 ;
+    background-color: $Dark-100 ;
+  }
+
+  &:active {
+    color: $Light-100 ;
+    background-color: $Dark-500 ;
+  }
+
+  &:focus {
+    color: $Light-100 ;
+    background-color: $Dark-300 ;
+    border: 1px solid $Accent-300 ;
+  }
+
+  &:disabled {
+    color: $Light-900 ;
+    background-color: $Dark-500 ;
+
+  }
 }
 
-.tertiary {
-  color: blue;
-  border: 1px solid blue;
+.outline {
+  @extend .common;
+  color: $Accent-500 ;
+  background-color: transparent;
+  border: 1px solid $Accent-500 ;
+
+  &:hover {
+    color: $Accent-100 ;
+    border: 1px solid $Accent-100 ;
+  }
+
+  &:active {
+    color: $Accent-700 ;
+    border: 1px solid $Accent-700 ;
+  }
+
+  &:focus {
+    color: $Accent-700 ;
+    border: 2px solid $Accent-700 ;
+  }
+
+  &:disabled {
+    color: $Accent-900 ;
+    border: 1px solid $Accent-900 ;
+  }
 }
 
-.link {
-  color: blue;
-  text-decoration: underline;
-}
+.text_button {
+  @extend .common;
+  color: $Accent-500 ;
+  background-color: transparent;
 
-.icon {
-  width: 1.5rem;
-  height: 1.5rem;
+  &:hover {
+    color: $Accent-100 ;
+  }
+
+  &:active {
+    color: $Accent-700 ;
+  }
+
+  &:focus {
+    color: $Accent-500 ;
+    border: 2px solid $Accent-700 ;
+  }
+
+  &:disabled {
+    color: $Accent-900 ;
+  }
 }
