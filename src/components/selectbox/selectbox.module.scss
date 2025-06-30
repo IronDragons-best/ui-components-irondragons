@@ -1,0 +1,111 @@
+@use '../../styles/colors' as *;
+//@use '../../styles/fonts' as typo;
+
+.Label {
+  color: $Light-900;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.Trigger {
+  all: unset;
+  display: flex;
+  //@include typo.regular-text-16;
+  align-items: center;
+  justify-content: space-between;
+  width: 210px;
+  border: 1px solid $Dark-100;
+  border-radius: 2px;
+  padding: 0 15px;
+  height: 35px;
+  background-color: transparent;
+  color: $Light-100;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  &[data-state="open"] {
+    border: 1px solid $Light-100;
+    border-radius: 2px 2px 0 0;
+    background-color: $Dark-500;
+  }
+
+  &[data-state="open"] .Icon {
+    transform: rotate(180deg);
+    //transition: transform 0.2s ease;
+  }
+
+  &:hover {
+  }
+  &:focus {
+    //box-shadow: 0 0 0 2px black;
+  }
+  &[data-placeholder] {
+    //color: var(--violet-9);
+  }
+}
+
+.Icon {
+  color: $Light-100;
+  user-select: none;
+}
+
+.Content {
+  //position: absolute;
+  //top: 35px;
+  //background-color: $Dark-500;
+  //border: 1px solid $Light-100;
+  //border-radius: 0 0 2px 2px;
+  //width: 100%;
+  //padding: 0 15px;
+  //overflow: hidden;
+  //height: 1000px;
+  //z-index: 1000;
+
+  overflow: hidden;
+  display: inline-flex;
+  background-color: $Dark-500;
+  border-radius: 6px;
+  width: 210px;
+  padding: 0 15px;
+}
+
+.Viewport {
+  //position: relative;
+  //display: flex;
+  //flex-direction: column;
+  //overflow: auto;
+  //max-height: 100vh;
+  padding: 5px;
+  overflow: auto;
+}
+
+.Item {
+  all: unset;
+  height: 35px;
+  //padding: 0 15px;
+  display: flex;
+  align-items: center;
+  color: $Light-100;
+  cursor: pointer;
+  background-color: transparent;
+  user-select: none;
+  &[data-disabled] {
+    pointer-events: none;
+  }
+  &[data-highlighted] {
+    outline: none;
+  }
+}
+
+.ScrollButton {
+  //display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+  background-color: transparent;
+  color: $Light-100;
+  cursor: default;
+  display: none;
+}
