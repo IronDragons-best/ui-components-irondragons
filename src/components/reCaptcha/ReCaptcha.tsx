@@ -1,7 +1,7 @@
 import ReCAPTCHA from "react-google-recaptcha";
 import styles from './ReCaptcha.module.scss'
 import {clsx} from "clsx";
-import * as React from "react";
+import {ReactElement} from "react";
 
 type Props = {
 	/** **Required**: Tracks if captcha verification was completed successfully */
@@ -26,7 +26,7 @@ type Props = {
  * />
  */
 
-export const ReCaptcha = ({isCaptchaPassed, setCaptchaToken}: Props): React.ReactElement => {
+export const ReCaptcha = ({isCaptchaPassed, setCaptchaToken}: Props): ReactElement => {
 	const submitHandler = (token: string | null) => {
 		if (isCaptchaPassed && token) {
 			setCaptchaToken(token)

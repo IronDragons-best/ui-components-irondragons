@@ -1,6 +1,6 @@
 import { RadioGroup } from "radix-ui";
 import styles from "./radio.module.scss";
-import {ComponentProps, InputHTMLAttributes} from "react";
+import {ComponentProps, InputHTMLAttributes, ReactElement} from "react";
 
 export type RadioOptionsType = {
 	id: string;
@@ -14,7 +14,7 @@ type Props = ComponentProps<typeof RadioGroup.Root> & InputHTMLAttributes<HTMLIn
 	selectedOption?: string,
 }
 
-export const Radio = ({options, defaultValue, disabled, ...rest}:Props) => (
+export const Radio = ({options, defaultValue, disabled, ...rest}:Props): ReactElement => (
 		<RadioGroup.Root
 			className={styles.Root}
 			defaultValue="default"
