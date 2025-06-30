@@ -7,7 +7,15 @@ const meta = {
     onClick: { action: 'clicked' },
     variant: {
       control: { type: 'radio' },
-      options: ['primary', 'secondary', 'tertiary', 'link'],
+      options: ['primary', 'secondary', 'outline', 'text_button'],
+    },
+  },
+  parameters: {
+    backgrounds: {
+      default: 'dark',
+      values: [
+        { name: 'dark', value: '#0D0D0D' },
+      ],
     },
   },
   component: Button,
@@ -18,52 +26,54 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
+/**
+ * Primary button example.
+ */
 export const Primary: Story = {
   args: {
-    children: 'Primary Button',
+    children: 'Primary',
     disabled: false,
     variant: 'primary',
   },
 }
 
-export const Secondary: Story = {
+/**
+ * Disabled primary button example.
+ */
+export const Disabled: Story = {
   args: {
-    children: 'Secondary Button',
-    disabled: false,
-    variant: 'secondary',
-  },
-}
-export const Tertiary: Story = {
-  args: {
-    children: 'Tertiary Button',
-    disabled: false,
-    variant: 'tertiary',
-  },
-}
-export const Link: Story = {
-  args: {
-    children: 'Button that looks like a link',
-    disabled: false,
-    variant: 'link',
+    children: 'Disabled',
+    disabled: true,
+    variant: 'primary',
   },
 }
 
+/**
+ * Example of rendering the Button as a link (`<a>` tag).
+ */
+export const LinkButton: Story = {
+  args: {
+    children: 'Link',
+    disabled: false,
+    as: 'a',
+    href: 'https://example.com', 
+    variant: 'text_button',
+    
+  }
+}
+
+/**
+ * Full-width button example.
+ */
 export const FullWidth: Story = {
   args: {
-    children: 'Full Width Button',
+    children: 'FullWith',
     disabled: false,
-    fullWidth: true,
     variant: 'primary',
+    fullWidth: true
   },
 }
 
-export const AsLink: Story = {
-  args: {
-    as: 'a',
-    children: 'Link that looks like a button',
-    href: 'https://google.com',
-    rel: 'noopener noreferrer',
-    target: '_blank',
-    variant: 'primary',
-  },
-}
+
+
+
