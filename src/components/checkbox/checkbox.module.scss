@@ -2,16 +2,41 @@
 
 .Root {
   all: unset;
-  border: 2px solid $Light-500;
-  color: $Light-100;
-  width: 14px;
-  height: 14px;
-  border-radius: 4px;
+
+  user-select: none;
+
   position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  user-select: none;
+
+  width: 14px;
+  height: 14px;
+
+  color: $Light-100;
+
+  border: 2px solid $Light-500;
+  border-radius: 4px;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    width: 36px;
+    height: 36px;
+
+    opacity: 0;
+    background-color: $Dark-300;
+    border-radius: 50%;
+
+    transition: 0.2s linear;
+  }
 
   &[data-state='checked'] {
     background-color: $Light-100;
@@ -23,29 +48,14 @@
     border-color: $Light-900;
   }
 
-  &[aria-disabled=true][data-state='checked'] {
+  &[aria-disabled="true"][data-state='checked'] {
     pointer-events: none;
     background-color: $Dark-100;
     border-color: $Dark-100;
   }
 
-  &[aria-disabled=true][data-state='unchecked'] {
+  &[aria-disabled="true"][data-state='unchecked'] {
     border-color: $Light-900;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    width: 36px;
-    height: 36px;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    border-radius: 50%;
-    background-color: $Dark-300;
-    z-index: -1;
-    opacity: 0;
-    transition: 0.2s linear;
   }
 
   &:hover::after {
@@ -62,25 +72,25 @@
     background-color: $Dark-500;
   }
 
-  &[aria-disabled=true]:hover::after {
+  &[aria-disabled="true"]:hover::after {
     opacity: 0;
   }
 
-  &[aria-disabled=true]:active::after {
+  &[aria-disabled="true"]:active::after {
     opacity: 0;
   }
 
-  &[aria-disabled=true]:focus::after {
+  &[aria-disabled="true"]:focus::after {
     opacity: 0;
   }
 }
 
 .Indicator {
-  padding-top: 3px;
   scale: 140%;
+  padding-top: 3px;
   color: $Dark-500;
 
-  &[aria-disabled=true] {
+  &[aria-disabled="true"] {
     color: $Light-900;
   }
 
@@ -88,26 +98,27 @@
     color: $Dark-900;
   }
 
-  &[aria-disabled=true][data-state='checked'] {
+  &[aria-disabled="true"][data-state='checked'] {
     color: $Light-700;
   }
 }
 
 .Indicator[aria-disabled='true'] {
-  color: $Light-700;
-  ointer-events: none;
+  pointer-events: none;
   user-select: none;
+  color: $Light-700;
 }
 
 .Label {
-  color: $Light-100;
   padding-left: 15px;
   font-size: 15px;
   line-height: 1;
+  color: $Light-100;
 }
 
 .Label[aria-disabled='true'] {
-  color: $Light-900;
-  ointer-events: none;
   user-select: none;
+  color: $Light-900;
+
+  ointer-events: none;
 }

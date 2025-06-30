@@ -33,67 +33,67 @@
   font-display: swap;
 }
 
-.large {
+@mixin large {
  font-size: $font-size-xxl;
  line-height: $line-height-l;
  font-weight: $font-weight-semi-bold;
 }
 
-.h1 {
+@mixin h1 {
  font-size: $font-size-xl;
  line-height: $line-height-l;
  font-weight: $font-weight-bold;
 }
 
-.h2 {
+@mixin h2 {
  font-size: $font-size-l;
  line-height: $line-height-m;
  font-weight: $font-weight-bold;
 }
 
-.h3 {
+@mixin h3 {
  font-size: $font-size-m;
  line-height: $line-height-m;
  font-weight: $font-weight-semi-bold;
 }
 
-.regular-text-16 {
+@mixin regular-text-16 {
  font-size: $font-size-m;
  line-height: $line-height-m;
  font-weight: $font-weight-regular;
 }
 
-.bold-text-16 {
+@mixin bold-text-16 {
  font-size: $font-size-m;
  line-height: $line-height-m;
  font-weight: $font-weight-bold;
 }
 
-.regular-text-14 {
+@mixin regular-text-14 {
  font-size: $font-size-s;
  line-height: $line-height-m;
  font-weight: $font-weight-regular;
 }
 
-.medium-text-14 {
+@mixin medium-text-14 {
  font-size: $font-size-s;
  line-height: $line-height-m;
  font-weight: $font-weight-medium;
 }
 
-.bold-text-14 {
+@mixin bold-text-14 {
  font-size: $font-size-s;
  line-height: $line-height-m;
  font-weight: $font-weight-bold;
 }
 
-.small-text {
+@mixin small-text {
  font-size: $font-size-xs;
  line-height: $line-height-s;
  font-weight: $font-weight-regular;
 }
 
-.semi-bold-small-text {
+@mixin semi-bold-small-text {
  font-size: $font-size-xs;
  line-height: $line-height-s;
  font-weight: $font-weight-semi-bold;

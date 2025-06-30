@@ -15,7 +15,7 @@ const Selectbox = () => (
         <ChevronDownIcon/>
       </Select.Icon>
     </Select.Trigger>
-    {/*<Select.Portal>*/}
+    <Select.Portal>
       <Select.Content className={s.Content} side="bottom" position="popper">
         <Select.ScrollUpButton className={s.ScrollButton}>
           <ChevronUpIcon/>
@@ -25,45 +25,31 @@ const Selectbox = () => (
             <SelectItem value="Select-box 1">Select-box 1</SelectItem>
             <SelectItem value="Select-box 2">Select-box 2</SelectItem>
             <SelectItem value="Select-box 3">Select-box 3</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 3</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 3</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 3</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 3</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 3</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 3</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 3</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 3</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 4</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 5</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 6</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 7</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 8</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 9</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 1</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 2</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 4</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 5</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 6</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 71</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 4</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 5</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 6</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 7</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 8</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 9</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 1</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 2</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 4</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 5</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 6</SelectItem>
-            <SelectItem value="Select-box 3">Select-box 71</SelectItem>
+            <SelectItem value="Select-box 4">Select-box 4</SelectItem>
+            <SelectItem value="Select-box 5">Select-box 5</SelectItem>
+            <SelectItem value="Select-box 6">Select-box 6</SelectItem>
+            <SelectItem value="Select-box 7">Select-box 7</SelectItem>
+            <SelectItem value="Select-box 8">Select-box 8</SelectItem>
+            <SelectItem value="Select-box 9">Select-box 9</SelectItem>
+            <SelectItem value="Select-box 10">Select-box 10</SelectItem>
+            <SelectItem value="Select-box 11">Select-box 11</SelectItem>
+            <SelectItem value="Select-box 12">Select-box 12</SelectItem>
+            <SelectItem value="Select-box 13">Select-box 13</SelectItem>
+            <SelectItem value="Select-box 14">Select-box 14</SelectItem>
+            <SelectItem value="Select-box 15">Select-box 15</SelectItem>
+            <SelectItem value="Select-box 16">Select-box 16</SelectItem>
+            <SelectItem value="Select-box 17">Select-box 17</SelectItem>
+            <SelectItem value="Select-box 18">Select-box 18</SelectItem>
+            <SelectItem value="Select-box 19">Select-box 19</SelectItem>
+
+
           </Select.Group>
         </Select.Viewport>
         <Select.ScrollDownButton className={s.ScrollButton}>
           <ChevronDownIcon/>
         </Select.ScrollDownButton>
       </Select.Content>
-    {/*</Select.Portal>*/}
+    </Select.Portal>
 
   </Select.Root>
 );
