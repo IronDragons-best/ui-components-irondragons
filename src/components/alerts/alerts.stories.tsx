@@ -1,8 +1,7 @@
-import type {Meta, Story} from '@storybook/react'
+import type {Meta, StoryObj} from '@storybook/react'
 import { Alert } from './'
-import {useState} from "react";
 
-export default {
+const meta = {
     parameters: {
         backgrounds: {
             default: 'dark',
@@ -17,27 +16,13 @@ export default {
     component: Alert,
     tags: ['autodocs'],
     title: 'Components/Alerts',
-} as Meta<typeof Alert>
+} satisfies Meta<typeof Alert>
+
+export default meta
+type Story = StoryObj<typeof meta>
 
 /** Example of a success Alert */
 export const Success: Story = {
-    render: (args) => {
-        const [visible, setVisible] = useState(true);
-
-        return (
-            <>
-                {visible && (
-                    <Alert
-                        {...args}
-                        onClose={() => {
-                            setVisible(false);
-                            args.onClose?.(); // вызов экшена
-                        }}
-                    />
-                )}
-            </>
-        );
-    },
     args: {
         children: 'Your settings are saved',
         variant: 'success',
@@ -48,22 +33,6 @@ export const Success: Story = {
 
 /** Example of the error Alert */
 export const Error: Story = {
-    render: (args) => {
-        const [visible, setVisible] = useState(true);
-        return (
-            <>
-                {visible && (
-                    <Alert
-                        {...args}
-                        onClose={() => {
-                            setVisible(false);
-                            args.onClose?.(); // вызов экшена
-                        }}
-                    />
-                )}
-            </>
-        );
-    },
     args: {
         children: 'Server is not available',
         variant: 'error',
