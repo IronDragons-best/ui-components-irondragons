@@ -1,9 +1,9 @@
 const TextArea = () => {
-    return (
-        <div>
-            <p>Text area</p>
-        </div>
-    );
+  return (
+    <div>
+      <p>Text area</p>
+    </div>
+  );
 };
 
-export  default TextArea;
+export default TextArea;

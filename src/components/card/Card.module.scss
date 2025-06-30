@@ -1,0 +1,15 @@
+@use '../../styles/colors' as *;
+
+.cardBody {
+  width: fit-content;
+  min-height: fit-content;
+  background-color: $Dark-500;
+  border: 1px solid $Dark-300;
+  border-radius: 2px;
+  padding: 23px 24px 24px;
+  color: $Light-100;
+}
+
+.fullWidth {
+  width: 100%;
+}
