@@ -48,13 +48,13 @@
     border-color: $Light-900;
   }
 
-  &[aria-disabled="true"][data-state='checked'] {
+  &[aria-disabled='true'][data-state='checked'] {
     pointer-events: none;
     background-color: $Dark-100;
     border-color: $Dark-100;
   }
 
-  &[aria-disabled="true"][data-state='unchecked'] {
+  &[aria-disabled='true'][data-state='unchecked'] {
     border-color: $Light-900;
   }
 
@@ -72,15 +72,15 @@
     background-color: $Dark-500;
   }
 
-  &[aria-disabled="true"]:hover::after {
+  &[aria-disabled='true']:hover::after {
     opacity: 0;
   }
 
-  &[aria-disabled="true"]:active::after {
+  &[aria-disabled='true']:active::after {
     opacity: 0;
   }
 
-  &[aria-disabled="true"]:focus::after {
+  &[aria-disabled='true']:focus::after {
     opacity: 0;
   }
 }
@@ -90,7 +90,8 @@
   padding-top: 3px;
   color: $Dark-500;
 
-  &[aria-disabled="true"] {
+
+  &[aria-disabled='true'] {
     color: $Light-900;
   }
 
@@ -98,7 +99,7 @@
     color: $Dark-900;
   }
 
-  &[aria-disabled="true"][data-state='checked'] {
+  &[aria-disabled='true'][data-state='checked'] {
     color: $Light-700;
   }
 }

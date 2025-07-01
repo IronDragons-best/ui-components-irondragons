@@ -3,10 +3,11 @@
 
 .box {
   box-sizing: border-box;
+  width: fit-content;
+
   font-size: $font-size-m;
   line-height: $line-height-m;
   color: $Light-100;
-  width: fit-content;
 
   > div {
     padding: 12px 24px;
@@ -15,7 +16,7 @@
 
 .error {
   background-color: $Danger-900;
-  border: 1px solid $Danger-500 ;
+  border: 1px solid $Danger-500;
 }
 
 .success {
@@ -29,8 +30,8 @@
 
 .content {
   display: flex;
-  justify-content: space-between;
   gap: 24px;
+  justify-content: space-between;
 }
 
 .icon {
@@ -39,5 +40,5 @@
 }
 
 .defaultIcon {
-    color: $Light-100;
+  color: $Light-100;
 }

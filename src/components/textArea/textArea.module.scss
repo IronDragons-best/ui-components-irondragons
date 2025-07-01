@@ -6,11 +6,14 @@
 }
 
 .textArea {
+  resize: none;
+
   width: fit-content;
   height: 84px;
-  resize: none;
   padding: 6px 0 0 12px;
+
   color: $Light-100;
+
   background-color: $Dark-500;
   border-color: $Dark-100;
 

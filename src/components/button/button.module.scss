@@ -4,6 +4,7 @@
 @mixin common {
   @include typo.h3;
 
+
   cursor: pointer;
 
   display: inline-flex;
@@ -27,10 +28,11 @@
     justify-content: center;
     width: 100%;
   }
-}
+}9
 
 .primary {
   @include common;
+
 
   color: $Light-100;
   background-color: $Accent-500;
@@ -41,9 +43,9 @@
   }
 
   &:focus {
-    color: $Light-100 ;
-    background-color: $Accent-500 ;
-    outline: 2px solid $Accent-700 ;
+    color: $Light-100;
+    background-color: $Accent-500;
+    outline: 2px solid $Accent-700;
   }
 
   &:active {
@@ -52,8 +54,8 @@
   }
 
   &:disabled {
-    color: $Light-900 ;
-    background-color: $Accent-900 ;
+    color: $Light-900;
+    background-color: $Accent-900;
   }
 }
 
@@ -63,77 +65,75 @@
   color: $Light-100 ;
   background-color: $Dark-300 ;
 
+
   &:hover {
-    color: $Light-100 ;
-    background-color: $Dark-100 ;
+    color: $Light-100;
+    background-color: $Dark-100;
   }
 
   &:active {
-    color: $Light-100 ;
-    background-color: $Dark-500 ;
+    color: $Light-100;
+    background-color: $Dark-500;
   }
 
   &:focus {
-    color: $Light-100 ;
-    background-color: $Dark-300 ;
-    border: 1px solid $Accent-300 ;
+    color: $Light-100;
+    background-color: $Dark-300;
+    border: 1px solid $Accent-300;
   }
 
   &:disabled {
-    color: $Light-900 ;
-    background-color: $Dark-500 ;
-
+    color: $Light-900;
+    background-color: $Dark-500;
   }
 }
 
 .outline {
   @include common;
-
   color: $Accent-500 ;
   background-color: transparent;
-  border: 1px solid $Accent-500 ;
+  border: 1px solid $Accent-500;
 
   &:hover {
-    color: $Accent-100 ;
-    border: 1px solid $Accent-100 ;
+    color: $Accent-100;
+    border: 1px solid $Accent-100;
   }
 
   &:active {
-    color: $Accent-700 ;
-    border: 1px solid $Accent-700 ;
+    color: $Accent-700;
+    border: 1px solid $Accent-700;
   }
 
   &:focus {
-    color: $Accent-700 ;
-    border: 2px solid $Accent-700 ;
+    color: $Accent-700;
+    border: 2px solid $Accent-700;
   }
 
   &:disabled {
-    color: $Accent-900 ;
-    border: 1px solid $Accent-900 ;
+    color: $Accent-900;
+    border: 1px solid $Accent-900;
   }
 }
 
 .text_button {
   @include common;
-
   color: $Accent-500 ;
   background-color: transparent;
 
   &:hover {
-    color: $Accent-100 ;
+    color: $Accent-100;
   }
 
   &:active {
-    color: $Accent-700 ;
+    color: $Accent-700;
   }
 
   &:focus {
-    color: $Accent-500 ;
-    border: 2px solid $Accent-700 ;
+    color: $Accent-500;
+    border: 2px solid $Accent-700;
   }
 
   &:disabled {
-    color: $Accent-900 ;
+    color: $Accent-900;
   }
 }
