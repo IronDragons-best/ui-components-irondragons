@@ -90,6 +90,7 @@
   padding-top: 3px;
   color: $Dark-500;
 
+
   &[aria-disabled='true'] {
     color: $Light-900;
   }
@@ -104,10 +105,9 @@
 }
 
 .Indicator[aria-disabled='true'] {
+  pointer-events: none;
   user-select: none;
   color: $Light-700;
-
-  ointer-events: none;
 }
 
 .Label {
@@ -118,8 +118,7 @@
 }
 
 .Label[aria-disabled='true'] {
+  pointer-events: none;
   user-select: none;
   color: $Light-900;
-
-  ointer-events: none;
 }

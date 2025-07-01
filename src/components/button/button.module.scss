@@ -1,8 +1,9 @@
-@use '../../styles/fonts' as *;
+@use '../../styles/fonts' as typo;
 @use '../../styles/colors' as *;
 
-.common {
-  @extend .h3;
+@mixin common {
+  @include typo.h3;
+
 
   cursor: pointer;
 
@@ -27,10 +28,11 @@
     justify-content: center;
     width: 100%;
   }
-}
+}9
 
 .primary {
-  @extend .common;
+  @include common;
+
 
   color: $Light-100;
   background-color: $Accent-500;
@@ -58,10 +60,11 @@
 }
 
 .secondary {
-  @extend .common;
+  @include common;
 
-  color: $Light-100;
-  background-color: $Dark-300;
+  color: $Light-100 ;
+  background-color: $Dark-300 ;
+
 
   &:hover {
     color: $Light-100;
@@ -86,9 +89,8 @@
 }
 
 .outline {
-  @extend .common;
-
-  color: $Accent-500;
+  @include common;
+  color: $Accent-500 ;
   background-color: transparent;
   border: 1px solid $Accent-500;
 
@@ -114,9 +116,8 @@
 }
 
 .text_button {
-  @extend .common;
-
-  color: $Accent-500;
+  @include common;
+  color: $Accent-500 ;
   background-color: transparent;
 
   &:hover {

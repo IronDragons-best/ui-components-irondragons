@@ -1,0 +1,129 @@
+@use '../../styles/colors' as *;
+@use '../../styles/fonts' as typo;
+
+
+.Label {
+  display: inline-block;
+  margin-bottom: 5px;
+  color: $Light-900;
+}
+
+.Icon {
+  user-select: none;
+  scale: 150%;
+  color: $Light-100;
+}
+
+.Trigger {
+  @include typo.regular-text-16;
+
+  all: unset;
+
+  cursor: pointer;
+  user-select: none;
+
+  position: relative;
+
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 190px;
+  height: 35px;
+  padding: 0 15px;
+
+  color: $Light-100;
+
+  background-color: transparent;
+  border: 1px solid $Dark-100;
+  border-radius: 2px;
+
+  &[data-placeholder] {
+    color: $Light-100;
+  }
+
+  &:hover {
+    color: $Light-900;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    cursor: default;
+    color: $Dark-100;
+  }
+
+  &:focus {
+    color: $Light-900;
+    border-color: $Accent-500;
+    outline: 1px solid $Accent-500;
+  }
+
+  &[data-state="open"] {
+    background-color: $Dark-500;
+    border: 1px solid $Light-100;
+    border-radius: 2px 2px 0 0;
+  }
+
+  &[data-state="open"] .Icon {
+    transform: rotate(180deg);
+  }
+}
+
+.Content {
+  position: absolute;
+  z-index: 1000;
+  right: 0;
+  left: 0;
+
+  overflow-y: auto;
+
+  width: var(--radix-select-trigger-width);
+  max-height: 210px;
+  padding: 0;
+
+  background-color: $Dark-500;
+  border: 1px solid $Light-100;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+}
+
+.Item {
+  all: unset;
+
+  cursor: pointer;
+  user-select: none;
+
+  display: flex;
+  align-items: center;
+
+  height: 35px;
+  padding: 0 15px;
+
+  color: $Light-100;
+
+  &[data-disabled] {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  &[data-highlighted] {
+    color: $Accent-500;
+    background-color: $Dark-300;
+    outline: none;
+  }
+}
+
+.ScrollButton {
+  cursor: default;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  height: 25px;
+
+  color: $Light-100;
+
+  background-color: transparent;
+}
