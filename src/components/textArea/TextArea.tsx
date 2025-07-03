@@ -35,7 +35,7 @@ export type TextAreaProps<T extends ElementType = 'textarea'> = {
    */
   fullWidth?: boolean
   /**
-   * **Required**: Id for Text area.
+   * **Required**: ID for Text area.
    */
   id: string
   asChild?: boolean
