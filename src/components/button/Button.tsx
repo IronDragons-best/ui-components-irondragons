@@ -41,6 +41,3 @@ export const Button = <T extends ElementType = 'button'>({
     </Component>
   );
 };
-
-  return <Component className={classNames} {...rest} >{children}</Component>
-}
