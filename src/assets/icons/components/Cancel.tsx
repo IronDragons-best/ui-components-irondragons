@@ -1,7 +1,7 @@
-import { IconProps, IconWrapper } from '../IconWrapper';
+import { IconProps, IconWrapper } from '../IconWrapper'
 
 const Cancel = (allProps: IconProps) => {
-  const { svgProps: props, ...restProps } = allProps;
+  const { svgProps: props, ...restProps } = allProps
 
   return (
     <IconWrapper
@@ -32,7 +32,7 @@ const Cancel = (allProps: IconProps) => {
       }
       {...restProps}
     />
-  );
-};
+  )
+}
 
-export default Cancel;
+export default Cancel

@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { Radio } from './Radio';
+import { Radio } from './Radio'
 
 const meta = {
   component: Radio,
@@ -24,10 +24,10 @@ const meta = {
     },
   },
   title: 'Components/Radio',
-} satisfies Meta<typeof Radio>;
+} satisfies Meta<typeof Radio>
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
 /**
  * ## Basic Usage
@@ -41,7 +41,7 @@ export const RadioActive: Story = {
     ],
     disabled: false,
   },
-};
+}
 
 /**
  * ## Disabled State
@@ -55,4 +55,4 @@ export const RadioDisabled: Story = {
     ],
     disabled: true,
   },
-};
+}
