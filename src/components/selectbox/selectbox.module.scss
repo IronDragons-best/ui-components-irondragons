@@ -25,10 +25,13 @@
 
   overflow: hidden;
   display: flex;
+  gap: 10px;
   align-items: center;
   justify-content: space-between;
 
-  width: 190px;
+  box-sizing: border-box;
+  width: fit-content;
+  min-width: 170px;
   height: 35px;
   padding: 0 15px;
 
@@ -38,15 +41,22 @@
   border: 1px solid $dark-100;
   border-radius: 2px;
 
-  &[data-placeholder] {
-    color: $light-100;
-  }
+ // TODO
 
-  &:hover {
+  &[data-placeholder] {
     color: $light-900;
   }
 
-  &:disabled {
+  &[data-label="true"][data-placeholder] {
+    color: $light-100;
+  }
+
+
+  &[data-state='closed']:hover {
+    color: $light-900;
+  }
+
+  &[data-placeholder]:disabled {
     pointer-events: none;
     cursor: default;
     color: $dark-100;
@@ -59,13 +69,44 @@
   }
 
   &[data-state='open'] {
+    color: $light-900;
     background-color: $dark-500;
     border: 1px solid $light-100;
     border-radius: 2px 2px 0 0;
   }
 
+  &[data-state='open']:active {
+    color: $light-100;
+    background-color: $dark-500;
+    border: 1px solid $light-100;
+    border-radius: 2px 2px 0 0;
+  }
+
+  &[data-state='open']:hover {
+    color: $light-900;
+    border: 1px solid $light-900;
+    border-radius: 2px 2px 0 0;
+  }
+
   &[data-state='open'] .Icon {
     transform: rotate(180deg);
+  }
+}
+
+.Selected {
+  display: flex;
+  gap: 15px;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.Viewport {
+  color: $light-900;
+
+  &:active {
+    color: $light-100;
   }
 }
 
@@ -81,10 +122,16 @@
   max-height: 210px;
   padding: 0;
 
+  color: $light-900;
+
   background-color: $dark-500;
   border: 1px solid $light-100;
   border-top: none;
   border-radius: 0 0 6px 6px;
+
+  &:active {
+    color: $light-100;
+  }
 }
 
 .Item {
@@ -99,7 +146,11 @@
   height: 35px;
   padding: 0 15px;
 
-  color: $light-100;
+  color: $light-900;
+
+  &:active {
+    color: $light-100;
+  }
 
   &[data-disabled] {
     pointer-events: none;

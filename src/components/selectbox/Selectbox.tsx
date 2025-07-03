@@ -1,17 +1,20 @@
-import { ComponentPropsWithoutRef, FC } from 'react'
+import {ComponentPropsWithoutRef, FC} from 'react'
 
-import { ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons'
-import { Select } from 'radix-ui'
+import {ChevronDownIcon, ChevronUpIcon} from '@radix-ui/react-icons'
+import {Select} from 'radix-ui'
 
 import '../../styles/index.scss'
 
 import s from './selectbox.module.scss'
 
-import { SelectItem } from './SelectItem'
+import {SelectItem} from './SelectItem'
+import {UniversalIcon} from "../common/unversalIcon/UniversalIcon";
+import {clsx} from "clsx";
 
 type OptionType = {
   value: string
   label: string
+  icon?: string
 }
 
 type SelectboxProps = {
@@ -23,12 +26,16 @@ type SelectboxProps = {
   options: OptionType[]
   /** **Required**: Placeholder text shown when no option is selected */
   placeholder: string
+  /** Initial value */
+  value?: string;
   /** Label displayed above the select input */
   label?: string
   /** Disables the select input */
   disabled?: boolean
   /** Additional CSS class names for the root element */
   className?: string
+  /** If true, the select input stretches to the full width of its container */
+  fullWidth?: boolean
   /** Callback fired when the selected value changes */
   onValueChange?: (value: string) => void
   /** Callback fired when the dropdown opens or closes */
@@ -36,54 +43,71 @@ type SelectboxProps = {
 } & Omit<ComponentPropsWithoutRef<typeof Select.Root>, 'value' | 'onValueChange' | 'children'>
 
 export const Selectbox: FC<SelectboxProps> = ({
-  idProp,
-  name,
-  label = '',
-  placeholder = 'Select...',
-  disabled = false,
-  className,
-  onValueChange,
-  onOpenChange,
-  options,
-  ...rest
-}: SelectboxProps) => (
-  <Select.Root onValueChange={onValueChange} onOpenChange={onOpenChange} {...rest}>
-    {label && (
-      <label htmlFor={idProp} className={s.Label}>
-        {label}
-      </label>
-    )}
-    <Select.Trigger
-      id={idProp}
-      className={s.Trigger}
-      disabled={disabled}
-      aria-label={label}
-      name={name}
-    >
-      <Select.Value placeholder={placeholder} />
-      <Select.Icon className={s.Icon}>
-        <ChevronDownIcon />
-      </Select.Icon>
-    </Select.Trigger>
+                                                idProp,
+                                                name,
+                                                label = '',
+                                                placeholder = 'Select...',
+                                                disabled = false,
+                                                className,
+                                                value,
+                                                fullWidth,
+                                                onValueChange,
+                                                onOpenChange,
+                                                options,
+                                                ...rest
+                                              }: SelectboxProps) => {
+  const selectedOption: OptionType | undefined = options.find(opt => opt.value === value);
 
-    <Select.Portal>
-      <Select.Content className={s.Content} side={'bottom'} position={'popper'}>
-        <Select.ScrollUpButton className={s.ScrollButton}>
-          <ChevronUpIcon />
-        </Select.ScrollUpButton>
-        <Select.Viewport className={s.Viewport}>
-          <Select.Group>
-            {options.map(option => (
-              <SelectItem key={option.value} value={option.value}>
-                {option.label}
-              </SelectItem>
-            ))}
-          </Select.Group>
-        </Select.Viewport>
-        <Select.ScrollDownButton className={s.ScrollButton}>
-          <ChevronDownIcon />
-        </Select.ScrollDownButton>
-      </Select.Content>
-    </Select.Portal>
-  </Select.Root>
-)
+  return (
+    <Select.Root onValueChange={onValueChange} onOpenChange={onOpenChange} {...rest}>
+      {label && (
+        <label htmlFor={idProp} className={s.Label}>
+          {label}
+        </label>
+      )}
+      <Select.Trigger
+        id={idProp}
+        className={clsx(s.Trigger, fullWidth && s.fullWidth)}
+        disabled={disabled}
+        aria-label={label}
+        data-label={label ? 'true' : 'false'}
+        name={name}
+      >
+        {selectedOption ? (
+          <div className={s.Selected}>
+            {selectedOption.icon && (
+              <span><UniversalIcon name={selectedOption.icon}/></span>
+            )}
+            {selectedOption.label}
+          </div>
+        ) : (
+          <Select.Value placeholder={placeholder}/>
+        )}
+        <Select.Icon className={s.Icon}>
+          <ChevronDownIcon/>
+        </Select.Icon>
+      </Select.Trigger>
+
+      <Select.Portal>
+        <Select.Content className={s.Content} side={'bottom'} position={'popper'}>
+          <Select.ScrollUpButton className={s.ScrollButton}>
+            <ChevronUpIcon/>
+          </Select.ScrollUpButton>
+          <Select.Viewport className={s.Viewport}>
+            <Select.Group>
+              {options.map(option => (
+                <SelectItem className={s.Selected} key={option.value} value={option.value}>
+                  {option.icon && <span><UniversalIcon name={option.icon}/></span>}
+                  {option.label}
+                </SelectItem>
+              ))}
+            </Select.Group>
+          </Select.Viewport>
+          <Select.ScrollDownButton className={s.ScrollButton}>
+            <ChevronDownIcon/>
+          </Select.ScrollDownButton>
+        </Select.Content>
+      </Select.Portal>
+    </Select.Root>
+  )
+}
