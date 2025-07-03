@@ -1,34 +1,34 @@
-import { ComponentProps, FC, ReactNode } from 'react'
+import { ComponentProps, FC, ReactNode } from 'react';
 
-import { clsx } from 'clsx'
+import { clsx } from 'clsx';
 
-import s from './alerts.module.scss'
+import s from './alerts.module.scss';
 
-import Cancel from '../../assets/icons/components/Cancel'
+import { UniversalIcon } from '../common/unversalIcon/UniversalIcon';
 
 export type AlertProps = {
   /**
    * **Required**: The content of the alert (usually text or elements).
    */
-  children: ReactNode
+  children: ReactNode;
   /**
    * Visual variant of the alert. Can be 'success' (green) or 'error' (red).
    * Defaults to no variant styling.
    */
-  variant?: 'success' | 'error'
+  variant?: 'success' | 'error';
   /**
    * Callback fired when the close button is clicked.
    */
-  onClose?: () => void
+  onClose?: () => void;
   /**
    * **Required**: If true, the alert can be closed via a close button.
    */
-  closable: boolean
+  closable: boolean;
   /**
    * If true, the alert stretches to the full width of its container.
    */
-  fullWidth?: boolean
-} & ComponentProps<'div'>
+  fullWidth?: boolean;
+} & ComponentProps<'div'>;
 
 export const Alert: FC<AlertProps> = ({
   children,
@@ -42,7 +42,7 @@ export const Alert: FC<AlertProps> = ({
     box: clsx(s.box, variant === 'success' ? s.success : s.error, fullWidth && s.fullWidth),
     content: s.content,
     icon: clsx(s.icon),
-  }
+  };
 
   return (
     <div className={classNames.box} {...rest}>
@@ -56,10 +56,10 @@ export const Alert: FC<AlertProps> = ({
         )}
         {closable && (
           <span className={classNames.icon} onClick={onClose}>
-            <Cancel />
+            <UniversalIcon name={'close'} />
           </span>
         )}
       </div>
     </div>
-  )
-}
+  );
+};

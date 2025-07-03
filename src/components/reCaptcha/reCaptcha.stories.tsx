@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { ReCaptcha } from './ReCaptcha'
+import { ReCaptcha } from './ReCaptcha';
 
 const meta = {
   args: {
@@ -16,10 +16,10 @@ const meta = {
   component: ReCaptcha,
   tags: ['autodocs'],
   title: 'Components/ReCaptcha',
-} satisfies Meta<typeof ReCaptcha>
+} satisfies Meta<typeof ReCaptcha>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 /** Example of a standard google ReCaptcha */
 export const GoogleReCaptcha: Story = {
@@ -27,4 +27,4 @@ export const GoogleReCaptcha: Story = {
     isCaptchaPassed: true,
     setCaptchaToken: () => {},
   },
-}
+};

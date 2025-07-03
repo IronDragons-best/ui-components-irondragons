@@ -1,16 +1,16 @@
-import { ReactElement } from 'react'
-import ReCAPTCHA from 'react-google-recaptcha'
+import { ReactElement } from 'react';
+import { ReCAPTCHA } from 'react-google-recaptcha';
 
-import { clsx } from 'clsx'
+import { clsx } from 'clsx';
 
-import styles from './ReCaptcha.module.scss'
+import styles from './ReCaptcha.module.scss';
 
 type Props = {
   /** **Required**: Tracks if captcha verification was completed successfully */
-  isCaptchaPassed: boolean
+  isCaptchaPassed: boolean;
   /** **Required**: Callback that receives the verification token string */
-  setCaptchaToken: (token: string) => void
-}
+  setCaptchaToken: (token: string) => void;
+};
 
 /**
  * ReCaptcha component that integrates Google reCAPTCHA v2
@@ -31,11 +31,11 @@ type Props = {
 export const ReCaptcha = ({ isCaptchaPassed, setCaptchaToken }: Props): ReactElement => {
   const submitHandler = (token: string | null) => {
     if (isCaptchaPassed && token) {
-      setCaptchaToken(token)
+      setCaptchaToken(token);
     }
-  }
+  };
 
-  const classNames = clsx(styles.reCaptchaWrapper, !isCaptchaPassed && styles.reCaptchaError)
+  const classNames = clsx(styles.reCaptchaWrapper, !isCaptchaPassed && styles.reCaptchaError);
 
   return (
     <div className={classNames}>
@@ -48,5 +48,5 @@ export const ReCaptcha = ({ isCaptchaPassed, setCaptchaToken }: Props): ReactEle
         <span className={styles.reCaptchaText}>Please verify that you are not a robot</span>
       )}
     </div>
-  )
-}
+  );
+};

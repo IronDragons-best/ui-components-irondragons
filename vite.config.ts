@@ -1,5 +1,7 @@
 import { resolve } from 'path';
+
 import { defineConfig } from 'vite';
+
 import { dependencies, devDependencies } from './package.json';
 
 // https://vitejs.dev/config/

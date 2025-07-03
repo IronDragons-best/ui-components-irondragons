@@ -3,34 +3,38 @@
 
 @font-face {
   font-family: Inter;
+  src: url('../assets/fonts/Inter_18pt-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: url('../assets/fonts/Inter_18pt-Bold.woff2') format('woff2');
+  src: url('../../public/assets/fonts/Inter_18pt-Bold.woff2') format('woff2');
 }
 
 @font-face {
   font-family: Inter;
+  src: url('../assets/fonts/Inter_18pt-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
-  src: url('../assets/fonts/Inter_18pt-Medium.woff2') format('woff2');
+  src: url('../../public/assets/fonts/Inter_18pt-Medium.woff2') format('woff2');
 }
 
 @font-face {
   font-family: Inter;
+  src: url('../assets/fonts/Inter_18pt-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url('../assets/fonts/Inter_18pt-Regular.woff2') format('woff2');
+  src: url('../../public/assets/fonts/Inter_18pt-Regular.woff2') format('woff2');
 }
 
 @font-face {
   font-family: Inter;
+  src: url('../assets/fonts/Inter_18pt-SemiBold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
-  src: url('../assets/fonts/Inter_18pt-SemiBold.woff2') format('woff2');
+  src: url('../../public/assets/fonts/Inter_18pt-SemiBold.woff2') format('woff2');
 }
 
 @mixin large {
@@ -101,18 +105,18 @@
 
 .regular-link,
 .regular-link:visited {
-  font-size: $font-size-s;
-  font-weight: $font-weight-regular;
-  line-height: $line-height-m;
   color: $Accent-500;
+  font-size: $font-size-s;
+  line-height: $line-height-m;
+  font-weight: $font-weight-regular;
   text-decoration: underline;
 }
 
 .small-link,
 .small-link:visited {
-  font-size: $font-size-xs;
-  font-weight: $font-weight-regular;
-  line-height: $line-height-s;
   color: $Accent-500;
+  font-size: $font-size-xs;
+  line-height: $line-height-s;
+  font-weight: $font-weight-regular;
   text-decoration: underline;
 }
