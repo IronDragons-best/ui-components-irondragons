@@ -1,6 +1,6 @@
 import {ComponentPropsWithoutRef, FC} from 'react'
 
-import {ChevronDownIcon, ChevronUpIcon} from '@radix-ui/react-icons'
+import {ChevronDownIcon} from '@radix-ui/react-icons'
 import {Select} from 'radix-ui'
 
 import '../../styles/index.scss'
@@ -76,7 +76,7 @@ export const Selectbox: FC<SelectboxProps> = ({
         {selectedOption ? (
           <div className={s.Selected}>
             {selectedOption.icon && (
-              <span><UniversalIcon name={selectedOption.icon}/></span>
+              <span className={s.IconWrapper}><UniversalIcon name={selectedOption.icon}/></span>
             )}
             {selectedOption.label}
           </div>
@@ -90,9 +90,6 @@ export const Selectbox: FC<SelectboxProps> = ({
 
       <Select.Portal>
         <Select.Content className={s.Content} side={'bottom'} position={'popper'}>
-          <Select.ScrollUpButton className={s.ScrollButton}>
-            <ChevronUpIcon/>
-          </Select.ScrollUpButton>
           <Select.Viewport className={s.Viewport}>
             <Select.Group>
               {options.map(option => (
@@ -103,9 +100,6 @@ export const Selectbox: FC<SelectboxProps> = ({
               ))}
             </Select.Group>
           </Select.Viewport>
-          <Select.ScrollDownButton className={s.ScrollButton}>
-            <ChevronDownIcon/>
-          </Select.ScrollDownButton>
         </Select.Content>
       </Select.Portal>
     </Select.Root>

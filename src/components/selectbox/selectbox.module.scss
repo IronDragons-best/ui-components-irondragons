@@ -41,16 +41,9 @@
   border: 1px solid $dark-100;
   border-radius: 2px;
 
- // TODO
-
   &[data-placeholder] {
-    color: $light-900;
-  }
-
-  &[data-label="true"][data-placeholder] {
     color: $light-100;
   }
-
 
   &[data-state='closed']:hover {
     color: $light-900;
@@ -69,7 +62,7 @@
   }
 
   &[data-state='open'] {
-    color: $light-900;
+    color: $light-100;
     background-color: $dark-500;
     border: 1px solid $light-100;
     border-radius: 2px 2px 0 0;
@@ -98,16 +91,17 @@
   gap: 15px;
 }
 
+.IconWrapper {
+  display: inline-flex;
+  align-self: center;
+}
+
 .fullWidth {
   width: 100%;
 }
 
 .Viewport {
-  color: $light-900;
-
-  &:active {
-    color: $light-100;
-  }
+  color: $light-100;
 }
 
 .Content {
@@ -122,16 +116,12 @@
   max-height: 210px;
   padding: 0;
 
-  color: $light-900;
+  color: $light-100;
 
   background-color: $dark-500;
   border: 1px solid $light-100;
   border-top: none;
   border-radius: 0 0 6px 6px;
-
-  &:active {
-    color: $light-100;
-  }
 }
 
 .Item {
@@ -146,11 +136,7 @@
   height: 35px;
   padding: 0 15px;
 
-  color: $light-900;
-
-  &:active {
-    color: $light-100;
-  }
+  color: $light-100;
 
   &[data-disabled] {
     pointer-events: none;
@@ -162,18 +148,4 @@
     background-color: $dark-300;
     outline: none;
   }
-}
-
-.ScrollButton {
-  cursor: default;
-
-  display: none;
-  align-items: center;
-  justify-content: center;
-
-  height: 25px;
-
-  color: $light-100;
-
-  background-color: transparent;
 }
