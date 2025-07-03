@@ -1,6 +1,8 @@
-import styles from './Card.module.scss';
 import { ReactNode } from 'react';
+
 import { clsx } from 'clsx';
+
+import styles from './Card.module.scss';
 
 type Props = {
   children?: ReactNode;
@@ -8,5 +10,6 @@ type Props = {
 };
 export const Card = ({ children, fullWidth }: Props) => {
   const classNames = clsx(styles.cardBody, fullWidth && styles.fullWidth);
+
   return <div className={classNames}>{children}</div>;
 };
