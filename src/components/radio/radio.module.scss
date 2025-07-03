@@ -90,7 +90,7 @@
 }
 
 .Label {
-  @extend .regular-text-14;
+  @include typo.regular-text-14;
 
   padding-left: 13px;
   color: $Light-100;
