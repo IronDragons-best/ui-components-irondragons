@@ -1,13 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import { TextAreaComponent } from './'
 
 const meta = {
   parameters: {
     backgrounds: {
       default: 'dark',
-      values: [
-        { name: 'dark', value: '#0D0D0D' },
-      ],
+      values: [{ name: 'dark', value: '#0D0D0D' }],
     },
   },
   argTypes: {
@@ -19,7 +18,7 @@ const meta = {
       control: { type: 'radio' },
       options: ['default'],
       description: 'Variant of the TextArea',
-      defaultValue: 'default'
+      defaultValue: 'default',
     },
     label: {
       control: 'text',
@@ -63,8 +62,8 @@ export const Default: Story = {
     placeholder: 'Type something...',
     disabled: false,
     variant: 'surface',
-    label: "Text-area",
-    resize: "none",
-    id: "1"
+    label: 'Text-area',
+    resize: 'none',
+    id: '1',
   },
 }

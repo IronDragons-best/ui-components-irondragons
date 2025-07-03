@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import Checkbox from './Checkbox'
+import { Checkbox } from './Checkbox'
 
 const meta = {
   argTypes: {
@@ -34,9 +34,7 @@ export const EnabledChecked: Story = {
   parameters: {
     backgrounds: {
       default: 'dark',
-      values: [
-        { name: 'dark', value: '#0D0D0D' },
-      ],
+      values: [{ name: 'dark', value: '#0D0D0D' }],
     },
   },
 }
@@ -52,9 +50,7 @@ export const Disabled: Story = {
   parameters: {
     backgrounds: {
       default: 'dark',
-      values: [
-        { name: 'dark', value: '#0D0D0D' },
-      ],
+      values: [{ name: 'dark', value: '#0D0D0D' }],
     },
   },
 }
@@ -70,9 +66,7 @@ export const DisabledChecked: Story = {
   parameters: {
     backgrounds: {
       default: 'dark',
-      values: [
-        { name: 'dark', value: '#0D0D0D' },
-      ],
+      values: [{ name: 'dark', value: '#0D0D0D' }],
     },
   },
 }
