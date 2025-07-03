@@ -40,7 +40,7 @@ export const ReCaptcha = ({ isCaptchaPassed, setCaptchaToken }: Props): ReactEle
   return (
     <div className={classNames}>
       <ReCAPTCHA
-        sitekey="6Lc42W4rAAAAALRY3UMLjkJQojl_FCxLdjtDh_6o"
+        sitekey={'6Lc42W4rAAAAALRY3UMLjkJQojl_FCxLdjtDh_6o'}
         onChange={submitHandler}
         theme={'dark'}
       />

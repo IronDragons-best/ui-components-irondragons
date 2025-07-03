@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import Checkbox from './Checkbox';
+import { Checkbox } from './Checkbox'
 
 const meta = {
   argTypes: {
@@ -19,10 +19,10 @@ const meta = {
   component: Checkbox,
   tags: ['autodocs'],
   title: 'Components/Checkbox',
-} satisfies Meta<typeof Checkbox>;
+} satisfies Meta<typeof Checkbox>
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
 /** Example of a standard, enabled checkbox */
 export const EnabledChecked: Story = {
@@ -37,7 +37,7 @@ export const EnabledChecked: Story = {
       values: [{ name: 'dark', value: '#0D0D0D' }],
     },
   },
-};
+}
 
 /** Example of a disabled checkbox (not checked) */
 export const Disabled: Story = {
@@ -53,7 +53,7 @@ export const Disabled: Story = {
       values: [{ name: 'dark', value: '#0D0D0D' }],
     },
   },
-};
+}
 
 /** Example of a disabled checkbox that is checked */
 export const DisabledChecked: Story = {
@@ -69,4 +69,4 @@ export const DisabledChecked: Story = {
       values: [{ name: 'dark', value: '#0D0D0D' }],
     },
   },
-};
+}

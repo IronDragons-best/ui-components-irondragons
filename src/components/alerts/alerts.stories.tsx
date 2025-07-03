@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { Alert } from './';
+import { Alert } from './'
 
 const meta = {
   parameters: {
@@ -15,10 +15,10 @@ const meta = {
   component: Alert,
   tags: ['autodocs'],
   title: 'Components/Alerts',
-} satisfies Meta<typeof Alert>;
+} satisfies Meta<typeof Alert>
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
 /** Example of a success Alert */
 export const Success: Story = {
@@ -28,7 +28,7 @@ export const Success: Story = {
     fullWidth: false,
     closable: true,
   },
-};
+}
 
 /** Example of the error Alert */
 export const Error: Story = {
@@ -38,4 +38,4 @@ export const Error: Story = {
     fullWidth: false,
     closable: true,
   },
-};
+}

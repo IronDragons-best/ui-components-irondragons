@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { TextAreaComponent } from './';
+import { TextAreaComponent } from './'
 
 const meta = {
   parameters: {
@@ -51,10 +51,10 @@ const meta = {
   component: TextAreaComponent,
   tags: ['autodocs'],
   title: 'Components/TextArea',
-} satisfies Meta<typeof TextAreaComponent>;
+} satisfies Meta<typeof TextAreaComponent>
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
 /** Example of a default Text-area */
 export const Default: Story = {
@@ -66,4 +66,4 @@ export const Default: Story = {
     resize: 'none',
     id: '1',
   },
-};
+}

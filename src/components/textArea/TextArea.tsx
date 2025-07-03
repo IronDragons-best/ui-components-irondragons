@@ -1,45 +1,45 @@
-import { ComponentPropsWithoutRef, ElementType } from 'react';
+import { ComponentPropsWithoutRef, ElementType } from 'react'
 
-import { clsx } from 'clsx';
+import { clsx } from 'clsx'
 
-import s from './textArea.module.scss';
+import s from './textArea.module.scss'
 
-export const textAreaVariant = ['default'];
+export const textAreaVariant = ['default']
 
-export type TextAreaVariant = (typeof textAreaVariant)[number];
+export type TextAreaVariant = (typeof textAreaVariant)[number]
 
 export type TextAreaProps<T extends ElementType = 'textarea'> = {
   /**
    * Custom component or HTML element to render instead of the default 'textarea'.
    * Useful for styling or using a wrapper component.
    */
-  as?: T;
+  as?: T
   /**
    * Visual style variant for the TextArea (e.g. 'default', etc.).
    */
-  variant?: TextAreaVariant;
+  variant?: TextAreaVariant
   /**
    * Label text displayed above the TextArea.
    */
-  label?: string;
+  label?: string
   /**
    * If true, displays the component in an error state.
    */
-  error?: boolean;
+  error?: boolean
   /**
    * Error message shown below the TextArea when `error` is true.
    */
-  errorText?: string;
+  errorText?: string
   /**
    * If true, makes the TextArea take up the full width of its container.
    */
-  fullWidth?: boolean;
+  fullWidth?: boolean
   /**
    * **Required**: Id for Text area.
    */
-  id: string;
-  asChild?: boolean;
-} & ComponentPropsWithoutRef<T>;
+  id: string
+  asChild?: boolean
+} & ComponentPropsWithoutRef<T>
 
 export const TextAreaComponent = <T extends ElementType = 'textarea'>(props: TextAreaProps<T>) => {
   const {
@@ -52,7 +52,7 @@ export const TextAreaComponent = <T extends ElementType = 'textarea'>(props: Tex
     fullWidth = false,
     id,
     ...rest
-  } = props;
+  } = props
 
   const classNames = clsx(
     s.textArea,
@@ -60,7 +60,7 @@ export const TextAreaComponent = <T extends ElementType = 'textarea'>(props: Tex
     disabled && s.disabled,
     fullWidth && s.fullWidth,
     className
-  );
+  )
 
   return (
     <div className={s.bodyTextArea}>
@@ -72,5 +72,5 @@ export const TextAreaComponent = <T extends ElementType = 'textarea'>(props: Tex
       <textarea className={classNames} disabled={disabled} id={id} {...rest} />
       {error && errorText && <div className={s.errorText}>{errorText}</div>}
     </div>
-  );
-};
+  )
+}

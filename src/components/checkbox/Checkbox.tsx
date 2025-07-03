@@ -1,24 +1,24 @@
-import { ComponentPropsWithoutRef } from 'react';
+import { ComponentPropsWithoutRef } from 'react'
 
-import { CheckIcon } from '@radix-ui/react-icons';
-import { Checkbox as RadixCheckbox } from 'radix-ui';
+import { CheckIcon } from '@radix-ui/react-icons'
+import { Checkbox as RadixCheckbox } from 'radix-ui'
 
-import s from './checkbox.module.scss';
+import s from './checkbox.module.scss'
 
 type CheckboxProps = {
   /** **Required**: Unique identifier for the checkbox */
-  idProp: string;
+  idProp: string
   /** Label displayed next to the checkbox */
-  label?: string;
+  label?: string
   /** Additional class name for styling */
-  className?: string;
+  className?: string
   /** Disables the checkbox */
-  disabled?: boolean;
+  disabled?: boolean
   /** Controls the checked state (if controlled externally) */
-  checked?: boolean;
-} & ComponentPropsWithoutRef<typeof RadixCheckbox.Root>;
+  checked?: boolean
+} & ComponentPropsWithoutRef<typeof RadixCheckbox.Root>
 
-const Checkbox = ({ label, idProp, className, disabled, ...props }: CheckboxProps) => (
+export const Checkbox = ({ label, idProp, className, disabled, ...props }: CheckboxProps) => (
   <div style={{ display: 'flex', alignItems: 'center' }}>
     <RadixCheckbox.Root
       className={s.Root}
@@ -35,6 +35,4 @@ const Checkbox = ({ label, idProp, className, disabled, ...props }: CheckboxProp
       {label}
     </label>
   </div>
-);
-
-export default Checkbox;
+)
