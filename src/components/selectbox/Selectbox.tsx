@@ -1,41 +1,41 @@
-import { ComponentPropsWithoutRef } from 'react';
+import { ComponentPropsWithoutRef, FC } from 'react'
 
-import { ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons';
-import { Select } from 'radix-ui';
+import { ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons'
+import { Select } from 'radix-ui'
 
-import '../../styles/index.scss';
+import '../../styles/index.scss'
 
-import s from './selectbox.module.scss';
+import s from './selectbox.module.scss'
 
-import SelectItem from './SelectItem';
+import { SelectItem } from './SelectItem'
 
 type OptionType = {
-  value: string;
-  label: string;
-};
+  value: string
+  label: string
+}
 
 type SelectboxProps = {
   /** **Required**: Unique ID for the Select. Trigger and associated label */
-  idProp: string;
+  idProp: string
   /** **Required**: Name attribute for the form (useful when submitting forms) */
-  name: string;
+  name: string
   /** **Required**: Array of options to choose from, each with a label (display text) and value */
-  options: OptionType[];
+  options: OptionType[]
   /** **Required**: Placeholder text shown when no option is selected */
-  placeholder: string;
+  placeholder: string
   /** Label displayed above the select input */
-  label?: string;
+  label?: string
   /** Disables the select input */
-  disabled?: boolean;
+  disabled?: boolean
   /** Additional CSS class names for the root element */
-  className?: string;
+  className?: string
   /** Callback fired when the selected value changes */
-  onValueChange?: (value: string) => void;
+  onValueChange?: (value: string) => void
   /** Callback fired when the dropdown opens or closes */
-  onOpenChange?: (open: boolean) => void;
-} & Omit<ComponentPropsWithoutRef<typeof Select.Root>, 'value' | 'onValueChange' | 'children'>;
+  onOpenChange?: (open: boolean) => void
+} & Omit<ComponentPropsWithoutRef<typeof Select.Root>, 'value' | 'onValueChange' | 'children'>
 
-const Selectbox: React.FC<SelectboxProps> = ({
+export const Selectbox: FC<SelectboxProps> = ({
   idProp,
   name,
   label = '',
@@ -73,7 +73,7 @@ const Selectbox: React.FC<SelectboxProps> = ({
         </Select.ScrollUpButton>
         <Select.Viewport className={s.Viewport}>
           <Select.Group>
-            {options.map((option) => (
+            {options.map(option => (
               <SelectItem key={option.value} value={option.value}>
                 {option.label}
               </SelectItem>
@@ -86,6 +86,4 @@ const Selectbox: React.FC<SelectboxProps> = ({
       </Select.Content>
     </Select.Portal>
   </Select.Root>
-);
-
-export default Selectbox;
+)

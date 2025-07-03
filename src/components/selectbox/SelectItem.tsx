@@ -1,17 +1,17 @@
-import * as React from 'react';
-import { ComponentPropsWithoutRef, ElementRef, ForwardedRef } from 'react';
+import * as React from 'react'
+import { ComponentPropsWithoutRef, ElementRef, ForwardedRef } from 'react'
 
-import clsx from 'clsx';
-import { Select } from 'radix-ui';
+import clsx from 'clsx'
+import { Select } from 'radix-ui'
 
-import s from './selectbox.module.scss';
+import s from './selectbox.module.scss'
 
 type SelectItemProps = {
-  value: string;
-  children: React.ReactNode;
-} & ComponentPropsWithoutRef<typeof Select.Item>;
+  value: string
+  children: React.ReactNode
+} & ComponentPropsWithoutRef<typeof Select.Item>
 
-const SelectItem = React.forwardRef<ElementRef<typeof Select.Item>, SelectItemProps>(
+export const SelectItem = React.forwardRef<ElementRef<typeof Select.Item>, SelectItemProps>(
   (
     { children, className, ...props }: SelectItemProps,
     forwardedRef: ForwardedRef<ElementRef<typeof Select.Item>>
@@ -20,8 +20,6 @@ const SelectItem = React.forwardRef<ElementRef<typeof Select.Item>, SelectItemPr
       <Select.Item className={clsx(s.Item, className)} {...props} ref={forwardedRef}>
         <Select.ItemText>{children}</Select.ItemText>
       </Select.Item>
-    );
+    )
   }
-);
-
-export default SelectItem;
+)

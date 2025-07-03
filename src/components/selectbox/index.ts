@@ -1,1 +1,1 @@
-export * from './Selectbox';
+export * from './Selectbox'

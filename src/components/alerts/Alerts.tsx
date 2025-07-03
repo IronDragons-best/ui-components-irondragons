@@ -4,7 +4,7 @@ import { clsx } from 'clsx'
 
 import s from './alerts.module.scss'
 
-import Cancel from '../../assets/icons/components/Cancel'
+import { UniversalIcon } from '../common/unversalIcon/UniversalIcon'
 
 export type AlertProps = {
   /**
@@ -56,7 +56,7 @@ export const Alert: FC<AlertProps> = ({
         )}
         {closable && (
           <span className={classNames.icon} onClick={onClose}>
-            <Cancel />
+            <UniversalIcon name={'close'} />
           </span>
         )}
       </div>
