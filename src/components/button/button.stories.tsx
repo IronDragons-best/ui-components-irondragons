@@ -1,5 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { Button } from './'
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { Button } from './';
 
 const meta = {
   argTypes: {
@@ -12,18 +13,16 @@ const meta = {
   parameters: {
     backgrounds: {
       default: 'dark',
-      values: [
-        { name: 'dark', value: '#0D0D0D' },
-      ],
+      values: [{ name: 'dark', value: '#0D0D0D' }],
     },
   },
   component: Button,
   tags: ['autodocs'],
   title: 'Components/Button',
-} satisfies Meta<typeof Button>
+} satisfies Meta<typeof Button>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 /**
  * Primary button example.
@@ -34,7 +33,7 @@ export const Primary: Story = {
     disabled: false,
     variant: 'primary',
   },
-}
+};
 
 /**
  * Disabled primary button example.
@@ -45,7 +44,7 @@ export const Disabled: Story = {
     disabled: true,
     variant: 'primary',
   },
-}
+};
 
 /**
  * Example of rendering the Button as a link (`<a>` tag).
@@ -55,11 +54,10 @@ export const LinkButton: Story = {
     children: 'Link',
     disabled: false,
     as: 'a',
-    href: 'https://example.com', 
+    href: 'https://example.com',
     variant: 'text_button',
-    
-  }
-}
+  },
+};
 
 /**
  * Full-width button example.
@@ -69,10 +67,6 @@ export const FullWidth: Story = {
     children: 'FullWith',
     disabled: false,
     variant: 'primary',
-    fullWidth: true
+    fullWidth: true,
   },
-}
-
-
-
-
+};

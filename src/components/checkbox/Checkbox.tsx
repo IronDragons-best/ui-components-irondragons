@@ -1,8 +1,9 @@
-import {ComponentPropsWithoutRef} from "react";
-import {Checkbox as RadixCheckbox} from "radix-ui";
-import {CheckIcon} from "@radix-ui/react-icons";
+import { ComponentPropsWithoutRef } from 'react';
 
-import s from './checkbox.module.scss'
+import { CheckIcon } from '@radix-ui/react-icons';
+import { Checkbox as RadixCheckbox } from 'radix-ui';
+
+import s from './checkbox.module.scss';
 
 type CheckboxProps = {
   /** **Required**: Unique identifier for the checkbox */
@@ -17,17 +18,17 @@ type CheckboxProps = {
   checked?: boolean;
 } & ComponentPropsWithoutRef<typeof RadixCheckbox.Root>;
 
-const Checkbox = ({
-                    label,
-                    idProp,
-                    className,
-                    disabled,
-                    ...props
-                  }: CheckboxProps) => (
-  <div style={{display: "flex", alignItems: "center"}}>
-    <RadixCheckbox.Root className={s.Root} defaultChecked id={idProp} aria-disabled={disabled} {...props}>
+const Checkbox = ({ label, idProp, className, disabled, ...props }: CheckboxProps) => (
+  <div style={{ display: 'flex', alignItems: 'center' }}>
+    <RadixCheckbox.Root
+      className={s.Root}
+      defaultChecked
+      id={idProp}
+      aria-disabled={disabled}
+      {...props}
+    >
       <RadixCheckbox.Indicator className={s.Indicator} aria-disabled={disabled}>
-        <CheckIcon/>
+        <CheckIcon />
       </RadixCheckbox.Indicator>
     </RadixCheckbox.Root>
     <label className={s.Label} htmlFor={idProp} aria-disabled={disabled}>
