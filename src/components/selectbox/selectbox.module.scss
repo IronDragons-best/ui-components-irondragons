@@ -1,7 +1,6 @@
 @use '../../styles/colors' as *;
 @use '../../styles/fonts' as typo;
 
-
 .Label {
   display: inline-block;
   margin-bottom: 5px;
@@ -59,13 +58,13 @@
     outline: 1px solid $Accent-500;
   }
 
-  &[data-state="open"] {
+  &[data-state='open'] {
     background-color: $Dark-500;
     border: 1px solid $Light-100;
     border-radius: 2px 2px 0 0;
   }
 
-  &[data-state="open"] .Icon {
+  &[data-state='open'] .Icon {
     transform: rotate(180deg);
   }
 }

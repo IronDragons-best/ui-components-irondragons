@@ -34,69 +34,69 @@
 }
 
 @mixin large {
- font-size: $font-size-xxl;
- line-height: $line-height-l;
- font-weight: $font-weight-semi-bold;
+  font-size: $font-size-xxl;
+  line-height: $line-height-l;
+  font-weight: $font-weight-semi-bold;
 }
 
 @mixin h1 {
- font-size: $font-size-xl;
- line-height: $line-height-l;
- font-weight: $font-weight-bold;
+  font-size: $font-size-xl;
+  line-height: $line-height-l;
+  font-weight: $font-weight-bold;
 }
 
 @mixin h2 {
- font-size: $font-size-l;
- line-height: $line-height-m;
- font-weight: $font-weight-bold;
+  font-size: $font-size-l;
+  line-height: $line-height-m;
+  font-weight: $font-weight-bold;
 }
 
 @mixin h3 {
- font-size: $font-size-m;
- line-height: $line-height-m;
- font-weight: $font-weight-semi-bold;
+  font-size: $font-size-m;
+  line-height: $line-height-m;
+  font-weight: $font-weight-semi-bold;
 }
 
 @mixin regular-text-16 {
- font-size: $font-size-m;
- line-height: $line-height-m;
- font-weight: $font-weight-regular;
+  font-size: $font-size-m;
+  line-height: $line-height-m;
+  font-weight: $font-weight-regular;
 }
 
 @mixin bold-text-16 {
- font-size: $font-size-m;
- line-height: $line-height-m;
- font-weight: $font-weight-bold;
+  font-size: $font-size-m;
+  line-height: $line-height-m;
+  font-weight: $font-weight-bold;
 }
 
 @mixin regular-text-14 {
- font-size: $font-size-s;
- line-height: $line-height-m;
- font-weight: $font-weight-regular;
+  font-size: $font-size-s;
+  line-height: $line-height-m;
+  font-weight: $font-weight-regular;
 }
 
 @mixin medium-text-14 {
- font-size: $font-size-s;
- line-height: $line-height-m;
- font-weight: $font-weight-medium;
+  font-size: $font-size-s;
+  line-height: $line-height-m;
+  font-weight: $font-weight-medium;
 }
 
 @mixin bold-text-14 {
- font-size: $font-size-s;
- line-height: $line-height-m;
- font-weight: $font-weight-bold;
+  font-size: $font-size-s;
+  line-height: $line-height-m;
+  font-weight: $font-weight-bold;
 }
 
 @mixin small-text {
- font-size: $font-size-xs;
- line-height: $line-height-s;
- font-weight: $font-weight-regular;
+  font-size: $font-size-xs;
+  line-height: $line-height-s;
+  font-weight: $font-weight-regular;
 }
 
 @mixin semi-bold-small-text {
- font-size: $font-size-xs;
- line-height: $line-height-s;
- font-weight: $font-weight-semi-bold;
+  font-size: $font-size-xs;
+  line-height: $line-height-s;
+  font-weight: $font-weight-semi-bold;
 }
 
 .regular-link,
