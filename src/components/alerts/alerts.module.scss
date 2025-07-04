@@ -7,7 +7,7 @@
 
   font-size: $font-size-m;
   line-height: $line-height-m;
-  color: $Light-100;
+  color: $light-100;
 
   > div {
     padding: 12px 24px;
@@ -15,13 +15,13 @@
 }
 
 .error {
-  background-color: $Danger-900;
-  border: 1px solid $Danger-500;
+  background-color: $danger-900;
+  border: 1px solid $danger-500;
 }
 
 .success {
-  background-color: $Success-900;
-  border: 1px solid $Success-500;
+  background-color: $success-900;
+  border: 1px solid $success-500;
 }
 
 .fullWidth {
@@ -40,5 +40,5 @@
 }
 
 .defaultIcon {
-  color: $Light-100;
+  color: $light-100;
 }

@@ -14,9 +14,9 @@
   width: 14px;
   height: 14px;
 
-  color: $Light-100;
+  color: $light-100;
 
-  border: 2px solid $Light-500;
+  border: 2px solid $light-500;
   border-radius: 4px;
 
   &::after {
@@ -32,30 +32,30 @@
     height: 36px;
 
     opacity: 0;
-    background-color: $Dark-300;
+    background-color: $dark-300;
     border-radius: 50%;
 
     transition: 0.2s linear;
   }
 
   &[data-state='checked'] {
-    background-color: $Light-100;
-    border-color: $Light-100;
+    background-color: $light-100;
+    border-color: $light-100;
   }
 
   &[data-disabled] {
     pointer-events: none;
-    border-color: $Light-900;
+    border-color: $light-900;
   }
 
   &[aria-disabled='true'][data-state='checked'] {
     pointer-events: none;
-    background-color: $Dark-100;
-    border-color: $Dark-100;
+    background-color: $dark-100;
+    border-color: $dark-100;
   }
 
   &[aria-disabled='true'][data-state='unchecked'] {
-    border-color: $Light-900;
+    border-color: $light-900;
   }
 
   &:hover::after {
@@ -64,12 +64,12 @@
 
   &:active::after {
     opacity: 1;
-    background-color: $Dark-100;
+    background-color: $dark-100;
   }
 
   &:focus::after {
     opacity: 1;
-    background-color: $Dark-500;
+    background-color: $dark-500;
   }
 
   &[aria-disabled='true']:hover::after {
@@ -88,36 +88,32 @@
 .Indicator {
   scale: 140%;
   padding-top: 3px;
-  color: $Dark-500;
+  color: $dark-500;
 
   &[aria-disabled='true'] {
-    color: $Light-900;
+    pointer-events: none;
+    user-select: none;
+    color: $light-700;
   }
 
   &[data-state='checked'] {
-    color: $Dark-900;
+    color: $dark-900;
   }
 
   &[aria-disabled='true'][data-state='checked'] {
-    color: $Light-700;
+    color: $light-700;
   }
-}
-
-.Indicator[aria-disabled='true'] {
-  pointer-events: none;
-  user-select: none;
-  color: $Light-700;
 }
 
 .Label {
   padding-left: 15px;
   font-size: 15px;
   line-height: 1;
-  color: $Light-100;
+  color: $light-100;
 }
 
 .Label[aria-disabled='true'] {
   pointer-events: none;
   user-select: none;
-  color: $Light-900;
+  color: $light-900;
 }

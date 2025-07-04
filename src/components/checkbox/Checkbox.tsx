@@ -18,7 +18,7 @@ type CheckboxProps = {
   checked?: boolean
 } & ComponentPropsWithoutRef<typeof RadixCheckbox.Root>
 
-const Checkbox = ({ label, idProp, className, disabled, ...props }: CheckboxProps) => (
+export const Checkbox = ({ label, idProp, className, disabled, ...props }: CheckboxProps) => (
   <div style={{ display: 'flex', alignItems: 'center' }}>
     <RadixCheckbox.Root
       className={s.Root}
@@ -36,5 +36,3 @@ const Checkbox = ({ label, idProp, className, disabled, ...props }: CheckboxProp
     </label>
   </div>
 )
-
-export default Checkbox

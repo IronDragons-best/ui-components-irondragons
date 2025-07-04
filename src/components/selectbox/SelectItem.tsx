@@ -11,7 +11,7 @@ type SelectItemProps = {
   children: React.ReactNode
 } & ComponentPropsWithoutRef<typeof Select.Item>
 
-const SelectItem = React.forwardRef<ElementRef<typeof Select.Item>, SelectItemProps>(
+export const SelectItem = React.forwardRef<ElementRef<typeof Select.Item>, SelectItemProps>(
   (
     { children, className, ...props }: SelectItemProps,
     forwardedRef: ForwardedRef<ElementRef<typeof Select.Item>>
@@ -23,5 +23,3 @@ const SelectItem = React.forwardRef<ElementRef<typeof Select.Item>, SelectItemPr
     )
   }
 )
-
-export default SelectItem

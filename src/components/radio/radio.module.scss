@@ -23,7 +23,7 @@
   height: 14px;
 
   border-radius: 50%;
-  outline: 3px solid $Light-100;
+  outline: 3px solid $light-100;
 
   &::after {
     content: '';
@@ -38,7 +38,7 @@
     height: 36px;
 
     opacity: 0;
-    background-color: $Dark-300;
+    background-color: $dark-300;
     border-radius: 50%;
 
     transition: 0.2s linear;
@@ -49,17 +49,17 @@
   }
 
   &:focus {
-    box-shadow: 0 0 0 2px $Dark-500;
+    box-shadow: 0 0 0 2px $dark-500;
   }
 
   &:active::after {
     opacity: 1;
-    background-color: $Dark-100;
+    background-color: $dark-100;
   }
 
   &:focus::after {
     opacity: 1;
-    background-color: $Dark-500;
+    background-color: $dark-500;
   }
 }
 
@@ -84,16 +84,16 @@
     width: 8px;
     height: 8px;
 
-    background-color: $Light-100;
+    background-color: $light-100;
     border-radius: 50%;
   }
 }
 
 .Label {
-  @extend .regular-text-14;
+  @include typo.regular-text-14;
 
   padding-left: 13px;
-  color: $Light-100;
+  color: $light-100;
 
   &:disabled {
     pointer-events: none;

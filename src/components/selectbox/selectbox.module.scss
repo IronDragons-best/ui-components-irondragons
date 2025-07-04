@@ -4,13 +4,13 @@
 .Label {
   display: inline-block;
   margin-bottom: 5px;
-  color: $Light-900;
+  color: $light-900;
 }
 
 .Icon {
   user-select: none;
   scale: 150%;
-  color: $Light-100;
+  color: $light-100;
 }
 
 .Trigger {
@@ -25,48 +25,83 @@
 
   overflow: hidden;
   display: flex;
+  gap: 10px;
   align-items: center;
   justify-content: space-between;
 
-  width: 190px;
+  box-sizing: border-box;
+  width: fit-content;
+  min-width: 170px;
   height: 35px;
   padding: 0 15px;
 
-  color: $Light-100;
+  color: $light-100;
 
   background-color: transparent;
-  border: 1px solid $Dark-100;
+  border: 1px solid $dark-100;
   border-radius: 2px;
 
   &[data-placeholder] {
-    color: $Light-100;
+    color: $light-100;
   }
 
-  &:hover {
-    color: $Light-900;
+  &[data-state='closed']:hover {
+    color: $light-900;
   }
 
-  &:disabled {
+  &[data-placeholder]:disabled {
     pointer-events: none;
     cursor: default;
-    color: $Dark-100;
+    color: $dark-100;
   }
 
   &:focus {
-    color: $Light-900;
-    border-color: $Accent-500;
-    outline: 1px solid $Accent-500;
+    color: $light-900;
+    border-color: $accent-500;
+    outline: 1px solid $accent-500;
   }
 
   &[data-state='open'] {
-    background-color: $Dark-500;
-    border: 1px solid $Light-100;
+    color: $light-100;
+    background-color: $dark-500;
+    border: 1px solid $light-100;
+    border-radius: 2px 2px 0 0;
+  }
+
+  &[data-state='open']:active {
+    color: $light-100;
+    background-color: $dark-500;
+    border: 1px solid $light-100;
+    border-radius: 2px 2px 0 0;
+  }
+
+  &[data-state='open']:hover {
+    color: $light-900;
+    border: 1px solid $light-900;
     border-radius: 2px 2px 0 0;
   }
 
   &[data-state='open'] .Icon {
     transform: rotate(180deg);
   }
+}
+
+.Selected {
+  display: flex;
+  gap: 15px;
+}
+
+.IconWrapper {
+  display: inline-flex;
+  align-self: center;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.Viewport {
+  color: $light-100;
 }
 
 .Content {
@@ -81,8 +116,10 @@
   max-height: 210px;
   padding: 0;
 
-  background-color: $Dark-500;
-  border: 1px solid $Light-100;
+  color: $light-100;
+
+  background-color: $dark-500;
+  border: 1px solid $light-100;
   border-top: none;
   border-radius: 0 0 6px 6px;
 }
@@ -99,7 +136,7 @@
   height: 35px;
   padding: 0 15px;
 
-  color: $Light-100;
+  color: $light-100;
 
   &[data-disabled] {
     pointer-events: none;
@@ -107,22 +144,8 @@
   }
 
   &[data-highlighted] {
-    color: $Accent-500;
-    background-color: $Dark-300;
+    color: $accent-500;
+    background-color: $dark-300;
     outline: none;
   }
-}
-
-.ScrollButton {
-  cursor: default;
-
-  display: none;
-  align-items: center;
-  justify-content: center;
-
-  height: 25px;
-
-  color: $Light-100;
-
-  background-color: transparent;
 }

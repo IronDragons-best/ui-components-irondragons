@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 
 import { clsx } from 'clsx'
 
-import styles from './Card.module.scss'
+import styles from './card.module.scss'
 
 type Props = {
   children?: ReactNode
