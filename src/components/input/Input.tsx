@@ -13,7 +13,7 @@ type InputVariant = 'search' | 'email' | 'password'
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string
   type: InputVariant
-  error?: string
+  error?: boolean
   errorText?: string
   fullWidth?: boolean
 }
@@ -48,9 +48,7 @@ export const Input = ({
   const containerClassNames = clsx(
     s.inputContainer,
     error && s.error,
-    disabled && s.disabled,
     fullWidth && s.fullWidth,
-    isFocused && s.focused,
     className
   )
 
@@ -64,7 +62,7 @@ export const Input = ({
 
       <div className={containerClassNames}>
         {isSearch && (
-          <span className={s.iconLeft}>
+          <span className={s.icon} data-atribute={11} aria-disabled={}>
             <Search />
           </span>
         )}
@@ -72,7 +70,6 @@ export const Input = ({
         <input
           id={id}
           type={inputType}
-          disabled={disabled}
           className={s.input}
           value={value}
           onChange={onChange}
@@ -88,7 +85,6 @@ export const Input = ({
             onClick={() => setShowPassword(!showPassword)}
             tabIndex={-1}
             aria-label={showPassword ? 'Скрыть пароль' : 'Показать пароль'}
-            disabled={disabled}
           >
             {showPassword ? <EyeOff /> : <Eye />}
           </button>

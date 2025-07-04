@@ -5,6 +5,10 @@
   flex-direction: column;
   gap: 4px;
   width: 100%;
+
+  &:disabled {
+    opacity: 0.5;
+  }
 }
 
 .label {
@@ -20,48 +24,61 @@
   position: relative;
 
   display: flex;
-  align-items: center;
+  align-items: center; // 👈 Центрируем по вертикали
+  justify-content: space-between;
 
   width: 300px;
   height: 40px;
 
+  font-size: 14px;
+  color: $Light-900;
+
   background-color: $Dark-500;
-  border: 2px solid $Dark-100;
-  border-radius: 2px; // ✅ добавлено
+  border: 1px solid $Dark-100;
+  border-radius: 2px; // 👈 Добавлено
 
-  transition: border-color 0.2s;
-
-  &.hover {
+  &:hover {
     border-color: $Light-900;
   }
 
-  &.focused {
-    border-color: $Accent-700;
+  &:focus {
+    border-color: $Accent-500;
+    outline: 1px solid $Accent-500;
   }
 
   &.error {
     border-color: $Danger-500;
   }
 
-  &.disabled {
+  &:disabled {
     pointer-events: none;
     background-color: $Dark-300;
     border-color: $Dark-100;
   }
 }
 
+.icon {
+  display: flex;
+  align-items: center; // 👈 Центрируем по вертикали
+  justify-content: center;
+
+  height: 100%; // 👈 Растягиваем на весь контейнер, чтобы центрировать
+  padding: 0 10px;
+
+  &[data-atribute='11'] {
+  }
+}
+
 .input {
   flex: 1;
 
-  height: 100%;
-  padding: 0 36px; // по умолчанию — как для search
-
-  font-size: 14px;
-  color: $Light-900;
+  height: 30px;
+  margin-left: 10px;
 
   background-color: transparent;
   border: none;
   outline: none;
+  box-shadow: none;
 
   &::placeholder {
     color: $Dark-100;
@@ -76,51 +93,22 @@
   }
 }
 
-// Изменим padding-left, если иконки слева нет
-.inputContainer.noIconLeft .input {
-  padding-left: 10px;
-}
-
-.iconLeft {
-  pointer-events: none;
-
-  position: absolute;
-  left: 10px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  height: 100%;
-}
-
-.iconRight {
-  cursor: pointer;
-
-  position: absolute;
-  right: 10px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  height: 100%;
-
-  background: none;
-  border: none;
-
-  svg {
-    pointer-events: none;
-  }
-
-  &:disabled {
-    cursor: default;
-  }
-}
-
 .errorText {
   font-size: 12px;
   color: $Danger-500;
+}
+
+.iconButton {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center; // 👈 Центрирование
+  justify-content: center;
+
+  padding: 0 10px;
+
+  background: none;
+  border: none;
 }
 
 .fullWidth {

@@ -6,6 +6,13 @@ const meta: Meta<typeof Input> = {
   title: 'Components/Input',
   component: Input,
   tags: ['autodocs'],
+
+  parameters: {
+    backgrounds: {
+      default: 'dark',
+      values: [{ name: 'dark', value: '#0D0D0D' }],
+    },
+  },
   argTypes: {
     type: {
       control: { type: 'radio' },
@@ -38,7 +45,7 @@ export const WithError: Story = {
   args: {
     label: 'Email',
     placeholder: 'example@mail.com',
-    error: 'true',
+    error: true,
     errorText: 'Неверный формат',
     type: 'email',
   },
@@ -68,7 +75,7 @@ export const CompactWithError: Story = {
   args: {
     label: 'Email',
     placeholder: 'username',
-    error: 'true',
+    error: true,
     errorText: 'Обязательное поле',
     type: 'email',
     fullWidth: true,

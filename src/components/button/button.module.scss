@@ -28,7 +28,8 @@
     width: 100%;
   }
 }
-9 .primary {
+
+.primary {
   @include common;
 
   color: $Light-100;
@@ -86,6 +87,7 @@
 
 .outline {
   @include common;
+
   color: $Accent-500;
   background-color: transparent;
   border: 1px solid $Accent-500;
@@ -113,6 +115,7 @@
 
 .text_button {
   @include common;
+
   color: $Accent-500;
   background-color: transparent;
 
