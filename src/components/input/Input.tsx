@@ -1,73 +1,101 @@
-import { InputHTMLAttributes, useState, forwardRef, ForwardedRef } from 'react'
+import { InputHTMLAttributes, useState } from 'react'
 
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 
 import s from './input.module.scss'
 
 import Eye from '../../assets/icons/components/Eye'
 import EyeOff from '../../assets/icons/components/EyeOff'
+import Search from '../../assets/icons/components/Search'
 
-type InputType = 'search' | 'email' | 'password'
+type InputVariant = 'search' | 'email' | 'password'
 
-type InputProps = {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string
+  type: InputVariant
   error?: string
-  type?: InputType
+  errorText?: string
   fullWidth?: boolean
-} & Omit<InputHTMLAttributes<HTMLInputElement>, 'type'>
+}
 
-export const Input = forwardRef<HTMLInputElement, InputProps>(
-  (
-    { label, error, type = 'search', className, value, placeholder, fullWidth, ...rest },
-    ref: ForwardedRef<HTMLInputElement>
-  ) => {
-    const [showPassword, setShowPassword] = useState(false)
+export const Input = ({
+  id,
+  label,
+  type,
+  error,
+  errorText,
+  disabled = false,
+  fullWidth = false,
+  className,
+  value,
+  onChange,
+  ...rest
+}: InputProps) => {
+  const [showPassword, setShowPassword] = useState(false)
+  const [isFocused, setIsFocused] = useState(false)
 
-    const isPassword = type === 'password'
-    const isPasswordEmpty = isPassword && (value === '' || value === undefined)
+  const isPassword = type === 'password'
+  const isSearch = type === 'search'
 
-    const effectivePlaceholder: string | undefined = isPasswordEmpty ? '••••••••' : placeholder
+  let inputType: string
 
-    const inputType = isPassword ? (showPassword ? 'text' : 'password') : type
+  if (isPassword) {
+    inputType = showPassword ? 'text' : 'password'
+  } else {
+    inputType = type
+  }
 
-    const togglePasswordVisibility = () => setShowPassword(prev => !prev)
+  const containerClassNames = clsx(
+    s.inputContainer,
+    error && s.error,
+    disabled && s.disabled,
+    fullWidth && s.fullWidth,
+    isFocused && s.focused,
+    className
+  )
 
-    const renderRightIcon = () => {
-      if (isPassword) {
-        return (
+  return (
+    <div className={s.wrapper}>
+      {label && (
+        <label htmlFor={id} className={s.label}>
+          {label}
+        </label>
+      )}
+
+      <div className={containerClassNames}>
+        {isSearch && (
+          <span className={s.iconLeft}>
+            <Search />
+          </span>
+        )}
+
+        <input
+          id={id}
+          type={inputType}
+          disabled={disabled}
+          className={s.input}
+          value={value}
+          onChange={onChange}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
+          {...rest}
+        />
+
+        {isPassword && (
           <button
             type={'button'}
             className={s.iconButton}
-            onClick={togglePasswordVisibility}
+            onClick={() => setShowPassword(!showPassword)}
             tabIndex={-1}
             aria-label={showPassword ? 'Скрыть пароль' : 'Показать пароль'}
+            disabled={disabled}
           >
             {showPassword ? <EyeOff /> : <Eye />}
           </button>
-        )
-      }
-    }
-
-    return (
-      <div className={clsx(s.wrapper, className)}>
-        {label && <label className={s.label}>{label}</label>}
-
-        <div className={clsx(s.inputContainer, fullWidth || s.compact, s[inputType])}>
-          <input
-            type={inputType}
-            ref={ref}
-            className={clsx(s.input, error && s.error)}
-            value={value}
-            placeholder={effectivePlaceholder}
-            {...rest}
-          />
-          {renderRightIcon()}
-        </div>
-
-        {error && <span className={s.errorText}>{error}</span>}
+        )}
       </div>
-    )
-  }
-)
 
-Input.displayName = 'Input'
+      {error && errorText && <div className={s.errorText}>{errorText}</div>}
+    </div>
+  )
+}

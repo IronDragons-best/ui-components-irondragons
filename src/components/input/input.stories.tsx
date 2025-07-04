@@ -12,14 +12,20 @@ const meta: Meta<typeof Input> = {
       options: ['search', 'email', 'password'],
     },
     fullWidth: {
-      control: { type: 'boolean' },
+      control: 'boolean',
+    },
+    disabled: {
+      control: 'boolean',
     },
   },
 }
 
+export default meta
+
 type Story = StoryObj<typeof Input>
 
 export const Default: Story = {
+  storyName: 'Default Email',
   args: {
     label: 'Email',
     placeholder: 'example@mail.com',
@@ -28,15 +34,18 @@ export const Default: Story = {
 }
 
 export const WithError: Story = {
+  storyName: 'Email With Error',
   args: {
     label: 'Email',
     placeholder: 'example@mail.com',
-    error: 'Неверный формат',
+    error: 'true',
+    errorText: 'Неверный формат',
     type: 'email',
   },
 }
 
 export const Password: Story = {
+  storyName: 'Password',
   args: {
     label: 'Пароль',
     placeholder: 'Введите пароль',
@@ -45,31 +54,33 @@ export const Password: Story = {
 }
 
 export const CompactInput: Story = {
+  storyName: 'Full Width Email',
   args: {
     label: 'Email',
     placeholder: 'mail@domain.com',
     type: 'email',
-    fullWidth: false,
+    fullWidth: true,
   },
 }
 
 export const CompactWithError: Story = {
+  storyName: 'Full Width Email With Error',
   args: {
-    label: 'Логин',
+    label: 'Email',
     placeholder: 'username',
-    error: 'Обязательное поле',
-    type: 'search',
-    fullWidth: false,
+    error: 'true',
+    errorText: 'Обязательное поле',
+    type: 'email',
+    fullWidth: true,
   },
 }
 
 export const CompactPassword: Story = {
+  storyName: 'Full Width Password',
   args: {
     label: 'Пароль',
     type: 'password',
     placeholder: 'Не виден при пустом значении',
-    fullWidth: false,
+    fullWidth: true,
   },
 }
-
-export default meta

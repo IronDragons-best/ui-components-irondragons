@@ -7,25 +7,6 @@
   width: 100%;
 }
 
-.iconLeftWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding-right: 4px;
-  padding-left: 8px;
-}
-
-.search {
-  background-color: red;
-}
-.email {
-  background-color: red;
-}
-.password {
-  background-color: red;
-}
-
 .label {
   font-size: 14px;
   color: $Light-900;
@@ -37,62 +18,103 @@
 
 .inputContainer {
   position: relative;
+
   display: flex;
   align-items: center;
-  width: 100%;
-}
 
-.compact {
-  max-width: 200px;
+  width: 300px;
+  height: 40px;
+
+  background-color: $Dark-500;
+  border: 2px solid $Dark-100;
+  border-radius: 2px; // ✅ добавлено
+
+  transition: border-color 0.2s;
+
+  &.hover {
+    border-color: $Light-900;
+  }
+
+  &.focused {
+    border-color: $Accent-700;
+  }
+
+  &.error {
+    border-color: $Danger-500;
+  }
+
+  &.disabled {
+    pointer-events: none;
+    background-color: $Dark-300;
+    border-color: $Dark-100;
+  }
 }
 
 .input {
   flex: 1;
 
-  width: 100%;
-  height: 40px;
-  padding: 6px 12px;
-  padding-right: 36px;
+  height: 100%;
+  padding: 0 36px; // по умолчанию — как для search
 
   font-size: 14px;
-  color: $Light-100;
+  color: $Light-900;
 
-  background-color: $Dark-500;
-  border: 1px solid $Dark-100;
-  border-radius: 0; // квадратные углы
+  background-color: transparent;
+  border: none;
+  outline: none;
 
-  &:focus {
-    border: 2px solid $Accent-700;
-    outline: none;
-
-    &::placeholder {
-      color: $Light-100;
-    }
-  }
-
-  &:active {
-    border: 1px solid $Light-100;
-
-    &::placeholder {
-      color: $Light-100;
-    }
+  &::placeholder {
+    color: $Dark-100;
   }
 
   &:disabled {
     color: $Dark-100;
-    border-color: $Dark-100;
 
     &::placeholder {
       color: $Dark-100;
     }
   }
+}
 
-  &.error {
-    border-color: $Danger-500;
+// Изменим padding-left, если иконки слева нет
+.inputContainer.noIconLeft .input {
+  padding-left: 10px;
+}
 
-    &:focus {
-      border-color: $Danger-500;
-    }
+.iconLeft {
+  pointer-events: none;
+
+  position: absolute;
+  left: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+}
+
+.iconRight {
+  cursor: pointer;
+
+  position: absolute;
+  right: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+
+  background: none;
+  border: none;
+
+  svg {
+    pointer-events: none;
+  }
+
+  &:disabled {
+    cursor: default;
   }
 }
 
@@ -101,19 +123,6 @@
   color: $Danger-500;
 }
 
-.iconButton,
-.iconWrapper {
-  position: absolute;
-  top: 50%;
-  right: 12px;
-  transform: translateY(-50%);
-
-  color: $Light-100;
-}
-
-.iconButton {
-  cursor: pointer;
-  padding: 0;
-  background: none;
-  border: none;
+.fullWidth {
+  width: 100%;
 }
