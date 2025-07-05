@@ -4,9 +4,7 @@ import { clsx } from 'clsx'
 
 import s from './input.module.scss'
 
-import Eye from '../../assets/icons/components/Eye'
-import EyeOff from '../../assets/icons/components/EyeOff'
-import Search from '../../assets/icons/components/Search'
+import { UniversalIcon } from '../common/unversalIcon/UniversalIcon'
 
 type InputVariant = 'search' | 'email' | 'password'
 
@@ -14,6 +12,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string
   type: InputVariant
   error?: boolean
+  disabled?: boolean
   errorText?: string
   fullWidth?: boolean
 }
@@ -32,38 +31,36 @@ export const Input = ({
   ...rest
 }: InputProps) => {
   const [showPassword, setShowPassword] = useState(false)
-  const [isFocused, setIsFocused] = useState(false)
+
+  const wrapperClassNames = clsx(s.wrapper, fullWidth && s.fullWidth)
+  const containerClassNames = clsx(s.inputContainer, error && s.error, className)
 
   const isPassword = type === 'password'
   const isSearch = type === 'search'
-
   let inputType: string
 
   if (isPassword) {
-    inputType = showPassword ? 'text' : 'password'
+    if (showPassword) {
+      inputType = 'text'
+    } else {
+      inputType = 'password'
+    }
   } else {
     inputType = type
   }
 
-  const containerClassNames = clsx(
-    s.inputContainer,
-    error && s.error,
-    fullWidth && s.fullWidth,
-    className
-  )
-
   return (
-    <div className={s.wrapper}>
+    <div className={wrapperClassNames}>
       {label && (
-        <label htmlFor={id} className={s.label}>
+        <label htmlFor={id} className={s.label} data-disabled={disabled}>
           {label}
         </label>
       )}
 
-      <div className={containerClassNames}>
+      <div className={containerClassNames} data-disabled={disabled}>
         {isSearch && (
-          <span className={s.icon} data-atribute={11} aria-disabled={}>
-            <Search />
+          <span className={s.icon} data-disabled={disabled}>
+            <UniversalIcon name={'search'} />
           </span>
         )}
 
@@ -72,9 +69,9 @@ export const Input = ({
           type={inputType}
           className={s.input}
           value={value}
+          disabled={disabled}
           onChange={onChange}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
+          data-disabled={disabled}
           {...rest}
         />
 
@@ -83,10 +80,12 @@ export const Input = ({
             type={'button'}
             className={s.iconButton}
             onClick={() => setShowPassword(!showPassword)}
+            disabled={disabled}
             tabIndex={-1}
             aria-label={showPassword ? 'Скрыть пароль' : 'Показать пароль'}
+            data-disabled={disabled}
           >
-            {showPassword ? <EyeOff /> : <Eye />}
+            {showPassword ? <UniversalIcon name={'eye'} /> : <UniversalIcon name={'eye-off'} />}
           </button>
         )}
       </div>

@@ -38,6 +38,27 @@ export const Default: Story = {
     placeholder: 'example@mail.com',
     type: 'email',
   },
+  render: args => {
+    let placeholder = ''
+    let label = ''
+
+    switch (args.type) {
+      case 'email':
+        placeholder = 'example@mail.com'
+        label = 'Email'
+        break
+      case 'search':
+        placeholder = 'Search...'
+        label = ''
+        break
+      case 'password':
+        placeholder = '••••••••'
+        label = 'Password'
+        break
+    }
+
+    return <Input {...args} placeholder={placeholder} label={label} />
+  },
 }
 
 export const WithError: Story = {

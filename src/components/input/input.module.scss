@@ -1,79 +1,88 @@
 @use '../../styles/colors' as *;
+@use '../../styles/fonts' as typo;
 
 .wrapper {
   display: flex;
   flex-direction: column;
   gap: 4px;
   width: 100%;
-
-  &:disabled {
-    opacity: 0.5;
-  }
 }
 
 .label {
-  font-size: 14px;
-  color: $Light-900;
+  color: $light-900;
 
-  .disabled & {
-    color: $Dark-100;
+  &[data-disabled='true'] {
+    pointer-events: none;
+    user-select: none;
+    color: $dark-100;
   }
 }
 
 .inputContainer {
+  @include typo.regular-text-16;
+
   position: relative;
 
   display: flex;
-  align-items: center; // 👈 Центрируем по вертикали
+  gap: 9px;
+  align-items: center;
   justify-content: space-between;
 
   width: 300px;
-  height: 40px;
+  height: 36px;
+  padding: 0 12px;
 
-  font-size: 14px;
-  color: $Light-900;
+  color: #8d9094;
 
-  background-color: $Dark-500;
-  border: 1px solid $Dark-100;
-  border-radius: 2px; // 👈 Добавлено
+  background: none;
+  border: 1px solid $dark-100;
+  border-radius: 2px;
 
-  &:hover {
-    border-color: $Light-900;
+  &:active {
+    color: $light-100;
+    background: $dark-500;
+    border-color: $light-900;
   }
 
-  &:focus {
-    border-color: $Accent-500;
-    outline: 1px solid $Accent-500;
+  &:hover {
+    border-color: #8d9094;
+  }
+
+  &:focus-within {
+    border-color: $accent-500;
+    outline: 1px solid $accent-500;
   }
 
   &.error {
-    border-color: $Danger-500;
+    color: $light-100;
+    border-color: $danger-500;
   }
 
-  &:disabled {
+  &[data-disabled='true'] {
     pointer-events: none;
-    background-color: $Dark-300;
-    border-color: $Dark-100;
+    opacity: 0.5;
+    border-color: $dark-100;
   }
 }
 
 .icon {
   display: flex;
-  align-items: center; // 👈 Центрируем по вертикали
+  align-items: center;
   justify-content: center;
+  height: 100%;
 
-  height: 100%; // 👈 Растягиваем на весь контейнер, чтобы центрировать
-  padding: 0 10px;
+  //padding: 0 10px;
 
-  &[data-atribute='11'] {
+  &[data-disabled='true'] {
+    pointer-events: none;
+    opacity: 0.6;
   }
 }
 
 .input {
   flex: 1;
 
-  height: 30px;
-  margin-left: 10px;
+  //height: 30px;
 
   background-color: transparent;
   border: none;
@@ -81,34 +90,43 @@
   box-shadow: none;
 
   &::placeholder {
-    color: $Dark-100;
+    color: $dark-100;
   }
 
-  &:disabled {
-    color: $Dark-100;
+  &[data-disabled='true'] {
+    color: $dark-100;
 
     &::placeholder {
-      color: $Dark-100;
+      color: $dark-100;
     }
   }
-}
-
-.errorText {
-  font-size: 12px;
-  color: $Danger-500;
 }
 
 .iconButton {
   cursor: pointer;
 
   display: flex;
-  align-items: center; // 👈 Центрирование
+  align-items: center;
   justify-content: center;
 
-  padding: 0 10px;
+  //padding: 0 10px;
+
+  color: $light-100;
 
   background: none;
   border: none;
+
+  &[data-disabled='true'] {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.errorText {
+  @include typo.regular-text-14;
+
+  color: $danger-500;
 }
 
 .fullWidth {
