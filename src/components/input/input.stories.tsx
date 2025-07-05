@@ -14,10 +14,6 @@ const meta: Meta<typeof Input> = {
     },
   },
   argTypes: {
-    type: {
-      control: { type: 'radio' },
-      options: ['search', 'email', 'password'],
-    },
     fullWidth: {
       control: 'boolean',
     },
@@ -32,56 +28,80 @@ export default meta
 type Story = StoryObj<typeof Input>
 
 export const DefaultEmail: Story = {
-  storyName: 'Default Email',
+  name: 'Default Email',
   args: {
     label: 'Email',
     placeholder: 'example@mail.com',
-    type: 'email',
+    inputType: 'email',
+    id: 'emailInput',
   },
 }
-export const DefaultInput: Story = {
-  storyName: 'Default input',
+export const DefaultInputWithRequiredField: Story = {
+  name: 'Default input with required field',
   args: {
     label: 'Input',
     placeholder: 'example',
-    type: 'text',
+    inputType: 'text',
+    id: 'defaultInput',
+    required: true,
+  },
+}
+export const DefaultInput: Story = {
+  name: 'Default input',
+  args: {
+    label: 'Input',
+    placeholder: 'example',
+    inputType: 'text',
+    id: 'defaultInput',
+  },
+}
+export const DisabledInput: Story = {
+  name: 'Disabled input',
+  args: {
+    label: 'This input is disabled',
+    placeholder: 'example',
+    inputType: 'text',
+    id: 'defaultInput',
+    disabled: true,
   },
 }
 export const DefaultPassword: Story = {
-  storyName: 'Default password',
+  name: 'Default password',
   args: {
     label: 'Password',
     placeholder: 'example',
-    type: 'password',
+    inputType: 'password',
+    id: 'passwordInput',
   },
 }
 export const DefaultSearch: Story = {
-  storyName: 'Default search',
+  name: 'Default search',
   args: {
     label: 'search',
     placeholder: 'example',
-    type: 'search',
+    inputType: 'search',
+    id: 'searchInput',
   },
 }
 
 export const InputsWithError: Story = {
-  storyName: 'Input with error',
+  name: 'Input with error',
   args: {
     label: 'Email',
     placeholder: 'example@mail.com',
     errorText: 'Incorrect format',
-    type: 'email',
+    inputType: 'email',
+    id: 'inputWithError',
   },
 }
 
 export const InputFullWidth: Story = {
-  storyName: 'Input text',
+  name: 'Input text',
   args: {
     label: 'text',
     placeholder: 'text',
-    type: 'text',
+    inputType: 'text',
     fullWidth: true,
+    id: 'fullSizeInput',
   },
 }
-
-
