@@ -1,0 +1,137 @@
+@use '../../styles/colors' as *;
+@use '../../styles/fonts' as typo;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.label {
+  color: $light-900;
+
+  &[data-disabled='true'] {
+    pointer-events: none;
+    user-select: none;
+    color: $dark-100;
+  }
+}
+
+.inputContainer {
+  @include typo.regular-text-16;
+
+  position: relative;
+
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 300px;
+  height: 36px;
+  padding: 0 12px;
+
+  color: $light-900;
+
+  background: none;
+  border: 1px solid $dark-100;
+  border-radius: 2px;
+
+  transition: 0.1s linear;
+
+  &:active {
+    color: $light-100;
+    background: $dark-500;
+    border-color: $light-100;
+  }
+
+  &:hover {
+    border-color: $light-900;
+  }
+
+  &:focus-within {
+    border: 1px solid $accent-500;
+    outline: 1px solid $accent-500;
+  }
+
+  &.error {
+    color: $light-100;
+    border: 1px solid $danger-500;
+    outline: none;
+  }
+
+  &[data-disabled='true'] {
+    pointer-events: none;
+    opacity: 0.5;
+    border-color: $dark-100;
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  //padding: 0 10px;
+
+  &[data-disabled='true'] {
+    pointer-events: none;
+    opacity: 0.6;
+  }
+}
+
+.input {
+  flex: 1;
+
+  //height: 30px;
+
+  background-color: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+
+  &::placeholder {
+    color: $dark-100;
+  }
+
+  &[data-disabled='true'] {
+    color: $dark-100;
+
+    &::placeholder {
+      color: $dark-100;
+    }
+  }
+}
+
+.iconButton {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  //padding: 0 10px;
+
+  color: $light-100;
+
+  background: none;
+  border: none;
+
+  &[data-disabled='true'] {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.errorText {
+  @include typo.regular-text-14;
+
+  color: $danger-500;
+}
+
+.fullWidth {
+  width: 100%;
+}

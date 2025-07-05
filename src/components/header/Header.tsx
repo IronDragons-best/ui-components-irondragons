@@ -48,7 +48,7 @@ export const Header = ({
         />
         {!isAuth && !isProcessingAuth && (
           <>
-            <Button variant='text_button'>Log in</Button>
+            <Button variant='text_button'>Sign in</Button>
             <Button variant='primary'>Sign up</Button>
           </>
         )}
