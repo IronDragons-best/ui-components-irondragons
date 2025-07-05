@@ -11,9 +11,11 @@ import {SelectItem} from './SelectItem'
 import {UniversalIcon} from "../common/unversalIcon/UniversalIcon";
 import {clsx} from "clsx";
 
+type LanguageType = 'rus' | 'eng'
+
 type OptionType = {
-  value: string
-  label: string
+  value: LanguageType | string,
+  label: string,
   icon?: string
 }
 
@@ -24,8 +26,8 @@ type SelectboxProps = {
   name: string
   /** **Required**: Array of options to choose from, each with a label (display text) and value */
   options: OptionType[]
-  /** **Required**: Placeholder text shown when no option is selected */
-  placeholder: string
+  /** Placeholder text shown when no option is selected */
+  placeholder?: string
   /** Initial value */
   value?: string;
   /** Label displayed above the select input */

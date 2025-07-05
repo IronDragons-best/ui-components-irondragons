@@ -89,6 +89,12 @@
 .Selected {
   display: flex;
   gap: 15px;
+
+  span {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
 }
 
 .IconWrapper {
@@ -113,7 +119,7 @@
   overflow-y: auto;
 
   width: var(--radix-select-trigger-width);
-  max-height: 210px;
+  max-height: 212px;
   padding: 0;
 
   color: $light-100;
