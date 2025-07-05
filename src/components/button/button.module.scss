@@ -5,6 +5,7 @@
   @include typo.h3;
 
   cursor: pointer;
+  user-select: none;
 
   display: inline-flex;
   align-items: center;
@@ -76,7 +77,7 @@
   &:focus {
     color: $light-100;
     background-color: $dark-300;
-    border: 1px solid $accent-300;
+    outline: 2px solid $accent-300;
   }
 
   &:disabled {
@@ -104,7 +105,7 @@
 
   &:focus {
     color: $accent-700;
-    border: 2px solid $accent-700;
+    outline: 2px solid $accent-700;
   }
 
   &:disabled {
@@ -129,7 +130,7 @@
 
   &:focus {
     color: $accent-500;
-    border: 2px solid $accent-700;
+    outline: 2px solid $accent-700;
   }
 
   &:disabled {
