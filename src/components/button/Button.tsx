@@ -26,7 +26,6 @@ export type ButtonProps<T extends ElementType = 'button'> = ButtonOwnProps<T> &
 export const Button = <T extends ElementType = 'button'>({
   as,
   children,
-  disabled = false,
   fullWidth = false,
   className,
   variant = 'primary',
