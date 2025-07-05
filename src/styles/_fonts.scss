@@ -6,7 +6,7 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: url('../../public/assets/fonts/Inter_18pt-Bold.woff2') format('woff2');
+  src: url('../assets/fonts/Inter_18pt-Bold.woff2') format('woff2');
 }
 
 @font-face {
@@ -14,7 +14,7 @@
   font-weight: 500;
   font-style: normal;
   font-display: swap;
-  src: url('../../public/assets/fonts/Inter_18pt-Medium.woff2') format('woff2');
+  src: url('../assets/fonts/Inter_18pt-Medium.woff2') format('woff2');
 }
 
 @font-face {
@@ -22,7 +22,7 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url('../../public/assets/fonts/Inter_18pt-Regular.woff2') format('woff2');
+  src: url('../assets/fonts/Inter_18pt-Regular.woff2') format('woff2');
 }
 
 @font-face {
@@ -30,70 +30,70 @@
   font-weight: 600;
   font-style: normal;
   font-display: swap;
-  src: url('../../public/assets/fonts/Inter_18pt-SemiBold.woff2') format('woff2');
+  src: url('../assets/fonts/Inter_18pt-SemiBold.woff2') format('woff2');
 }
 
-.large {
+@mixin large {
   font-size: $font-size-xxl;
   font-weight: $font-weight-semi-bold;
   line-height: $line-height-l;
 }
 
-.h1 {
+@mixin h1 {
   font-size: $font-size-xl;
   font-weight: $font-weight-bold;
   line-height: $line-height-l;
 }
 
-.h2 {
+@mixin h2 {
   font-size: $font-size-l;
   font-weight: $font-weight-bold;
   line-height: $line-height-m;
 }
 
-.h3 {
+@mixin h3 {
   font-size: $font-size-m;
   font-weight: $font-weight-semi-bold;
   line-height: $line-height-m;
 }
 
-.regular-text-16 {
+@mixin regular-text-16 {
   font-size: $font-size-m;
   font-weight: $font-weight-regular;
   line-height: $line-height-m;
 }
 
-.bold-text-16 {
+@mixin bold-text-16 {
   font-size: $font-size-m;
   font-weight: $font-weight-bold;
   line-height: $line-height-m;
 }
 
-.regular-text-14 {
+@mixin regular-text-14 {
   font-size: $font-size-s;
   font-weight: $font-weight-regular;
   line-height: $line-height-m;
 }
 
-.medium-text-14 {
+@mixin medium-text-14 {
   font-size: $font-size-s;
   font-weight: $font-weight-medium;
   line-height: $line-height-m;
 }
 
-.bold-text-14 {
+@mixin bold-text-14 {
   font-size: $font-size-s;
   font-weight: $font-weight-bold;
   line-height: $line-height-m;
 }
 
-.small-text {
+@mixin small-text {
   font-size: $font-size-xs;
   font-weight: $font-weight-regular;
   line-height: $line-height-s;
 }
 
-.semi-bold-small-text {
+@mixin semi-bold-small-text {
   font-size: $font-size-xs;
   font-weight: $font-weight-semi-bold;
   line-height: $line-height-s;
@@ -104,7 +104,7 @@
   font-size: $font-size-s;
   font-weight: $font-weight-regular;
   line-height: $line-height-m;
-  color: $Accent-500;
+  color: $accent-500;
   text-decoration: underline;
 }
 
@@ -113,6 +113,6 @@
   font-size: $font-size-xs;
   font-weight: $font-weight-regular;
   line-height: $line-height-s;
-  color: $Accent-500;
+  color: $accent-500;
   text-decoration: underline;
 }

@@ -1,0 +1,151 @@
+@use '../../styles/colors' as *;
+@use '../../styles/fonts' as typo;
+
+.Label {
+  display: inline-block;
+  margin-bottom: 5px;
+  color: $light-900;
+}
+
+.Icon {
+  user-select: none;
+  scale: 150%;
+  color: $light-100;
+}
+
+.Trigger {
+  @include typo.regular-text-16;
+
+  all: unset;
+
+  cursor: pointer;
+  user-select: none;
+
+  position: relative;
+
+  overflow: hidden;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+  width: fit-content;
+  min-width: 170px;
+  height: 35px;
+  padding: 0 15px;
+
+  color: $light-100;
+
+  background-color: transparent;
+  border: 1px solid $dark-100;
+  border-radius: 2px;
+
+  &[data-placeholder] {
+    color: $light-100;
+  }
+
+  &[data-state='closed']:hover {
+    color: $light-900;
+  }
+
+  &[data-placeholder]:disabled {
+    pointer-events: none;
+    cursor: default;
+    color: $dark-100;
+  }
+
+  &:focus {
+    color: $light-900;
+    border-color: $accent-500;
+    outline: 1px solid $accent-500;
+  }
+
+  &[data-state='open'] {
+    color: $light-100;
+    background-color: $dark-500;
+    border: 1px solid $light-100;
+    border-radius: 2px 2px 0 0;
+  }
+
+  &[data-state='open']:active {
+    color: $light-100;
+    background-color: $dark-500;
+    border: 1px solid $light-100;
+    border-radius: 2px 2px 0 0;
+  }
+
+  &[data-state='open']:hover {
+    color: $light-900;
+    border: 1px solid $light-900;
+    border-radius: 2px 2px 0 0;
+  }
+
+  &[data-state='open'] .Icon {
+    transform: rotate(180deg);
+  }
+}
+
+.Selected {
+  display: flex;
+  gap: 15px;
+}
+
+.IconWrapper {
+  display: inline-flex;
+  align-self: center;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.Viewport {
+  color: $light-100;
+}
+
+.Content {
+  position: absolute;
+  z-index: 1000;
+  right: 0;
+  left: 0;
+
+  overflow-y: auto;
+
+  width: var(--radix-select-trigger-width);
+  max-height: 210px;
+  padding: 0;
+
+  color: $light-100;
+
+  background-color: $dark-500;
+  border: 1px solid $light-100;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+}
+
+.Item {
+  all: unset;
+
+  cursor: pointer;
+  user-select: none;
+
+  display: flex;
+  align-items: center;
+
+  height: 35px;
+  padding: 0 15px;
+
+  color: $light-100;
+
+  &[data-disabled] {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  &[data-highlighted] {
+    color: $accent-500;
+    background-color: $dark-300;
+    outline: none;
+  }
+}

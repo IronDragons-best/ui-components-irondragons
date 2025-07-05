@@ -1,19 +1,19 @@
-import React from 'react';
+import React from 'react'
 
-import parse from 'html-react-parser';
+import parse from 'html-react-parser'
 
 export const UniversalIcon = ({ name }: { name: string }) => {
-  const [svgElement, setSvgElement] = React.useState<React.ReactNode>(null);
+  const [svgElement, setSvgElement] = React.useState<React.ReactNode>(null)
 
   React.useEffect(() => {
     fetch(`/assets/icons/${name}.svg`)
-      .then((res) => res.text())
-      .then((svgString) => {
-        const parsed = parse(svgString);
+      .then(res => res.text())
+      .then(svgString => {
+        const parsed = parse(svgString)
 
-        setSvgElement(parsed);
-      });
-  }, [name]);
+        setSvgElement(parsed)
+      })
+  }, [name])
 
-  return svgElement;
-};
+  return svgElement
+}

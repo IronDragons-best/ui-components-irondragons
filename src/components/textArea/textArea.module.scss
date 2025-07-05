@@ -6,37 +6,41 @@
 }
 
 .textArea {
+  resize: none;
+
   width: fit-content;
   height: 84px;
-  resize: none;
   padding: 6px 0 0 12px;
-  color: $Light-100;
-  background-color: $Dark-500;
-  border-color: $Dark-100;
+
+  color: $light-100;
+
+  background-color: $dark-500;
+  border-color: $dark-100;
+  border-radius: 2px;
 
   &:active {
-    border: 1px solid $Light-100;
+    border: 1px solid $light-100;
 
     &::placeholder {
-      color: $Light-100;
+      color: $light-100;
     }
   }
 
   &:focus {
-    border: 2px solid $Accent-700;
+    border: 2px solid $accent-700;
     outline: none;
 
     &::placeholder {
-      color: $Light-100;
+      color: $light-100;
     }
   }
 
   &:disabled {
-    color: $Dark-100;
-    border-color: $Dark-100;
+    color: $dark-100;
+    border-color: $dark-100;
 
     &::placeholder {
-      color: $Dark-100;
+      color: $dark-100;
     }
   }
 }
@@ -46,21 +50,21 @@
 }
 
 .label {
-  color: $Light-900;
+  color: $light-900;
 }
 
 .disabled .label {
-  color: $Dark-100;
+  color: $dark-100;
 }
 
 .error {
-  border-color: $Danger-500;
+  border-color: $danger-500;
 
   &:focus {
-    border-color: $Danger-500;
+    border-color: $danger-500;
   }
 }
 
 .errorText {
-  color: $Danger-500;
+  color: $danger-500;
 }
