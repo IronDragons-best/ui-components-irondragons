@@ -1,4 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type {Meta, StoryFn, StoryObj} from '@storybook/react'
+import { useState } from 'react';
 
 import { Selectbox } from './Selectbox'
 
@@ -13,6 +14,7 @@ const meta: Meta<typeof Selectbox> = {
     idProp: '1',
     label: 'Default label',
     disabled: false,
+    value: 'rus',
   },
   component: Selectbox,
   tags: ['autodocs'],
@@ -77,3 +79,22 @@ export const Disabled: Story = {
     ],
   },
 }
+/** Default a language selectbox without a label. */
+export const PrimaryLanguage: StoryFn<typeof Selectbox> = () => {
+  const [value, setValue] = useState('rus');
+
+  return (
+    <Selectbox
+      idProp="country-select"
+      name="country"
+      label=""
+      value={value}
+      onValueChange={setValue}
+      placeholder="Select language"
+      options={[
+        { label: 'Russian', value: 'rus', icon: 'Flag-Russia' },
+        { label: 'English', value: 'eng', icon: 'Flag-United-Kingdom' },
+      ]}
+    />
+  );
+};

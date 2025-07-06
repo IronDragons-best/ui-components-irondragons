@@ -1,15 +1,35 @@
-import { ReactNode } from 'react'
+import { ReactNode } from 'react';
 
-import { clsx } from 'clsx'
+import { clsx } from 'clsx';
 
-import styles from './card.module.scss'
+import styles from './Card.module.scss';
+
+type cardSize = 'sm' | 'md' | 'lg';
 
 type Props = {
-  children?: ReactNode
-  fullWidth?: boolean
-}
-export const Card = ({ children, fullWidth }: Props) => {
-  const classNames = clsx(styles.cardBody, fullWidth && styles.fullWidth)
+  /**
+   * Controls the card's padding and font scaling.
+   * @default 'md'
+   */
+  size?: cardSize;
+  /**
+   * Content to render inside the card.
+   * Accepts strings, JSX, arrays, etc.
+   */
+  children?: ReactNode;
+  /**
+   * When `true`, forces the card to occupy 100% of its parent's width.
+   * @default false
+   */
+  fullWidth?: boolean;
+};
 
-  return <div className={classNames}>{children}</div>
-}
+export const Card = ({ children, fullWidth, size = 'md' }: Props) => {
+  const classNames = clsx(styles.cardBody, fullWidth && styles.fullWidth);
+
+  return (
+    <div className={classNames} data-cardSize={size}>
+      {children}
+    </div>
+  );
+};

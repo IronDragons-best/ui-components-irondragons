@@ -18,7 +18,7 @@ export const SelectItem = React.forwardRef<ElementRef<typeof Select.Item>, Selec
   ): React.ReactElement => {
     return (
       <Select.Item className={clsx(s.Item, className)} {...props} ref={forwardedRef}>
-        <Select.ItemText>{children}</Select.ItemText>
+        <Select.ItemText className={s.ItemContent}>{children}</Select.ItemText>
       </Select.Item>
     )
   }

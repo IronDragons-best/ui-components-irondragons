@@ -25,10 +25,13 @@
 
   overflow: hidden;
   display: flex;
+  gap: 10px;
   align-items: center;
   justify-content: space-between;
 
-  width: 190px;
+  box-sizing: border-box;
+  width: fit-content;
+  min-width: 170px;
   height: 35px;
   padding: 0 15px;
 
@@ -42,11 +45,11 @@
     color: $light-100;
   }
 
-  &:hover {
+  &[data-state='closed']:hover {
     color: $light-900;
   }
 
-  &:disabled {
+  &[data-placeholder]:disabled {
     pointer-events: none;
     cursor: default;
     color: $dark-100;
@@ -59,14 +62,52 @@
   }
 
   &[data-state='open'] {
+    color: $light-100;
     background-color: $dark-500;
     border: 1px solid $light-100;
+    border-radius: 2px 2px 0 0;
+  }
+
+  &[data-state='open']:active {
+    color: $light-100;
+    background-color: $dark-500;
+    border: 1px solid $light-100;
+    border-radius: 2px 2px 0 0;
+  }
+
+  &[data-state='open']:hover {
+    color: $light-900;
+    border: 1px solid $light-900;
     border-radius: 2px 2px 0 0;
   }
 
   &[data-state='open'] .Icon {
     transform: rotate(180deg);
   }
+}
+
+.Selected {
+  display: flex;
+  gap: 15px;
+
+  span {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+}
+
+.IconWrapper {
+  display: inline-flex;
+  align-self: center;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.Viewport {
+  color: $light-100;
 }
 
 .Content {
@@ -78,8 +119,10 @@
   overflow-y: auto;
 
   width: var(--radix-select-trigger-width);
-  max-height: 210px;
+  max-height: 212px;
   padding: 0;
+
+  color: $light-100;
 
   background-color: $dark-500;
   border: 1px solid $light-100;
@@ -111,18 +154,4 @@
     background-color: $dark-300;
     outline: none;
   }
-}
-
-.ScrollButton {
-  cursor: default;
-
-  display: none;
-  align-items: center;
-  justify-content: center;
-
-  height: 25px;
-
-  color: $light-100;
-
-  background-color: transparent;
 }
