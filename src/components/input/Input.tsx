@@ -9,10 +9,13 @@ import { UniversalIcon } from '../common/unversalIcon/UniversalIcon'
 type InputVariant = 'search' | 'email' | 'password' | 'text'
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
+  /** Defines the visual style of the input (e.g., "search", "password", "text"). */
   inputType: InputVariant
+  /**  Optional label text displayed above the input field. */
   label?: string
-  error?: boolean
+  /** Error message displayed below the input when error is true. */
   errorText?: string
+  /** 	If true, the input spans 100% of its container width. */
   fullWidth?: boolean
 }
 

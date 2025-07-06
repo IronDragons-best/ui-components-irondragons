@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import { Input } from './Input'
 
+/** A flexible input component with support for labels, validation, and responsive layout.  */
 const meta: Meta<typeof Input> = {
   title: 'Components/Input',
   component: Input,
@@ -18,7 +19,19 @@ const meta: Meta<typeof Input> = {
       control: 'boolean',
     },
     disabled: {
-      control: 'boolean',
+      table: {
+        disable: true,
+      },
+    },
+    placeholder: {
+      table: {
+        disable: true,
+      },
+    },
+    id: {
+      table: {
+        disable: true,
+      },
     },
   },
 }
@@ -27,6 +40,7 @@ export default meta
 
 type Story = StoryObj<typeof Input>
 
+/** Default email input  */
 export const DefaultEmail: Story = {
   name: 'Default Email',
   args: {
@@ -36,6 +50,7 @@ export const DefaultEmail: Story = {
     id: 'emailInput',
   },
 }
+/** Default input with required field  */
 export const DefaultInputWithRequiredField: Story = {
   name: 'Default input with required field',
   args: {
@@ -46,6 +61,7 @@ export const DefaultInputWithRequiredField: Story = {
     required: true,
   },
 }
+/** Default input  */
 export const DefaultInput: Story = {
   name: 'Default input',
   args: {
@@ -55,6 +71,8 @@ export const DefaultInput: Story = {
     id: 'defaultInput',
   },
 }
+
+/** Disabled input  */
 export const DisabledInput: Story = {
   name: 'Disabled input',
   args: {
@@ -65,6 +83,8 @@ export const DisabledInput: Story = {
     disabled: true,
   },
 }
+
+/** Default input with password type */
 export const DefaultPassword: Story = {
   name: 'Default password',
   args: {
@@ -74,6 +94,8 @@ export const DefaultPassword: Story = {
     id: 'passwordInput',
   },
 }
+
+/** Default input with search type */
 export const DefaultSearch: Story = {
   name: 'Default search',
   args: {
@@ -83,7 +105,7 @@ export const DefaultSearch: Story = {
     id: 'searchInput',
   },
 }
-
+/** Input with error */
 export const InputsWithError: Story = {
   name: 'Input with error',
   args: {
@@ -94,7 +116,7 @@ export const InputsWithError: Story = {
     id: 'inputWithError',
   },
 }
-
+/** Full size input */
 export const InputFullWidth: Story = {
   name: 'Input text',
   args: {
