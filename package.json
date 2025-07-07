@@ -1,20 +1,15 @@
 {
     "name": "@irondragons/ui-lib-inctagram",
     "private": false,
-    "version": "0.2.2",
+    "version": "0.2.3",
     "type": "module",
     "main": "dist/index.js",
-    "module": "ESNext",
+    "module": "./dist/index.js",
     "types": "dist/index.d.ts",
-    "exports": {
-        ".": {
-            "import": "./dist/index.js",
-            "types": "./dist/index.d.ts"
-        }
-    },
     "files": [
         "dist",
-        "dist/style.css"
+        "dist/style.css",
+        "src/**/*.scss"
     ],
     "scripts": {
         "start": "vite",
