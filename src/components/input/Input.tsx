@@ -4,7 +4,7 @@ import { clsx } from 'clsx'
 
 import s from './input.module.scss'
 
-import { UniversalIcon } from '../common/unversalIcon/UniversalIcon'
+import { UniversalIcon } from '@/components'
 
 type InputVariant = 'search' | 'email' | 'password' | 'text'
 
@@ -76,7 +76,6 @@ export const Input = ({
             type={'button'}
             className={s.iconButton}
             onClick={() => setShowPassword(!showPassword)}
-            aria-label={showPassword ? 'hide' : 'show'}
           >
             {showPassword ? (
               <UniversalIcon name={'eye-outline'} />
