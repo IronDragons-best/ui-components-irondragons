@@ -1,26 +1,15 @@
 {
     "name": "@irondragons/ui-lib-inctagram",
     "private": false,
-    "version": "0.2.11",
+    "version": "0.2.12",
     "type": "module",
     "main": "dist/index.js",
-    "module": "./dist/index.js",
+    "module": "dist/index.js",
     "types": "dist/index.d.ts",
-    "style": "./dist/style.css",
+    "style": "dist/style.css",
     "files": [
         "dist"
     ],
-    "exports": {
-        ".": {
-            "import": {
-                "types": "./dist/index.d.ts",
-                "default": "./dist/index.js"
-            }
-        },
-        "./theme.css": "./dist/css/theme.css",
-        "./font.css": "./dist/css/font.css",
-        "./kit.css": "./dist/style.css"
-    },
     "scripts": {
         "start": "vite",
         "dev": "storybook dev -p 6006",
