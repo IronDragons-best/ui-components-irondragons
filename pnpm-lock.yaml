@@ -26,6 +26,9 @@ importers:
       clsx:
         specifier: ^2.0.0
         version: 2.1.1
+      html-react-parser:
+        specifier: ^5.2.5
+        version: 5.2.5(@types/react@18.3.23)(react@18.3.1)
       radix-ui:
         specifier: ^1.4.2
         version: 1.4.2(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -84,9 +87,6 @@ importers:
       eslint-plugin-storybook:
         specifier: ^0.6.15
         version: 0.6.15(eslint@8.57.1)(typescript@5.8.3)
-      html-react-parser:
-        specifier: ^5.2.5
-        version: 5.2.5(@types/react@18.3.23)(react@18.3.1)
       sass:
         specifier: ^1.69.5
         version: 1.89.2
@@ -102,6 +102,9 @@ importers:
       vite:
         specifier: ^4.5.0
         version: 4.5.14(@types/node@20.19.1)(sass@1.89.2)
+      vite-plugin-libcss:
+        specifier: ^1.1.2
+        version: 1.1.2(vite@4.5.14(@types/node@20.19.1)(sass@1.89.2))
 
 packages:
 
@@ -5781,6 +5784,11 @@ packages:
   vary@1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
+
+  vite-plugin-libcss@1.1.2:
+    resolution: {integrity: sha512-nM1vqIibhKPvzpa6aPc8DahGcKS82cUE/Jiap6r9aIrsNno105RIDI8XnLmP1nKU8nhGb08eNrWjSOhO53c6NQ==}
+    peerDependencies:
+      vite: '*'
 
   vite@4.5.14:
     resolution: {integrity: sha512-+v57oAaoYNnO3hIu5Z/tJRZjq5aHM2zDve9YZ8HngVHbhk66RStobhb1sqPMIPEleV6cNKYK4eGrAbE9Ulbl2g==}
@@ -12730,6 +12738,11 @@ snapshots:
       spdx-expression-parse: 3.0.1
 
   vary@1.1.2: {}
+
+  vite-plugin-libcss@1.1.2(vite@4.5.14(@types/node@20.19.1)(sass@1.89.2)):
+    dependencies:
+      minimatch: 9.0.5
+      vite: 4.5.14(@types/node@20.19.1)(sass@1.89.2)
 
   vite@4.5.14(@types/node@20.19.1)(sass@1.89.2):
     dependencies:
