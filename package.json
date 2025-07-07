@@ -1,14 +1,14 @@
 {
     "name": "@irondragons/ui-lib-inctagram",
     "private": false,
-    "version": "0.2.9",
+    "version": "0.2.10",
     "type": "module",
     "main": "dist/index.js",
     "module": "./dist/index.js",
     "types": "dist/index.d.ts",
+    "style": "./dist/style.css",
     "files": [
-        "dist",
-        "dist/style.css"
+        "dist"
     ],
     "scripts": {
         "start": "vite",
