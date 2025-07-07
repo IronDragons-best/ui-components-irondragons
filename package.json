@@ -56,7 +56,6 @@
         "storybook": "7.5.3",
         "stylelint": "^15.11.0",
         "typescript": "^5.2.2",
-        "vite": "^4.5.0",
-        "vite-plugin-libcss": "^1.1.2"
+        "vite": "^4.5.0"
     }
 }
