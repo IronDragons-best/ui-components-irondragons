@@ -46,8 +46,6 @@ export default defineConfig({
       ],
       output: {
         dir: 'dist',
-        entryFileNames: '[name].js',
-        format: 'es',
       },
     },
     sourcemap: true,
