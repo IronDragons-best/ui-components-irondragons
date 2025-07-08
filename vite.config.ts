@@ -24,7 +24,7 @@ export default defineConfig({
     viteStaticCopy({
       targets: [
         {
-          src: 'src/assets/fonts', // путь к ассетам
+          src: 'src/assets/fonts/*', // путь к ассетам
           dest: 'assets', // куда копировать в dist
         },
       ],
