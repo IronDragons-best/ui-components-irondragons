@@ -1,12 +1,18 @@
 {
     "name": "@irondragons/ui-lib-inctagram",
     "private": false,
-    "version": "0.2.16",
+    "version": "0.2.17",
     "type": "module",
-    "main": "dist/index.cjs.js",
+    "main": "dist/index.cjs",
     "module": "dist/index.es.js",
     "types": "dist/index.d.ts",
     "style": "dist/style.css",
+    "exports": {
+        ".": {
+            "import": "./dist/index.es.js",
+            "require": "./dist/index.cjs"
+        }
+    },
     "files": [
         "dist"
     ],
