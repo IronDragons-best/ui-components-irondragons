@@ -36,7 +36,7 @@ export default defineConfig({
       name: 'ui-components-irondragons',
       // the proper extensions will be added
       fileName: 'index',
-      formats: ['es'],
+      formats: ['es', 'cjs'],
     },
     rollupOptions: {
       external: [
