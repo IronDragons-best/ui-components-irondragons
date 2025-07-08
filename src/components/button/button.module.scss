@@ -1,4 +1,5 @@
 @use '../../styles/fonts' as typo;
+@use '../../styles/colors' as colors;
 @use '../../styles/colors' as *;
 
 @mixin common {
@@ -33,28 +34,28 @@
 .primary {
   @include common;
 
-  color: $light-100;
-  background-color: $accent-500;
+  color: colors.$light-100;
+  background-color: colors.$accent-500;
 
   &:hover {
-    color: $light-100;
-    background-color: $accent-100;
+    color: colors.$light-100;
+    background-color: colors.$accent-100;
   }
 
   &:focus {
-    color: $light-100;
-    background-color: $accent-500;
-    outline: 2px solid $accent-700;
+    color: colors.$light-100;
+    background-color: colors.$accent-500;
+    outline: 2px solid colors.$accent-700;
   }
 
   &:active {
-    color: $light-500;
-    background-color: $accent-700;
+    color: colors.$light-500;
+    background-color: colors.$accent-700;
   }
 
   &:disabled {
-    color: $light-900;
-    background-color: $accent-900;
+    color: colors.$light-900;
+    background-color: colors.$accent-900;
   }
 }
 
