@@ -1,7 +1,7 @@
 {
     "name": "@irondragons/ui-lib-inctagram",
     "private": false,
-    "version": "0.2.23",
+    "version": "0.2.24",
     "type": "module",
     "main": "dist/index.cjs",
     "module": "dist/index.es.js",
@@ -19,10 +19,11 @@
         "dist"
     ],
     "scripts": {
+        "copy:scss": "cpx \"src/components/**/*.module.scss\" dist/components --preserve",
         "build:css": "sass src/styles/index.scss dist/style.css",
         "start": "vite",
         "dev": "storybook dev -p 6006",
-        "build": "vite build && tsc && pnpm run build:css",
+        "build": "vite build && tsc && pnpm run build:css && pnpm copy:scss",
         "lint": "eslint \"src/**/*.{tsx,ts,jsx,js}\" && stylelint \"src/**/*.{scss,css}\" --allow-empty-input",
         "lint:fix": "eslint --fix \"src/**/*.{tsx,ts,jsx,js}\" && stylelint --fix \"src/**/*.{scss,css}\" --allow-empty-input",
         "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,scss,md}\"",
@@ -41,7 +42,8 @@
         "radix-ui": "^1.4.2",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "react-google-recaptcha": "^3.1.0"
+        "react-google-recaptcha": "^3.1.0",
+        "rollup-plugin-copy": "^3.5.0"
     },
     "devDependencies": {
         "@it-incubator/eslint-config": "^1.0.1",
@@ -58,6 +60,7 @@
         "@types/react": "^18.2.15",
         "@types/react-dom": "^18.2.7",
         "@vitejs/plugin-react": "^4.0.3",
+        "cpx": "^1.5.0",
         "eslint-plugin-storybook": "^0.6.15",
         "sass": "^1.69.5",
         "storybook": "7.5.3",

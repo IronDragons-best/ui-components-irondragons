@@ -28,8 +28,8 @@ export default defineConfig({
           dest: 'assets', // куда копировать в dist
         },
         {
-          src: 'src/**/*.module.scss', // копировать SCSS
-          dest: '.', // сохраним структуру как есть
+          src: 'src/styles/**/*',
+          dest: 'styles',
         },
       ],
     }),
