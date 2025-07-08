@@ -17,9 +17,10 @@
         "dist"
     ],
     "scripts": {
+        "build:css": "sass src/styles/index.scss dist/style.css",
         "start": "vite",
         "dev": "storybook dev -p 6006",
-        "build": "vite build && tsc",
+        "build": "vite build && tsc && npm run build:css",
         "lint": "eslint \"src/**/*.{tsx,ts,jsx,js}\" && stylelint \"src/**/*.{scss,css}\" --allow-empty-input",
         "lint:fix": "eslint --fix \"src/**/*.{tsx,ts,jsx,js}\" && stylelint --fix \"src/**/*.{scss,css}\" --allow-empty-input",
         "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,scss,md}\"",
