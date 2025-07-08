@@ -108,13 +108,13 @@ const D = "_box_1cx9d_5", G = "_error_1cx9d_16", J = "_success_1cx9d_21", K = "_
   className: c,
   value: o,
   fullWidth: f,
-  onValueChange: _,
+  onValueChange: u,
   onOpenChange: I,
   options: x,
   ...C
 }) => {
-  const N = x.find((m) => m.value === o);
-  return /* @__PURE__ */ s(d.Root, { onValueChange: _, onOpenChange: I, ...C, children: [
+  const N = x.find((_) => _.value === o);
+  return /* @__PURE__ */ s(d.Root, { onValueChange: u, onOpenChange: I, ...C, children: [
     n && /* @__PURE__ */ e("label", { htmlFor: t, className: i.Label, children: n }),
     /* @__PURE__ */ s(
       d.Trigger,
@@ -134,10 +134,10 @@ const D = "_box_1cx9d_5", G = "_error_1cx9d_16", J = "_success_1cx9d_21", K = "_
         ]
       }
     ),
-    /* @__PURE__ */ e(d.Portal, { children: /* @__PURE__ */ e(d.Content, { className: i.Content, side: "bottom", position: "popper", children: /* @__PURE__ */ e(d.Viewport, { className: i.Viewport, children: /* @__PURE__ */ e(d.Group, { children: x.map((m) => /* @__PURE__ */ s(he, { className: i.Selected, value: m.value, children: [
-      m.icon && /* @__PURE__ */ e("span", { children: /* @__PURE__ */ e(b, { name: m.icon }) }),
-      m.label
-    ] }, m.value)) }) }) }) })
+    /* @__PURE__ */ e(d.Portal, { children: /* @__PURE__ */ e(d.Content, { className: i.Content, side: "bottom", position: "popper", children: /* @__PURE__ */ e(d.Viewport, { className: i.Viewport, children: /* @__PURE__ */ e(d.Group, { children: x.map((_) => /* @__PURE__ */ s(he, { className: i.Selected, value: _.value, children: [
+      _.icon && /* @__PURE__ */ e("span", { children: /* @__PURE__ */ e(b, { name: _.icon }) }),
+      _.label
+    ] }, _.value)) }) }) }) })
   ] });
 }, be = "_Header_11x48_51", fe = "_Logo_11x48_61", xe = "_Content_11x48_67", Ne = "_IconWrapper_11x48_73", y = {
   "regular-link": "_regular-link_11x48_33",
@@ -175,7 +175,7 @@ const D = "_box_1cx9d_5", G = "_error_1cx9d_16", J = "_success_1cx9d_21", K = "_
       ] })
     ] })
   ] });
-}, ge = "_wrapper_1ln8g_51", Ie = "_label_1ln8g_60", ke = "_inputContainer_1ln8g_79", Ce = "_error_1ln8g_109", ye = "_input_1ln8g_79", We = "_iconButton_1ln8g_137", ve = "_errorText_1ln8g_156", $e = "_fullWidth_1ln8g_163", u = {
+}, ge = "_wrapper_1ln8g_51", Ie = "_label_1ln8g_60", ke = "_inputContainer_1ln8g_79", Ce = "_error_1ln8g_109", ye = "_input_1ln8g_79", We = "_iconButton_1ln8g_137", ve = "_errorText_1ln8g_156", $e = "_fullWidth_1ln8g_163", m = {
   "regular-link": "_regular-link_1ln8g_33",
   "small-link": "_small-link_1ln8g_42",
   wrapper: ge,
@@ -196,27 +196,27 @@ const D = "_box_1cx9d_5", G = "_error_1cx9d_16", J = "_success_1cx9d_21", K = "_
   required: o,
   ...f
 }) => {
-  const [_, I] = E(!1), x = p(u.inputContainer, a && u.error, c && u.fullWidth), C = n === "password", N = n === "search", m = (V) => C ? _ ? "text" : "password" : V;
-  return /* @__PURE__ */ s("div", { className: u.wrapper, children: [
+  const [u, I] = E(!1), x = p(m.inputContainer, a && m.error, c && m.fullWidth), C = n === "password", N = n === "search", _ = (V) => C ? u ? "text" : "password" : V;
+  return /* @__PURE__ */ s("div", { className: m.wrapper, children: [
     l && /* @__PURE__ */ e(
       "label",
       {
         "data-requiredField": o,
         htmlFor: t,
-        className: u.label,
+        className: m.label,
         "data-disabled": r,
         children: l
       }
     ),
     /* @__PURE__ */ s("div", { className: x, "data-disabled": r, children: [
-      N && /* @__PURE__ */ e("button", { type: "submit", className: u.iconButton, "data-disabled": r, children: /* @__PURE__ */ e(b, { name: "search" }) }),
+      N && /* @__PURE__ */ e("button", { type: "submit", className: m.iconButton, "data-disabled": r, children: /* @__PURE__ */ e(b, { name: "search" }) }),
       /* @__PURE__ */ e(
         "input",
         {
           id: t,
-          type: m(n),
+          type: _(n),
           required: o,
-          className: u.input,
+          className: m.input,
           autoComplete: "off",
           ...f
         }
@@ -225,14 +225,13 @@ const D = "_box_1cx9d_5", G = "_error_1cx9d_16", J = "_success_1cx9d_21", K = "_
         "button",
         {
           type: "button",
-          className: u.iconButton,
-          onClick: () => I(!_),
-          "aria-label": _ ? "hide" : "show",
-          children: _ ? /* @__PURE__ */ e(b, { name: "eye-outline" }) : /* @__PURE__ */ e(b, { name: "eye-off-outline" })
+          className: m.iconButton,
+          onClick: () => I(!u),
+          children: u ? /* @__PURE__ */ e(b, { name: "eye-outline" }) : /* @__PURE__ */ e(b, { name: "eye-off-outline" })
         }
       )
     ] }),
-    a && /* @__PURE__ */ e("div", { className: u.errorText, children: a })
+    a && /* @__PURE__ */ e("div", { className: m.errorText, children: a })
   ] });
 }, we = "_Root_8k8ek_51", Te = "_disabled_8k8ek_57", Re = "_Item_8k8ek_63", Le = "_Indicator_8k8ek_101", Ae = "_Label_8k8ek_120", k = {
   "regular-link": "_regular-link_8k8ek_33",
@@ -298,7 +297,7 @@ const D = "_box_1cx9d_5", G = "_error_1cx9d_16", J = "_success_1cx9d_21", K = "_
     errorText: c,
     disabled: o = !1,
     fullWidth: f = !1,
-    id: _,
+    id: u,
     ...I
   } = t, x = p(
     h.textArea,
@@ -308,8 +307,8 @@ const D = "_box_1cx9d_5", G = "_error_1cx9d_16", J = "_success_1cx9d_21", K = "_
     l
   );
   return /* @__PURE__ */ s("div", { className: h.bodyTextArea, children: [
-    a && /* @__PURE__ */ e("label", { className: h.label, htmlFor: _, children: a }),
-    /* @__PURE__ */ e("textarea", { className: x, disabled: o, id: _, ...I }),
+    a && /* @__PURE__ */ e("label", { className: h.label, htmlFor: u, children: a }),
+    /* @__PURE__ */ e("textarea", { className: x, disabled: o, id: u, ...I }),
     r && c && /* @__PURE__ */ e("div", { className: h.errorText, children: c })
   ] });
 };
@@ -324,6 +323,7 @@ export {
   nt as ReCaptcha,
   pe as Selectbox,
   lt as TextAreaComponent,
+  b as UniversalIcon,
   ze as buttonVariant,
   ct as clsx,
   rt as textAreaVariant

@@ -8,3 +8,4 @@ export * from './radio';
 export * from './reCaptcha';
 export * from './selectbox';
 export * from './textArea';
+export * from './common/unversalIcon';

@@ -4,6 +4,8 @@ import { defineConfig } from 'vite'
 
 import { dependencies, devDependencies } from './package.json'
 
+import {viteStaticCopy} from "vite-plugin-static-copy";
+
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
@@ -11,6 +13,23 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '',
+      },
+    },
+  },
+  plugins: [
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'src/assets/fonts', // путь к ассетам
+          dest: 'assets', // куда копировать в dist
+        },
+      ],
+    }),
+  ],
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
