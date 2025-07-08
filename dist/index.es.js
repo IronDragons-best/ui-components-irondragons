@@ -18,7 +18,7 @@ const U = "_box_1cx9d_5", D = "_error_1cx9d_16", G = "_success_1cx9d_21", J = "_
 }, f = ({ name: t }) => {
   const [l, n] = j.useState(null);
   return j.useEffect(() => {
-    fetch(`./assets/icons/${t}.svg`).then((a) => a.text()).then((a) => {
+    fetch(`/assets/icons/${t}.svg`).then((a) => a.text()).then((a) => {
       const r = F(a);
       n(r);
     });
