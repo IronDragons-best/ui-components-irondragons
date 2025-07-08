@@ -27,6 +27,10 @@ export default defineConfig({
           src: 'src/assets/fonts/*', // путь к ассетам
           dest: 'assets', // куда копировать в dist
         },
+        {
+          src: 'src/**/*.module.scss', // копировать SCSS
+          dest: '.', // сохраним структуру как есть
+        },
       ],
     }),
   ],
