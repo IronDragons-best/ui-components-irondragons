@@ -1,6 +1,5 @@
 @use '../../styles/fonts' as typo;
 @use '../../styles/colors' as colors;
-@use '../../styles/colors' as *;
 
 @mixin common {
   @include typo.h3;
@@ -62,79 +61,79 @@
 .secondary {
   @include common;
 
-  color: $light-100;
-  background-color: $dark-300;
+  color: colors.$light-100;
+  background-color: colors.$dark-300;
 
   &:hover {
-    color: $light-100;
-    background-color: $dark-100;
+    color: colors.$light-100;
+    background-color: colors.$dark-100;
   }
 
   &:active {
-    color: $light-100;
-    background-color: $dark-500;
+    color: colors.$light-100;
+    background-color: colors.$dark-500;
   }
 
   &:focus {
-    color: $light-100;
-    background-color: $dark-300;
-    outline: 2px solid $accent-300;
+    color: colors.$light-100;
+    background-color: colors.$dark-300;
+    outline: 2px solid colors.$accent-300;
   }
 
   &:disabled {
-    color: $light-900;
-    background-color: $dark-500;
+    color: colors.$light-900;
+    background-color: colors.$dark-500;
   }
 }
 
 .outline {
   @include common;
 
-  color: $accent-500;
+  color: colors.$accent-500;
   background-color: transparent;
-  border: 1px solid $accent-500;
+  border: 1px solid colors.$accent-500;
 
   &:hover {
-    color: $accent-100;
-    border: 1px solid $accent-100;
+    color: colors.$accent-100;
+    border: 1px solid colors.$accent-100;
   }
 
   &:active {
-    color: $accent-700;
-    border: 1px solid $accent-700;
+    color: colors.$accent-700;
+    border: 1px solid colors.$accent-700;
   }
 
   &:focus {
-    color: $accent-700;
-    outline: 2px solid $accent-700;
+    color: colors.$accent-700;
+    outline: 2px solid colors.$accent-700;
   }
 
   &:disabled {
-    color: $accent-900;
-    border: 1px solid $accent-900;
+    color: colors.$accent-900;
+    border: 1px solid colors.$accent-900;
   }
 }
 
 .text_button {
   @include common;
 
-  color: $accent-500;
+  color: colors.$accent-500;
   background-color: transparent;
 
   &:hover {
-    color: $accent-100;
+    color: colors.$accent-100;
   }
 
   &:active {
-    color: $accent-700;
+    color: colors.$accent-700;
   }
 
   &:focus {
-    color: $accent-500;
-    outline: 2px solid $accent-700;
+    color: colors.$accent-500;
+    outline: 2px solid colors.$accent-700;
   }
 
   &:disabled {
-    color: $accent-900;
+    color: colors.$accent-900;
   }
 }
