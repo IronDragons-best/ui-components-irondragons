@@ -35,7 +35,7 @@ export default defineConfig({
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'ui-components-irondragons',
       // the proper extensions will be added
-      fileName: 'index',
+      fileName: (format) => `index.${format}.js`,
       formats: ['es', 'cjs'],
     },
     rollupOptions: {
