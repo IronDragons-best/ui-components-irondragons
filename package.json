@@ -7,14 +7,6 @@
     "module": "dist/index.es.js",
     "types": "dist/index.d.ts",
     "style": "dist/style.css",
-    "exports": {
-        ".": {
-            "import": "./dist/index.es.js",
-            "require": "./dist/index.cjs",
-            "types": "./dist/index.d.ts"
-        },
-        "./style.css": "./dist/style.css"
-    },
     "files": [
         "dist"
     ],
@@ -23,7 +15,8 @@
         "build:css": "sass src/styles/index.scss dist/style.css",
         "start": "vite",
         "dev": "storybook dev -p 6006",
-        "build": "vite build && tsc && pnpm run build:css && pnpm copy:scss",
+        "build": "vite build && tsc",
+        "build2": "vite build && tsc && pnpm run build:css && pnpm copy:scss",
         "lint": "eslint \"src/**/*.{tsx,ts,jsx,js}\" && stylelint \"src/**/*.{scss,css}\" --allow-empty-input",
         "lint:fix": "eslint --fix \"src/**/*.{tsx,ts,jsx,js}\" && stylelint --fix \"src/**/*.{scss,css}\" --allow-empty-input",
         "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,scss,md}\"",

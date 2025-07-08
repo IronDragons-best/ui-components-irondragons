@@ -20,20 +20,20 @@ export default defineConfig({
       },
     },
   },
-  plugins: [
-    viteStaticCopy({
-      targets: [
-        {
-          src: 'src/assets/fonts/*', // путь к ассетам
-          dest: 'assets', // куда копировать в dist
-        },
-        {
-          src: 'src/styles/**/*',
-          dest: 'styles',
-        },
-      ],
-    }),
-  ],
+  // plugins: [
+  //   viteStaticCopy({
+  //     targets: [
+  //       {
+  //         src: 'src/assets/fonts/*', // путь к ассетам
+  //         dest: 'assets', // куда копировать в dist
+  //       },
+  //       // {
+  //       //   src: 'src/styles/**/*',
+  //       //   dest: 'styles',
+  //       // },
+  //     ],
+  //   }),
+  // ],
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
