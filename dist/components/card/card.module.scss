@@ -1,0 +1,29 @@
+@use '../../styles/colors' as *;
+
+.cardBody {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+  min-height: fit-content;
+  padding: 24px;
+
+  color: $light-100;
+
+  background-color: $dark-500;
+  border: 1px solid $dark-300;
+  border-radius: 2px;
+
+  &[data-cardsize='sm'] {
+    padding: 12px;
+  }
+
+  &[data-cardsize='lg'] {
+    padding: 30px;
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}

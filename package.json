@@ -1,7 +1,7 @@
 {
     "name": "@irondragons/ui-lib-inctagram",
     "private": false,
-    "version": "0.2.34",
+    "version": "0.2.35",
     "type": "module",
     "main": "dist/index.cjs",
     "module": "dist/index.es.js",
@@ -11,9 +11,10 @@
         "dist"
     ],
     "scripts": {
+        "build": "vite build && pnpm run copy-scss && tsc",
+        "copy-scss": "cpx \"src/**/*.scss\" dist",
         "start": "vite",
         "dev": "storybook dev -p 6006",
-        "build": "vite build && tsc",
         "lint": "eslint \"src/**/*.{tsx,ts,jsx,js}\" && stylelint \"src/**/*.{scss,css}\" --allow-empty-input",
         "lint:fix": "eslint --fix \"src/**/*.{tsx,ts,jsx,js}\" && stylelint --fix \"src/**/*.{scss,css}\" --allow-empty-input",
         "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,scss,md}\"",

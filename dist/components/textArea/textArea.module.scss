@@ -1,0 +1,70 @@
+@use '../../styles/colors' as *;
+
+.bodyTextArea {
+  display: flex;
+  flex-direction: column;
+}
+
+.textArea {
+  resize: none;
+
+  width: fit-content;
+  height: 84px;
+  padding: 6px 0 0 12px;
+
+  color: $light-100;
+
+  background-color: $dark-500;
+  border-color: $dark-100;
+  border-radius: 2px;
+
+  &:active {
+    border: 1px solid $light-100;
+
+    &::placeholder {
+      color: $light-100;
+    }
+  }
+
+  &:focus {
+    border: 2px solid $accent-700;
+    outline: none;
+
+    &::placeholder {
+      color: $light-100;
+    }
+  }
+
+  &:disabled {
+    color: $dark-100;
+    border-color: $dark-100;
+
+    &::placeholder {
+      color: $dark-100;
+    }
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.label {
+  color: $light-900;
+}
+
+.disabled .label {
+  color: $dark-100;
+}
+
+.error {
+  border-color: $danger-500;
+
+  &:focus {
+    border-color: $danger-500;
+  }
+}
+
+.errorText {
+  color: $danger-500;
+}

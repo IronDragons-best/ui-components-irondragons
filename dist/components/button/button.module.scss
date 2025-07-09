@@ -1,0 +1,139 @@
+@use '../../styles/fonts' as typo;
+@use '../../styles/colors' as colors;
+
+@mixin common {
+  @include typo.h3;
+
+  cursor: pointer;
+  user-select: none;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+  min-height: 36px;
+  padding: 6px 24px;
+
+  text-align: center;
+  text-decoration: none;
+
+  border: none;
+
+  &:disabled {
+    cursor: initial;
+  }
+
+  &.fullWidth {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+.primary {
+  @include common;
+
+  color: colors.$light-100;
+  background-color: colors.$accent-500;
+
+  &:hover {
+    color: colors.$light-100;
+    background-color: colors.$accent-100;
+  }
+
+  &:focus {
+    color: colors.$light-100;
+    background-color: colors.$accent-500;
+    outline: 2px solid colors.$accent-700;
+  }
+
+  &:active {
+    color: colors.$light-500;
+    background-color: colors.$accent-700;
+  }
+
+  &:disabled {
+    color: colors.$light-900;
+    background-color: colors.$accent-900;
+  }
+}
+
+.secondary {
+  @include common;
+
+  color: colors.$light-100;
+  background-color: colors.$dark-300;
+
+  &:hover {
+    color: colors.$light-100;
+    background-color: colors.$dark-100;
+  }
+
+  &:active {
+    color: colors.$light-100;
+    background-color: colors.$dark-500;
+  }
+
+  &:focus {
+    color: colors.$light-100;
+    background-color: colors.$dark-300;
+    outline: 2px solid colors.$accent-300;
+  }
+
+  &:disabled {
+    color: colors.$light-900;
+    background-color: colors.$dark-500;
+  }
+}
+
+.outline {
+  @include common;
+
+  color: colors.$accent-500;
+  background-color: transparent;
+  border: 1px solid colors.$accent-500;
+
+  &:hover {
+    color: colors.$accent-100;
+    border: 1px solid colors.$accent-100;
+  }
+
+  &:active {
+    color: colors.$accent-700;
+    border: 1px solid colors.$accent-700;
+  }
+
+  &:focus {
+    color: colors.$accent-700;
+    outline: 2px solid colors.$accent-700;
+  }
+
+  &:disabled {
+    color: colors.$accent-900;
+    border: 1px solid colors.$accent-900;
+  }
+}
+
+.text_button {
+  @include common;
+
+  color: colors.$accent-500;
+  background-color: transparent;
+
+  &:hover {
+    color: colors.$accent-100;
+  }
+
+  &:active {
+    color: colors.$accent-700;
+  }
+
+  &:focus {
+    color: colors.$accent-500;
+    outline: 2px solid colors.$accent-700;
+  }
+
+  &:disabled {
+    color: colors.$accent-900;
+  }
+}
