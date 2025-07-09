@@ -86,10 +86,13 @@
 
   color: $light-100;
 
-  background-color: transparent;
+  background-clip: text;
   border: none;
   outline: none;
   box-shadow: none;
+  caret-color: $light-100;
+
+  -webkit-text-fill-color: transparent;
 
   &::placeholder {
     transition: 0.2s linear;
