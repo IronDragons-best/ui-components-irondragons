@@ -35,7 +35,7 @@ export const Header = ({
       </div>
       <div className={s.Content}>
         {isAuth && (
-          <div className={s.IconWrapper} data-notificationCount={convertNumber(notificationCount)}>
+          <div className={s.IconWrapper} data-notificationcount={convertNumber(notificationCount)}>
             <UniversalIcon name={'outline-bell'}/>
           </div>
         )}

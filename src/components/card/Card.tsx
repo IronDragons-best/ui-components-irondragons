@@ -28,7 +28,7 @@ export const Card = ({ children, fullWidth, size = 'md' }: Props) => {
   const classNames = clsx(styles.cardBody, fullWidth && styles.fullWidth);
 
   return (
-    <div className={classNames} data-cardSize={size}>
+    <div className={classNames} data-cardsize={size}>
       {children}
     </div>
   );

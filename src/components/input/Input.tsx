@@ -48,7 +48,7 @@ export const Input = ({
     <div className={s.wrapper}>
       {label && (
         <label
-          data-requiredField={required}
+          data-requiredfield={required}
           htmlFor={id}
           className={s.label}
           data-disabled={disabled}

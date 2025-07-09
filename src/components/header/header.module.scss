@@ -30,7 +30,7 @@
   align-self: center;
 
   &::before {
-    content: attr(data-notificationCount);
+    content: attr(data-notificationcount);
 
     position: absolute;
     top: -0.4em;
@@ -60,7 +60,7 @@
     color: $light-700;
   }
 
-  &[data-notificationCount="0"]::before {
+  &[data-notificationcount="0"]::before {
     display: none;
   }
 }
