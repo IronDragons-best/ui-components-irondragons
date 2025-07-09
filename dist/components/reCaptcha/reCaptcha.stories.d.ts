@@ -13,9 +13,10 @@ declare const meta: {
             }[];
         };
     };
-    component: ({ isCaptchaPassed, setCaptchaToken }: {
+    component: ({ isCaptchaPassed, setCaptchaToken, siteKey, ...rest }: {
         isCaptchaPassed: boolean;
         setCaptchaToken: (token: string) => void;
+        siteKey: string;
     }) => import("react").ReactElement;
     tags: string[];
     title: string;

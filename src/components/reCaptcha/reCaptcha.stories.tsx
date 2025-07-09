@@ -26,5 +26,6 @@ export const GoogleReCaptcha: Story = {
   args: {
     isCaptchaPassed: true,
     setCaptchaToken: () => {},
+    siteKey: '6Lc42W4rAAAAALRY3UMLjkJQojl_FCxLdjtDh_6o',
   },
 }
