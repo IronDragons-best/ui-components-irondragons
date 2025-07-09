@@ -1,6 +1,10 @@
 @use '../../styles/colors' as *;
 
 .cardBody {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: fit-content;
   min-height: fit-content;
   padding: 24px;
