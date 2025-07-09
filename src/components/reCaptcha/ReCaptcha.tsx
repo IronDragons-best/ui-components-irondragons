@@ -10,6 +10,7 @@ type Props = {
   isCaptchaPassed: boolean
   /** **Required**: Callback that receives the verification token string */
   setCaptchaToken: (token: string) => void
+  siteKey: string
 }
 
 /**
@@ -28,7 +29,7 @@ type Props = {
  * />
  */
 
-export const ReCaptcha = ({ isCaptchaPassed, setCaptchaToken }: Props): ReactElement => {
+export const ReCaptcha = ({ isCaptchaPassed, setCaptchaToken, siteKey, ...rest }: Props): ReactElement => {
   const submitHandler = (token: string | null) => {
     if (isCaptchaPassed && token) {
       setCaptchaToken(token)
@@ -40,9 +41,10 @@ export const ReCaptcha = ({ isCaptchaPassed, setCaptchaToken }: Props): ReactEle
   return (
     <div className={classNames}>
       <ReCAPTCHA
-        sitekey={'6Lc42W4rAAAAALRY3UMLjkJQojl_FCxLdjtDh_6o'}
+        sitekey={siteKey}
         onChange={submitHandler}
         theme={'dark'}
+        {...rest}
       />
       {!isCaptchaPassed && (
         <span className={styles.reCaptchaText}>Please verify that you are not a robot</span>
