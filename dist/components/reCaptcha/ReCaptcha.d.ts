@@ -4,6 +4,7 @@ type Props = {
     isCaptchaPassed: boolean;
     /** **Required**: Callback that receives the verification token string */
     setCaptchaToken: (token: string) => void;
+    siteKey: string;
 };
 /**
  * ReCaptcha component that integrates Google reCAPTCHA v2
@@ -20,5 +21,5 @@ type Props = {
  *   setCaptchaToken={(token) => setToken(token)}
  * />
  */
-export declare const ReCaptcha: ({ isCaptchaPassed, setCaptchaToken }: Props) => ReactElement;
+export declare const ReCaptcha: ({ isCaptchaPassed, setCaptchaToken, siteKey, ...rest }: Props) => ReactElement;
 export {};
