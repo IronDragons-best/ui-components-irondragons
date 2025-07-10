@@ -48,7 +48,7 @@ body {
   (за исключением тех, у которых уже указан
   атрибут fill со значением 'none' или начинается с 'url')
  */
-:where([fill]:not([fill='none'], [fill^='url'])) {
+svg:not([data-static='true']) [fill]:not([fill='none'], [fill^='url']) {
   fill: currentcolor;
 }
 
@@ -57,7 +57,9 @@ body {
   (за исключением тех, у которых уже указан
   атрибут stroke со значением 'none')
  */
-:where([stroke]:not([stroke='none'], [stroke^='url'])) {
+
+
+svg:not([data-static='true']) [stroke]:not([stroke='none'], [stroke^='url']) {
   stroke: currentcolor;
 }
 

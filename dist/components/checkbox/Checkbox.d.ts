@@ -1,10 +1,10 @@
-import { ComponentPropsWithoutRef } from 'react';
+import { ComponentPropsWithoutRef, ReactNode } from 'react';
 import { Checkbox as RadixCheckbox } from 'radix-ui';
 type CheckboxProps = {
     /** **Required**: Unique identifier for the checkbox */
     idProp: string;
     /** Label displayed next to the checkbox */
-    label?: string;
+    label?: ReactNode;
     /** Additional class name for styling */
     className?: string;
     /** Disables the checkbox */

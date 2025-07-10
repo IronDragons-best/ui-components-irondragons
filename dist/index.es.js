@@ -1,4 +1,4 @@
-import { jsx as e, jsxs as o, Fragment as S } from "react/jsx-runtime";
+import { jsx as e, jsxs as c, Fragment as L } from "react/jsx-runtime";
 import q, { clsx as p } from "clsx";
 import { clsx as ct } from "clsx";
 import * as V from "react";
@@ -15,34 +15,34 @@ const z = "_box_1cx9d_5", G = "_error_1cx9d_16", U = "_success_1cx9d_21", D = "_
   content: K,
   icon: O,
   defaultIcon: J
-}, f = ({ name: t }) => {
-  const [s, a] = T.useState(null);
+}, f = ({ name: t, dataStatic: s = !1 }) => {
+  const [r, a] = T.useState(null);
   return T.useEffect(() => {
-    fetch(`/assets/icons/${t}.svg`).then((r) => r.text()).then((r) => {
-      const n = E(r);
-      a(n);
+    fetch(`/assets/icons/${t}.svg`).then((n) => n.text()).then((n) => {
+      const l = E(n);
+      a(l);
     });
-  }, [t]), s;
+  }, [t]), r;
 }, Qe = ({
   children: t,
   variant: s = "success",
-  onClose: a,
-  closable: r = !0,
+  onClose: r,
+  closable: a = !0,
   fullWidth: n = !1,
-  ...c
+  ...l
 }) => {
-  const l = {
+  const o = {
     box: p(N.box, s === "success" ? N.success : N.error, n && N.fullWidth),
     content: N.content,
     icon: p(N.icon)
   };
-  return /* @__PURE__ */ e("div", { className: l.box, ...c, children: /* @__PURE__ */ o("div", { className: l.content, children: [
-    s === "error" ? /* @__PURE__ */ o("div", { children: [
+  return /* @__PURE__ */ e("div", { className: o.box, ...l, children: /* @__PURE__ */ c("div", { className: o.content, children: [
+    s === "error" ? /* @__PURE__ */ c("div", { children: [
       /* @__PURE__ */ e("strong", { children: "Error!" }),
       " ",
       t
-    ] }) : /* @__PURE__ */ e(S, { children: t }),
-    r && /* @__PURE__ */ e("span", { className: l.icon, onClick: a, children: /* @__PURE__ */ e(f, { name: "close" }) })
+    ] }) : /* @__PURE__ */ e(L, { children: t }),
+    a && /* @__PURE__ */ e("span", { className: o.icon, onClick: r, children: /* @__PURE__ */ e(f, { name: "close" }) })
   ] }) });
 }, M = "_primary_4txjf_51", Q = "_fullWidth_4txjf_72", X = "_secondary_4txjf_94", Y = "_outline_4txjf_137", Z = "_text_button_4txjf_180", w = {
   "regular-link": "_regular-link_4txjf_33",
@@ -55,36 +55,36 @@ const z = "_box_1cx9d_5", G = "_error_1cx9d_16", U = "_success_1cx9d_21", D = "_
 }, Xe = ["primary", "secondary", "outline", "text_button"], R = ({
   as: t,
   children: s,
-  fullWidth: a = !1,
-  className: r,
+  fullWidth: r = !1,
+  className: a,
   variant: n = "primary",
-  ...c
+  ...l
 }) => {
-  const l = p(w.button, w[n], a && w.fullWidth, r);
-  return /* @__PURE__ */ e(t || "button", { className: l, ...c, children: s });
-}, ee = "_cardBody_1rsrz_1", te = "_fullWidth_1rsrz_20", L = {
+  const o = p(w.button, w[n], r && w.fullWidth, a);
+  return /* @__PURE__ */ e(t || "button", { className: o, ...l, children: s });
+}, ee = "_cardBody_1rsrz_1", te = "_fullWidth_1rsrz_20", S = {
   cardBody: ee,
   fullWidth: te
-}, Ye = ({ children: t, fullWidth: s, size: a = "md" }) => {
-  const r = p(L.cardBody, s && L.fullWidth);
-  return /* @__PURE__ */ e("div", { className: r, "data-cardsize": a, children: t });
+}, Ye = ({ children: t, fullWidth: s, size: r = "md" }) => {
+  const a = p(S.cardBody, s && S.fullWidth);
+  return /* @__PURE__ */ e("div", { className: a, "data-cardsize": r, children: t });
 }, re = "_Root_1otx6_1", ae = "_Indicator_1otx6_65", ne = "_Label_1otx6_82", $ = {
   Root: re,
   Indicator: ae,
   Label: ne
-}, Ze = ({ label: t, idProp: s, className: a, disabled: r, ...n }) => /* @__PURE__ */ o("div", { style: { display: "flex", alignItems: "center" }, children: [
+}, Ze = ({ label: t, idProp: s, className: r, disabled: a, ...n }) => /* @__PURE__ */ c("div", { style: { display: "flex", alignItems: "center" }, children: [
   /* @__PURE__ */ e(
     j.Root,
     {
       className: $.Root,
       defaultChecked: !0,
       id: s,
-      "aria-disabled": r,
+      "aria-disabled": a,
       ...n,
-      children: /* @__PURE__ */ e(j.Indicator, { className: $.Indicator, "aria-disabled": r, children: /* @__PURE__ */ e(F, {}) })
+      children: /* @__PURE__ */ e(j.Indicator, { className: $.Indicator, "aria-disabled": a, children: /* @__PURE__ */ e(F, {}) })
     }
   ),
-  /* @__PURE__ */ e("label", { className: $.Label, htmlFor: s, "aria-disabled": r, children: t })
+  /* @__PURE__ */ e("label", { className: $.Label, htmlFor: s, "aria-disabled": a, children: t })
 ] }), se = "_Label_1qj6r_51", le = "_Icon_1qj6r_57", oe = "_Trigger_1qj6r_63", ce = "_Selected_1qj6r_123", ie = "_IconWrapper_1qj6r_133", de = "_fullWidth_1qj6r_138", _e = "_Viewport_1qj6r_142", me = "_Content_1qj6r_146", ue = "_Item_1qj6r_162", i = {
   "regular-link": "_regular-link_1qj6r_33",
   "small-link": "_small-link_1qj6r_42",
@@ -98,43 +98,43 @@ const z = "_box_1cx9d_5", G = "_error_1cx9d_16", U = "_success_1cx9d_21", D = "_
   Content: me,
   Item: ue
 }, he = V.forwardRef(
-  ({ children: t, className: s, ...a }, r) => /* @__PURE__ */ e(d.Item, { className: q(i.Item, s), ...a, ref: r, children: /* @__PURE__ */ e(d.ItemText, { className: i.ItemContent, children: t }) })
+  ({ children: t, className: s, ...r }, a) => /* @__PURE__ */ e(d.Item, { className: q(i.Item, s), ...r, ref: a, children: /* @__PURE__ */ e(d.ItemText, { className: i.ItemContent, children: t }) })
 ), pe = ({
   idProp: t,
   name: s,
-  label: a = "",
-  placeholder: r = "Select...",
+  label: r = "",
+  placeholder: a = "Select...",
   disabled: n = !1,
-  className: c,
-  value: l,
+  className: l,
+  value: o,
   fullWidth: b,
   onValueChange: u,
   onOpenChange: I,
   options: x,
   ...C
 }) => {
-  const g = x.find((_) => _.value === l);
-  return /* @__PURE__ */ o(d.Root, { onValueChange: u, onOpenChange: I, ...C, children: [
-    a && /* @__PURE__ */ e("label", { htmlFor: t, className: i.Label, children: a }),
-    /* @__PURE__ */ o(
+  const g = x.find((_) => _.value === o);
+  return /* @__PURE__ */ c(d.Root, { onValueChange: u, onOpenChange: I, ...C, children: [
+    r && /* @__PURE__ */ e("label", { htmlFor: t, className: i.Label, children: r }),
+    /* @__PURE__ */ c(
       d.Trigger,
       {
         id: t,
         className: p(i.Trigger, b && i.fullWidth),
         disabled: n,
-        "aria-label": a,
-        "data-label": a ? "true" : "false",
+        "aria-label": r,
+        "data-label": r ? "true" : "false",
         name: s,
         children: [
-          g ? /* @__PURE__ */ o("div", { className: i.Selected, children: [
+          g ? /* @__PURE__ */ c("div", { className: i.Selected, children: [
             g.icon && /* @__PURE__ */ e("span", { className: i.IconWrapper, children: /* @__PURE__ */ e(f, { name: g.icon }) }),
             g.label
-          ] }) : /* @__PURE__ */ e(d.Value, { placeholder: r }),
+          ] }) : /* @__PURE__ */ e(d.Value, { placeholder: a }),
           /* @__PURE__ */ e(d.Icon, { className: i.Icon, children: /* @__PURE__ */ e(H, {}) })
         ]
       }
     ),
-    /* @__PURE__ */ e(d.Portal, { children: /* @__PURE__ */ e(d.Content, { className: i.Content, side: "bottom", position: "popper", children: /* @__PURE__ */ e(d.Viewport, { className: i.Viewport, children: /* @__PURE__ */ e(d.Group, { children: x.map((_) => /* @__PURE__ */ o(he, { className: i.Selected, value: _.value, children: [
+    /* @__PURE__ */ e(d.Portal, { children: /* @__PURE__ */ e(d.Content, { className: i.Content, side: "bottom", position: "popper", children: /* @__PURE__ */ e(d.Viewport, { className: i.Viewport, children: /* @__PURE__ */ e(d.Group, { children: x.map((_) => /* @__PURE__ */ c(he, { className: i.Selected, value: _.value, children: [
       _.icon && /* @__PURE__ */ e("span", { children: /* @__PURE__ */ e(f, { name: _.icon }) }),
       _.label
     ] }, _.value)) }) }) }) })
@@ -149,27 +149,27 @@ const z = "_box_1cx9d_5", G = "_error_1cx9d_16", U = "_success_1cx9d_21", D = "_
 }, et = ({
   isAuth: t,
   isProcessingAuth: s = !1,
-  localization: a,
-  notificationCount: r = 0
+  localization: r,
+  notificationCount: a = 0
 }) => {
-  const n = (c) => c > 9 ? "9+" : `${c}`;
-  return /* @__PURE__ */ o("header", { className: W.Header, children: [
+  const n = (l) => l > 9 ? "9+" : `${l}`;
+  return /* @__PURE__ */ c("header", { className: W.Header, children: [
     /* @__PURE__ */ e("div", { children: /* @__PURE__ */ e("span", { className: W.Logo, children: "Inctagram" }) }),
-    /* @__PURE__ */ o("div", { className: W.Content, children: [
-      t && /* @__PURE__ */ e("div", { className: W.IconWrapper, "data-notificationcount": n(r), children: /* @__PURE__ */ e(f, { name: "outline-bell" }) }),
+    /* @__PURE__ */ c("div", { className: W.Content, children: [
+      t && /* @__PURE__ */ e("div", { className: W.IconWrapper, "data-notificationcount": n(a), children: /* @__PURE__ */ e(f, { name: "outline-bell" }) }),
       /* @__PURE__ */ e(
         pe,
         {
-          value: a,
+          value: r,
           name: "aaa",
           options: [
             { label: "Russian", value: "rus", icon: "Flag-Russia" },
             { label: "English", value: "eng", icon: "Flag-United-Kingdom" }
           ],
-          idProp: a
+          idProp: r
         }
       ),
-      !t && !s && /* @__PURE__ */ o(S, { children: [
+      !t && !s && /* @__PURE__ */ c(L, { children: [
         /* @__PURE__ */ e(R, { variant: "text_button", children: "Sign in" }),
         /* @__PURE__ */ e(R, { variant: "primary", children: "Sign up" })
       ] })
@@ -189,33 +189,33 @@ const z = "_box_1cx9d_5", G = "_error_1cx9d_16", U = "_success_1cx9d_21", D = "_
 }, tt = ({
   id: t,
   label: s,
-  inputType: a,
-  errorText: r,
+  inputType: r,
+  errorText: a,
   disabled: n = !1,
-  fullWidth: c = !1,
-  required: l,
+  fullWidth: l = !1,
+  required: o,
   ...b
 }) => {
-  const [u, I] = B(!1), x = p(m.inputContainer, r && m.error, c && m.fullWidth), C = a === "password", g = a === "search", _ = (A) => C ? u ? "text" : "password" : A;
-  return /* @__PURE__ */ o("div", { className: m.wrapper, children: [
+  const [u, I] = B(!1), x = p(m.inputContainer, a && m.error, l && m.fullWidth), C = r === "password", g = r === "search", _ = (A) => C ? u ? "text" : "password" : A;
+  return /* @__PURE__ */ c("div", { className: m.wrapper, children: [
     s && /* @__PURE__ */ e(
       "label",
       {
-        "data-requiredfield": l,
+        "data-requiredfield": o,
         htmlFor: t,
         className: m.label,
         "data-disabled": n,
         children: s
       }
     ),
-    /* @__PURE__ */ o("div", { className: x, "data-disabled": n, children: [
+    /* @__PURE__ */ c("div", { className: x, "data-disabled": n, children: [
       g && /* @__PURE__ */ e("button", { type: "submit", className: m.iconButton, "data-disabled": n, children: /* @__PURE__ */ e(f, { name: "search" }) }),
       /* @__PURE__ */ e(
         "input",
         {
           id: t,
-          type: _(a),
-          required: l,
+          type: _(r),
+          required: o,
           className: m.input,
           autoComplete: "off",
           ...b
@@ -231,27 +231,27 @@ const z = "_box_1cx9d_5", G = "_error_1cx9d_16", U = "_success_1cx9d_21", D = "_
         }
       )
     ] }),
-    r && /* @__PURE__ */ e("div", { className: m.errorText, children: r })
+    a && /* @__PURE__ */ e("div", { className: m.errorText, children: a })
   ] });
-}, ke = "_Root_n6gai_51", Te = "_disabled_n6gai_57", je = "_Item_n6gai_63", Re = "_Indicator_n6gai_101", Le = "_Label_n6gai_120", y = {
+}, ke = "_Root_n6gai_51", Te = "_disabled_n6gai_57", je = "_Item_n6gai_63", Re = "_Indicator_n6gai_101", Se = "_Label_n6gai_120", y = {
   "regular-link": "_regular-link_n6gai_33",
   "small-link": "_small-link_n6gai_42",
   Root: ke,
   disabled: Te,
   Item: je,
   Indicator: Re,
-  Label: Le
-}, rt = ({ options: t, defaultValue: s, disabled: a, ...r }) => /* @__PURE__ */ e(
+  Label: Se
+}, rt = ({ options: t, defaultValue: s, disabled: r, ...a }) => /* @__PURE__ */ e(
   v.Root,
   {
     className: y.Root,
     defaultValue: "default",
     "aria-label": "View density",
-    ...r,
-    children: t?.length && t.map((n) => /* @__PURE__ */ o(
+    ...a,
+    children: t?.length && t.map((n) => /* @__PURE__ */ c(
       "div",
       {
-        className: a ? y.disabled : "",
+        className: r ? y.disabled : "",
         style: { display: "flex", alignItems: "center" },
         children: [
           /* @__PURE__ */ e(v.Item, { className: y.Item, value: n.radioName, id: n.id, children: /* @__PURE__ */ e(v.Indicator, { className: y.Indicator }) }),
@@ -261,22 +261,22 @@ const z = "_box_1cx9d_5", G = "_error_1cx9d_16", U = "_success_1cx9d_21", D = "_
       n.id
     ))
   }
-), Se = "_reCaptchaWrapper_hfn95_5", Ae = "_reCaptchaError_hfn95_11", qe = "_reCaptchaText_hfn95_15", k = {
-  reCaptchaWrapper: Se,
+), Le = "_reCaptchaWrapper_hfn95_5", Ae = "_reCaptchaError_hfn95_11", qe = "_reCaptchaText_hfn95_15", k = {
+  reCaptchaWrapper: Le,
   reCaptchaError: Ae,
   reCaptchaText: qe
-}, at = ({ isCaptchaPassed: t, setCaptchaToken: s, siteKey: a, ...r }) => {
-  const n = (l) => {
-    t && l && s(l);
-  }, c = p(k.reCaptchaWrapper, !t && k.reCaptchaError);
-  return /* @__PURE__ */ o("div", { className: c, children: [
+}, at = ({ isCaptchaPassed: t, setCaptchaToken: s, siteKey: r, ...a }) => {
+  const n = (o) => {
+    t && o && s(o);
+  }, l = p(k.reCaptchaWrapper, !t && k.reCaptchaError);
+  return /* @__PURE__ */ c("div", { className: l, children: [
     /* @__PURE__ */ e(
       P,
       {
-        sitekey: a,
+        sitekey: r,
         onChange: n,
         theme: "dark",
-        ...r
+        ...a
       }
     ),
     !t && /* @__PURE__ */ e("span", { className: k.reCaptchaText, children: "Please verify that you are not a robot" })
@@ -292,25 +292,25 @@ const z = "_box_1cx9d_5", G = "_error_1cx9d_16", U = "_success_1cx9d_21", D = "_
 }, nt = ["default"], st = (t) => {
   const {
     className: s,
-    variant: a = "default",
-    label: r,
+    variant: r = "default",
+    label: a,
     error: n,
-    errorText: c,
-    disabled: l = !1,
+    errorText: l,
+    disabled: o = !1,
     fullWidth: b = !1,
     id: u,
     ...I
   } = t, x = p(
     h.textArea,
-    n ? h.error : h[a],
-    l && h.disabled,
+    n ? h.error : h[r],
+    o && h.disabled,
     b && h.fullWidth,
     s
   );
-  return /* @__PURE__ */ o("div", { className: h.bodyTextArea, children: [
-    r && /* @__PURE__ */ e("label", { className: h.label, htmlFor: u, children: r }),
-    /* @__PURE__ */ e("textarea", { className: x, disabled: l, id: u, ...I }),
-    n && c && /* @__PURE__ */ e("div", { className: h.errorText, children: c })
+  return /* @__PURE__ */ c("div", { className: h.bodyTextArea, children: [
+    a && /* @__PURE__ */ e("label", { className: h.label, htmlFor: u, children: a }),
+    /* @__PURE__ */ e("textarea", { className: x, disabled: o, id: u, ...I }),
+    n && l && /* @__PURE__ */ e("div", { className: h.errorText, children: l })
   ] });
 };
 export {

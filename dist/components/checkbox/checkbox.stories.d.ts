@@ -10,6 +10,15 @@ declare const meta: {
             };
         };
     };
+    parameters: {
+        backgrounds: {
+            default: string;
+            values: {
+                name: string;
+                value: string;
+            }[];
+        };
+    };
     args: {
         idProp: string;
         label: string;
@@ -17,7 +26,7 @@ declare const meta: {
     };
     component: ({ label, idProp, className, disabled, ...props }: {
         idProp: string;
-        label?: string;
+        label?: import("react").ReactNode;
         className?: string;
         disabled?: boolean;
         checked?: boolean;
