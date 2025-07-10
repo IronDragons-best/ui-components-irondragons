@@ -1,5 +1,9 @@
 import React from 'react';
-export declare const UniversalIcon: ({ name, dataStatic, }: {
+type Props = {
     name: string;
     dataStatic?: boolean;
-}) => React.ReactNode;
+    width?: string;
+    height?: string;
+};
+export declare const UniversalIcon: ({ name, dataStatic, width, height, }: Props) => React.ReactNode;
+export {};
