@@ -57,8 +57,6 @@ svg:not([data-static='true']) [fill]:not([fill='none'], [fill^='url']) {
   (за исключением тех, у которых уже указан
   атрибут stroke со значением 'none')
  */
-
-
 svg:not([data-static='true']) [stroke]:not([stroke='none'], [stroke^='url']) {
   stroke: currentcolor;
 }
