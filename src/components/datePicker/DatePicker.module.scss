@@ -1,0 +1,210 @@
+@use '../../styles/colors' as *;
+@use '../../styles/fonts' as *;
+@use '../../styles/typography' as *;
+
+.datePicker {
+  &__label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: $font-size-s;
+    color: $light-900;
+  }
+
+  &__trigger {
+    cursor: pointer;
+
+    display: flex;
+    column-gap: 23px;
+    align-items: center;
+
+    padding: 5px 10px;
+
+    color: $light-100;
+
+    background-color: transparent;
+    border: 1px solid $dark-300;
+    border-radius: 2px;
+
+    &:focus {
+      background-color: $dark-500;
+      border-color: transparent;
+      outline: 2px solid $accent-700;
+    }
+
+    &:hover {
+      background-color: $dark-500;
+    }
+
+    &--disabled {
+      pointer-events: none;
+      background-color: transparent;
+      border-color: $dark-300;
+
+      .datePicker__dateValue {
+        color: $light-900;
+      }
+
+      &:hover {
+        background-color: unset;
+      }
+    }
+
+    &--error {
+      color: $danger-500;
+      background-color: $dark-500;
+      border-color: $danger-500;
+
+      &:focus {
+        border-color: unset;
+        outline: unset;
+      }
+    }
+
+    &--open {
+      background-color: $dark-500;
+    }
+
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__errorText {
+    font-size: $font-size-xs;
+    color: $danger-500;
+  }
+
+  &__popover {
+    transform-origin: var(--radix-popover-content-transform-origin);
+    animation: scale-in 0.5s ease;
+  }
+
+  @keyframes scale-in {
+    from {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+}
+
+// календарь
+// Локальные стили календаря
+.datePicker__calendar {
+  color: $light-900;
+  background-color: $dark-500;
+  border: 1px solid $dark-300;
+  border-radius: 2px;
+}
+
+.captionLabel {
+  padding-left: 15px;
+  font-weight: $font-weight-bold;
+  color: $light-100;
+}
+
+.day {
+  width: 36px;
+  height: 36px;
+  line-height: $line-height-m;
+  color: $light-100;
+}
+
+.weekdays {
+  margin-bottom: 12px;
+}
+
+.weekday {
+  font-weight: $font-weight-regular;
+  color: $light-900;
+  opacity: unset;
+}
+
+.selected {
+  font-weight: $font-weight-regular;
+  color: $light-100;
+  border: unset;
+}
+
+.today {
+  font-weight: $font-weight-bold;
+  color: $accent-500;
+}
+
+.weekend {
+  color: $danger-300;
+}
+
+.rangeStart {
+  background: $accent-900;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.rangeEnd {
+  background: $accent-900;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+.chevron {
+  width: 15px;
+  height: 15px;
+  fill: $light-100;
+}
+
+.navButton {
+  padding: 8px;
+  background-color: $dark-100;
+  border-radius: 50%;
+}
+
+// Глобальные стили календаря
+:global {
+  .rdp-root {
+    --rdp-day-size: 36px;
+    --rdp-cell-size: 36px;
+
+    .rdp-range_middle {
+      background-color: $accent-900;
+    }
+  }
+
+  .rdp-months {
+    padding: 16px 24px;
+
+    .rdp-nav {
+      inset-block-start: 15px;
+      inset-inline-end: 24px;
+
+      .rdp-button_next, .rdp-button_previous {
+        padding: 8px;
+        background-color: $dark-100;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .rdp-month_caption {
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 12px;
+  }
+
+  .rdp-day_button {
+    --rdp-day_button-width: 36px;
+    --rdp-day_button-height: 36px;
+  }
+
+}
+
+
+
+
