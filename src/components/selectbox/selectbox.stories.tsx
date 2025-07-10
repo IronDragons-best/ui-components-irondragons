@@ -81,7 +81,7 @@ export const Disabled: Story = {
 }
 /** Default a language selectbox without a label. */
 export const PrimaryLanguage: StoryFn<typeof Selectbox> = () => {
-  const [value, setValue] = useState('rus');
+  const [value, setValue] = useState('eng');
 
   return (
     <Selectbox
@@ -92,7 +92,7 @@ export const PrimaryLanguage: StoryFn<typeof Selectbox> = () => {
       onValueChange={setValue}
       placeholder="Select language"
       options={[
-        { label: 'Russian', value: 'rus', icon: 'Flag-Russia' },
+        { label: 'Russian', value: 'rus', icon: 'flag-russia' },
         { label: 'English', value: 'eng', icon: 'Flag-United-Kingdom' },
       ]}
     />

@@ -1,12 +1,20 @@
 import React from 'react'
 
-import parse, {domToReact, HTMLReactParserOptions, Element, DOMNode } from 'html-react-parser'
-type Props= {
+import parse, {domToReact, HTMLReactParserOptions, Element, DOMNode} from 'html-react-parser'
+
+type Props = {
   name: string
   dataStatic?: boolean
+  width?: string
+  height?: string
 }
 
-export const UniversalIcon = ({name, dataStatic = false,}: Props) => {
+export const UniversalIcon = ({
+                                name,
+                                dataStatic = false,
+                                width = '24px',
+                                height = '24px',
+                              }: Props) => {
   const [svgElement, setSvgElement] = React.useState<React.ReactNode>(null)
 
   React.useEffect(() => {
@@ -20,7 +28,9 @@ export const UniversalIcon = ({name, dataStatic = false,}: Props) => {
 
               const attribs = {
                 ...el.attribs,
-                ...(dataStatic ? { 'data-static': 'true' } : { 'data-static': 'false' }),
+                ...(dataStatic ? {'data-static': 'true'} : {'data-static': 'false'}),
+                width: width,
+                height: height,
               };
               return (
                 <svg {...attribs}>
