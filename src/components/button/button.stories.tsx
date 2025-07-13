@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import { Button } from './'
 
 const meta = {
@@ -12,9 +13,7 @@ const meta = {
   parameters: {
     backgrounds: {
       default: 'dark',
-      values: [
-        { name: 'dark', value: '#0D0D0D' },
-      ],
+      values: [{ name: 'dark', value: '#0D0D0D' }],
     },
   },
   component: Button,
@@ -55,10 +54,9 @@ export const LinkButton: Story = {
     children: 'Link',
     disabled: false,
     as: 'a',
-    href: 'https://example.com', 
+    href: 'https://example.com',
     variant: 'text_button',
-    
-  }
+  },
 }
 
 /**
@@ -69,10 +67,6 @@ export const FullWidth: Story = {
     children: 'FullWith',
     disabled: false,
     variant: 'primary',
-    fullWidth: true
+    fullWidth: true,
   },
 }
-
-
-
-

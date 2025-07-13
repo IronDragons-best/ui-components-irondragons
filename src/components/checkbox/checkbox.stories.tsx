@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import Checkbox from './Checkbox'
+import { Checkbox } from './Checkbox'
 
 const meta = {
   argTypes: {
@@ -9,6 +9,12 @@ const meta = {
       table: {
         disable: true,
       },
+    },
+  },
+  parameters: {
+    backgrounds: {
+      default: 'dark',
+      values: [{ name: 'dark', value: '#0D0D0D' }],
     },
   },
   args: {
@@ -31,14 +37,6 @@ export const EnabledChecked: Story = {
     label: 'Check-box',
     disabled: false,
   },
-  parameters: {
-    backgrounds: {
-      default: 'dark',
-      values: [
-        { name: 'dark', value: '#0D0D0D' },
-      ],
-    },
-  },
 }
 
 /** Example of a disabled checkbox (not checked) */
@@ -48,14 +46,6 @@ export const Disabled: Story = {
     label: 'Check-box disabled',
     checked: false,
     disabled: true,
-  },
-  parameters: {
-    backgrounds: {
-      default: 'dark',
-      values: [
-        { name: 'dark', value: '#0D0D0D' },
-      ],
-    },
   },
 }
 
@@ -67,12 +57,5 @@ export const DisabledChecked: Story = {
     checked: true,
     disabled: true,
   },
-  parameters: {
-    backgrounds: {
-      default: 'dark',
-      values: [
-        { name: 'dark', value: '#0D0D0D' },
-      ],
-    },
-  },
+
 }

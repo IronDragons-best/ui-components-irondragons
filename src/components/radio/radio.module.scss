@@ -1,82 +1,103 @@
 @use '../../styles/colors' as *;
-@use '../../styles/fonts' as *;
+@use '../../styles/fonts' as typo;
 
 .Root {
-    display: flex;
-    flex-direction: column;
-    gap: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
 }
 
 .disabled {
-    opacity: 0.5;
-    cursor: default;
-    pointer-events: none;
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.5;
 }
 
 .Item {
-    all: unset;
-    outline: 3px solid $Light-100;
-    width: 14px;
-    height: 14px;
+  all: unset;
+
+  position: relative;
+  z-index: 10;
+
+  width: 14px;
+  height: 14px;
+
+  border-radius: 50%;
+  outline: 3px solid $light-100;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    width: 36px;
+    height: 36px;
+
+    opacity: 0;
+    background-color: $dark-300;
     border-radius: 50%;
-    position: relative;
-    z-index: 10;
-    &:hover::after{
-        opacity: 1;
-    }
-    &:focus {
-        box-shadow: 0 0 0 2px $Dark-500;
-    }
-    &::after {
-        content: '';
-        position: absolute;
-        width: 36px;
-        height: 36px;
-        top: 50%;
-        left: 50%;
-        translate: -50% -50%;
-        border-radius: 50%;
-        background-color: $Dark-300;
-        z-index: -1;
-        opacity: 0;
-        transition: 0.2s linear;
-    }
-    &:active::after{
-        opacity: 1;
-        background-color: $Dark-100;
-    }
-    &:focus::after{
-        opacity: 1;
-        background-color: $Dark-500;
-    }
+
+    transition: 0.2s linear;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px $dark-500;
+  }
+
+  &:active::after {
+    opacity: 1;
+    background-color: $dark-100;
+  }
+
+  &:focus::after {
+    opacity: 1;
+    background-color: $dark-500;
+  }
 }
 
 .Indicator {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    &::after {
-        content: "";
-        display: block;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background-color: $Light-100;
-        top: 50%;
-        left: 50%;
-    }
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  &::after {
+    content: '';
+
+    top: 50%;
+    left: 50%;
+
+    display: block;
+
+    width: 8px;
+    height: 8px;
+
+    background-color: $light-100;
+    border-radius: 50%;
+  }
 }
 
 .Label {
-    @extend .regular-text-14;
-    color: $Light-100;
-    padding-left: 13px;
-    &:disabled{
-        opacity: 0.5;
-        cursor: default;
-        pointer-events: none;
-    }
+  @include typo.regular-text-14;
+
+  padding-left: 13px;
+  color: $light-100;
+
+  &:disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.5;
+  }
 }

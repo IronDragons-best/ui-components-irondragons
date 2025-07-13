@@ -1,13 +1,16 @@
-import ReCAPTCHA from "react-google-recaptcha";
+import { ReactElement } from 'react'
+import ReCAPTCHA from 'react-google-recaptcha'
+
+import { clsx } from 'clsx'
+
 import styles from './ReCaptcha.module.scss'
-import {clsx} from "clsx";
-import {ReactElement} from "react";
 
 type Props = {
-	/** **Required**: Tracks if captcha verification was completed successfully */
-	isCaptchaPassed: boolean,
-	/** **Required**: Callback that receives the verification token string */
-	setCaptchaToken: (token: string) => void
+  /** **Required**: Tracks if captcha verification was completed successfully */
+  isCaptchaPassed: boolean
+  /** **Required**: Callback that receives the verification token string */
+  setCaptchaToken: (token: string) => void
+  siteKey: string
 }
 
 /**
@@ -26,25 +29,26 @@ type Props = {
  * />
  */
 
-export const ReCaptcha = ({isCaptchaPassed, setCaptchaToken}: Props): ReactElement => {
-	const submitHandler = (token: string | null) => {
-		if (isCaptchaPassed && token) {
-			setCaptchaToken(token)
-		}
-	}
-	
-	const classNames = clsx(styles.reCaptchaWrapper, !isCaptchaPassed && styles.reCaptchaError)
-	
-	return (
-		<div className={classNames}>
-			<ReCAPTCHA
-				sitekey="6Lc42W4rAAAAALRY3UMLjkJQojl_FCxLdjtDh_6o"
-				onChange={submitHandler}
-				theme={'dark'}
-			/>
-			{!isCaptchaPassed && <span className={styles.reCaptchaText}>Please verify that you are not a robot</span>}
-		</div>
-	)
-};
+export const ReCaptcha = ({ isCaptchaPassed, setCaptchaToken, siteKey, ...rest }: Props): ReactElement => {
+  const submitHandler = (token: string | null) => {
+    if (isCaptchaPassed && token) {
+      setCaptchaToken(token)
+    }
+  }
 
+  const classNames = clsx(styles.reCaptchaWrapper, !isCaptchaPassed && styles.reCaptchaError)
 
+  return (
+    <div className={classNames}>
+      <ReCAPTCHA
+        sitekey={siteKey}
+        onChange={submitHandler}
+        theme={'dark'}
+        {...rest}
+      />
+      {!isCaptchaPassed && (
+        <span className={styles.reCaptchaText}>Please verify that you are not a robot</span>
+      )}
+    </div>
+  )
+}

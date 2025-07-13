@@ -34,11 +34,43 @@ option {
 }
 
 body {
+  width: 100%;
   min-height: 100vh;
-  min-width: 100vw;
+
   font-family: $font-family;
   line-height: $line-height-m;
-  background-color: $Dark-700;
+
+  background-color: $dark-700;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+/**
+  Приводим к единому цвету svg-элементы
+  (за исключением тех, у которых уже указан
+  атрибут fill со значением 'none' или начинается с 'url')
+ */
+svg:not([data-static='true']) [fill]:not([fill='none'], [fill^='url']) {
+  fill: currentcolor;
+}
+
+/**
+  Приводим к единому цвету svg-элементы
+  (за исключением тех, у которых уже указан
+  атрибут stroke со значением 'none')
+ */
+svg:not([data-static='true']) [stroke]:not([stroke='none'], [stroke^='url']) {
+  stroke: currentcolor;
+}
+
+/**
+  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+ */
+svg * {
+  transition-property: fill, stroke;
 }
 
 /* Сброс для теней, используемых в фокусе */
