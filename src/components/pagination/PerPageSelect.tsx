@@ -12,6 +12,7 @@ export const PerPageSelect: FC<PerPageSelectProps> = ({onPerPageChange, perPage,
         <div className={classNames.selectBox}>
             Show
             <Selectbox
+                variant={'pagination'}
                 className={classNames.selectBox}
                 onValueChange={(val) => onPerPageChange(Number(val))}
                 options={selectOptions}

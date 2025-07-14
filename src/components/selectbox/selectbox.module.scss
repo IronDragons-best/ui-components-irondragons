@@ -86,6 +86,25 @@
   }
 }
 
+.pagination.Trigger {
+  min-width: 130px;
+  background-color: $dark-500;
+  border: 1px solid $dark-300;
+
+  &:focus {
+    color: $light-100;
+    border-color: $dark-300;
+    outline: none;
+  }
+
+  &[data-state='open']:active {
+    color: $light-100;
+    background-color: $dark-500;
+    border: 1px solid $dark-300;
+    border-radius: 2px 2px 0 0;
+  }
+}
+
 .Selected {
   display: flex;
   gap: 15px;
@@ -130,6 +149,10 @@
   border-radius: 0 0 6px 6px;
 }
 
+.pagination.Content {
+  border: 1px solid $dark-300;
+}
+
 .Item {
   all: unset;
 
@@ -152,6 +175,14 @@
   &[data-highlighted] {
     color: $accent-500;
     background-color: $dark-300;
+    outline: none;
+  }
+}
+
+.pagination.Item {
+  &[data-highlighted] {
+    color: $light-100;
+    background-color: $dark-100;
     outline: none;
   }
 }

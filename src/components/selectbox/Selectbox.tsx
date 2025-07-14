@@ -30,6 +30,7 @@ type SelectboxProps = {
   placeholder?: string
   /** Initial value */
   value?: string | number;
+  variant?: 'default' | 'pagination';
   /** Label displayed above the select input */
   label?: string
   /** Disables the select input */
@@ -56,6 +57,7 @@ export const Selectbox: FC<SelectboxProps> = ({
                                                 onValueChange,
                                                 onOpenChange,
                                                 options,
+                                                variant = 'default',
                                                 ...rest
                                               }: SelectboxProps) => {
   const selectedOption: OptionType | undefined = options.find(opt => opt.value === value);
@@ -69,7 +71,7 @@ export const Selectbox: FC<SelectboxProps> = ({
       )}
       <Select.Trigger
         id={idProp}
-        className={clsx(s.Trigger, fullWidth && s.fullWidth)}
+        className={clsx(s[`${variant}`], s.Trigger, fullWidth && s.fullWidth)}
         disabled={disabled}
         aria-label={label}
         data-label={label ? 'true' : 'false'}
@@ -78,7 +80,7 @@ export const Selectbox: FC<SelectboxProps> = ({
         {selectedOption ? (
           <div className={s.Selected}>
             {selectedOption.icon && (
-              <span className={s.IconWrapper}><UniversalIcon name={selectedOption.icon}/></span>
+              <span className={s.IconWrapper}><UniversalIcon name={selectedOption.icon} /></span>
             )}
             {selectedOption.label}
           </div>
@@ -91,11 +93,11 @@ export const Selectbox: FC<SelectboxProps> = ({
       </Select.Trigger>
 
       <Select.Portal>
-        <Select.Content className={s.Content} side={'bottom'} position={'popper'}>
+        <Select.Content className={clsx(s[`${variant}`], s.Content)} side={'bottom'} position={'popper'}>
           <Select.Viewport className={s.Viewport}>
             <Select.Group>
               {options.map(option => (
-                <SelectItem className={s.Selected} key={option.value} value={option.value.toString()}>
+                <SelectItem className={s.Selected} key={option.value} variant={variant} value={option.value.toString()}>
                   {option.icon && <span><UniversalIcon name={option.icon}/></span>}
                   {option.label}
                 </SelectItem>
