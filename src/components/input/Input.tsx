@@ -59,7 +59,7 @@ export const Input = ({
       <div className={containerClassNames} data-disabled={disabled}>
         {isSearch && (
           <button type={'submit'} className={s.iconButton} data-disabled={disabled}>
-            <UniversalIcon name={'search'} />
+            <UniversalIcon name={'google'}/>
           </button>
         )}
         <input

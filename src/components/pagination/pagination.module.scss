@@ -1,0 +1,78 @@
+@use '../../styles/colors' as *;
+@use '../../styles/typography' as *;
+
+.root {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  gap: 12px;
+  list-style-type: none;
+}
+
+@mixin item {
+  all: unset;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 24px;
+  height: 24px;
+
+  color: $light-100;
+
+  border-radius: 2px;
+}
+
+.item {
+  @include item;
+
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid $accent-700;
+  }
+
+  &:disabled {
+    cursor: initial;
+    opacity: 1;
+  }
+
+  &:hover:not(&:disabled) {
+    background-color: $dark-500;
+  }
+
+  &.selected {
+    color: $dark-900;
+    background-color: $light-100;
+  }
+}
+
+.dots {
+  @include item;
+}
+
+.icon {
+  .item:disabled & {
+    color: $dark-100;
+  }
+}
+
+.selectBox {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+
+  color:  $light-100;
+  white-space: nowrap;
+}
+
+.select {
+  flex-shrink: 0;
+  width: 52px;
+  border-color: $dark-300;
+}

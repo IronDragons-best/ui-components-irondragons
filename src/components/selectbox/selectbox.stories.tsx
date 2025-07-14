@@ -92,7 +92,7 @@ export const PrimaryLanguage: StoryFn<typeof Selectbox> = () => {
       onValueChange={setValue}
       placeholder="Select language"
       options={[
-        { label: 'Russian', value: 'rus', icon: 'flag-russia' },
+        { label: 'Russian', value: 'rus', icon: 'Flag-Russia' },
         { label: 'English', value: 'eng', icon: 'Flag-United-Kingdom' },
       ]}
     />

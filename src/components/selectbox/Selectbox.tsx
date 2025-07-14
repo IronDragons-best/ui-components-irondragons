@@ -14,22 +14,23 @@ import {clsx} from "clsx";
 type LanguageType = 'rus' | 'eng'
 
 type OptionType = {
-  value: LanguageType | string,
+  value: LanguageType | string | number,
   label: string,
   icon?: string
 }
 
 type SelectboxProps = {
   /** **Required**: Unique ID for the Select. Trigger and associated label */
-  idProp: string
+  idProp?: string
   /** **Required**: Name attribute for the form (useful when submitting forms) */
-  name: string
+  name?: string
   /** **Required**: Array of options to choose from, each with a label (display text) and value */
   options: OptionType[]
   /** Placeholder text shown when no option is selected */
   placeholder?: string
   /** Initial value */
-  value?: string;
+  value?: string | number;
+  variant?: 'default' | 'pagination';
   /** Label displayed above the select input */
   label?: string
   /** Disables the select input */
@@ -56,6 +57,7 @@ export const Selectbox: FC<SelectboxProps> = ({
                                                 onValueChange,
                                                 onOpenChange,
                                                 options,
+                                                variant = 'default',
                                                 ...rest
                                               }: SelectboxProps) => {
   const selectedOption: OptionType | undefined = options.find(opt => opt.value === value);
@@ -69,7 +71,7 @@ export const Selectbox: FC<SelectboxProps> = ({
       )}
       <Select.Trigger
         id={idProp}
-        className={clsx(s.Trigger, fullWidth && s.fullWidth)}
+        className={clsx(s[`${variant}`], s.Trigger, fullWidth && s.fullWidth)}
         disabled={disabled}
         aria-label={label}
         data-label={label ? 'true' : 'false'}
@@ -78,7 +80,7 @@ export const Selectbox: FC<SelectboxProps> = ({
         {selectedOption ? (
           <div className={s.Selected}>
             {selectedOption.icon && (
-              <span className={s.IconWrapper}><UniversalIcon name={selectedOption.icon}/></span>
+              <span className={s.IconWrapper}><UniversalIcon name={selectedOption.icon} /></span>
             )}
             {selectedOption.label}
           </div>
@@ -91,11 +93,11 @@ export const Selectbox: FC<SelectboxProps> = ({
       </Select.Trigger>
 
       <Select.Portal>
-        <Select.Content className={s.Content} side={'bottom'} position={'popper'}>
+        <Select.Content className={clsx(s[`${variant}`], s.Content)} side={'bottom'} position={'popper'}>
           <Select.Viewport className={s.Viewport}>
             <Select.Group>
               {options.map(option => (
-                <SelectItem className={s.Selected} key={option.value} value={option.value}>
+                <SelectItem className={s.Selected} key={option.value} variant={variant} value={option.value.toString()}>
                   {option.icon && <span><UniversalIcon name={option.icon}/></span>}
                   {option.label}
                 </SelectItem>
