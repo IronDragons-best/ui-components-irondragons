@@ -16,7 +16,6 @@ const meta = {
     component: Pagination,
 }satisfies Meta<typeof Pagination>;
 
-
 export default meta;
 type Story = StoryObj<typeof meta>;
 
