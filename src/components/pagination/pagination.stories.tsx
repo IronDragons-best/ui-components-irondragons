@@ -1,17 +1,65 @@
-import type { Meta } from '@storybook/react'
-import { Pagination } from './'
+import { useState } from 'react'
 
-export default {
-    component: Pagination,
+import {Meta, StoryObj} from '@storybook/react'
+
+import {Pagination} from "@/components/pagination/Pagination";
+
+const meta = {
+    parameters: {
+        backgrounds: {
+            default: 'dark',
+            values: [{ name: 'dark', value: '#0D0D0D' }],
+        },
+    },
     tags: ['autodocs'],
     title: 'Components/Pagination',
-} as Meta<typeof Pagination>
+    component: Pagination,
+}satisfies Meta<typeof Pagination>;
 
-export const Success = {
-    args: {
-        children: 'Your settins are saved',
-        variant: 'success',
-        fullWidth: false,
-    },
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+/** Example of the default pagination */
+export const Default = () => {
+    const [page, setPage] = useState(1)
+    const [perPage, setPerPage] = useState(8)
+    const TOTAL_PAGES_COUNT = 10
+
+    return (
+        <div>
+            <Pagination
+                onChange={setPage}
+                count={TOTAL_PAGES_COUNT}
+                page={page}
+                perPage={perPage}
+                perPageOptions={[5, 8, 12, 100]}
+                onPerPageChange={setPerPage}
+            />
+        </div>
+    )
 }
 
+/** Example of the default pagination with two pages */
+export const DefaultWithTwoPages = () => {
+    const [page, setPage] = useState(1)
+    const TOTAL_PAGE_COUNT = 2
+
+    return (
+        <div>
+            <Pagination onChange={setPage} count={TOTAL_PAGE_COUNT} page={page} />
+        </div>
+    )
+}
+
+/** Example of the default pagination with one pages */
+export const DefaultWithOnePages = () => {
+    const [page, setPage] = useState(1)
+    const TOTAL_PAGE_COUNT = 1
+
+    return (
+        <div>
+            <Pagination onChange={setPage} count={TOTAL_PAGE_COUNT} page={page} />
+        </div>
+    )
+}
