@@ -3,21 +3,22 @@ import { Select } from 'radix-ui';
 import '../../styles/index.scss';
 type LanguageType = 'rus' | 'eng';
 type OptionType = {
-    value: LanguageType | string;
+    value: LanguageType | string | number;
     label: string;
     icon?: string;
 };
 type SelectboxProps = {
     /** **Required**: Unique ID for the Select. Trigger and associated label */
-    idProp: string;
+    idProp?: string;
     /** **Required**: Name attribute for the form (useful when submitting forms) */
-    name: string;
+    name?: string;
     /** **Required**: Array of options to choose from, each with a label (display text) and value */
     options: OptionType[];
     /** Placeholder text shown when no option is selected */
     placeholder?: string;
     /** Initial value */
-    value?: string;
+    value?: string | number;
+    variant?: 'default' | 'pagination';
     /** Label displayed above the select input */
     label?: string;
     /** Disables the select input */
