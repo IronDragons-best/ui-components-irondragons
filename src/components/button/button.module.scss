@@ -41,7 +41,7 @@
     background-color: colors.$accent-100;
   }
 
-  &:focus {
+  &:focus-visible {
     color: colors.$light-100;
     background-color: colors.$accent-500;
     outline: 2px solid colors.$accent-700;
@@ -74,7 +74,7 @@
     background-color: colors.$dark-500;
   }
 
-  &:focus {
+  &:focus-visible {
     color: colors.$light-100;
     background-color: colors.$dark-300;
     outline: 2px solid colors.$accent-300;
@@ -103,7 +103,7 @@
     border: 1px solid colors.$accent-700;
   }
 
-  &:focus {
+  &:focus-visible {
     color: colors.$accent-700;
     outline: 2px solid colors.$accent-700;
   }
