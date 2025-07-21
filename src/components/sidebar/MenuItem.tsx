@@ -2,7 +2,7 @@ import { ElementType, ReactNode } from 'react';
 import s from './sidebar.module.scss';
 
 type MenuItemProps<T extends ElementType = 'a'> = {
-  as?: T; // Сделаем as необязательным
+  as?: T;
   text: string;
   href: string;
   icon: ReactNode;

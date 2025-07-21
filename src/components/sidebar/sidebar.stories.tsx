@@ -1,4 +1,3 @@
-// Sidebar.stories.tsx
 import type { Meta, StoryObj } from '@storybook/react';
 import { Sidebar } from './Sidebar';
 
@@ -20,10 +19,8 @@ export default meta;
 type Story = StoryObj<typeof Sidebar>;
 
 export const Default: Story = {
-  args: {},      // обязательно, чтобы StoryObj не ругался
-  render: () => (  // убрали (args) =>, так как пропсов нет
-   
-        <Sidebar/>
-  
-  ),
+  args: {},  
+  render: () =>  <Sidebar/>
 };
+
+
