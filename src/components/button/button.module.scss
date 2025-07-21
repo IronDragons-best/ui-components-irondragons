@@ -128,7 +128,7 @@
     color: colors.$accent-700;
   }
 
-  &:focus {
+  &:focus-visible {
     color: colors.$accent-500;
     outline: 2px solid colors.$accent-700;
   }
