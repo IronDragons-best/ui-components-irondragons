@@ -1,13 +1,15 @@
 @use '../../styles/colors' as *;
-@use '../../styles/typography' as *;
+@use '../../styles/fonts' as *;
+
 
 .sidebar {
     padding-top: 72px;
     display: flex;
     flex-direction: column; 
+    align-items: flex-start;
     width: 220px;
-    height: 660px;
-    border: 1px solid $dark-300;
+    height: 100%;
+    border-right: 1px solid $dark-300;
     color: $dark-700;
     padding-left: 60px;
 }
@@ -28,13 +30,13 @@
 
 .menuButton {
     color: inherit; 
-    font-size: $font-size-s;
-    font-weight: $font-weight-medium;
-    line-height: $line-height-m;
+    @include medium-text-14;
     display: flex;
     align-items: center;
-    padding: 0;
     margin-bottom: 24px;
+}
+.sidebar_menu{
+    margin-bottom: 180px;
 }
 
 .sidebar_menu .menu_item:nth-child(5) {
@@ -44,7 +46,6 @@
 .footer .menu_item:last-child {
     margin-bottom: 0; 
 }
-
 
 .sidebar_menu .menu_item,
 .footer .menu_item {
@@ -60,7 +61,7 @@
         color: $accent-500; 
     }
 
-    &:focus {
+    &:focus-visible {
         color: $light-100;
     }
 
@@ -74,212 +75,5 @@
 .footer {
     border: none;
     padding: 0;
-    margin-top: auto; 
-    padding-bottom: 36px; 
+    margin-bottom: 36px; 
 }
-
-
-
-
-
-
-
-
-
-
-// .sidebar_menu {
-//     list-style: none;
-//     padding: 0;
-//     margin: 0;
-// }
-
-// .sidebar {
-//   width: 220px;
-//   height: 660px;
-//   padding: 72px 60px;
-//   display: flex;
-//   flex-direction: column;
-// }
-
-// // Список пунктов
-// .sidebar_menu {
-//   list-style: none;
-//   margin: 0;
-//   padding: 0;
-//   flex: 1;
-// }
-
-// // Отдельный пункт
-// .menu_item {
-//     // @extend .medium-text-14;
-//   margin-bottom: 48px;
-//   padding: 0;
-
-//   /* Button variant="text_button" внутри */
-//   .button {
-//     width: 100%;
-//     background: transparent;
-//     border: none;
-//     padding: 8px 16px;
-//     text-align: left;
-//     cursor: pointer;
-//     // transition: background 0.2s, color 0.2s;
-
-
-//   }
-// }
-
-// // .element:nth-child(4)
-
-// // Контейнер для иконки + текста внутри кнопки
-// .button_icon {
-//   display: flex;
-//   align-items: center;
-//   gap: 12px;
-// }
-// // sidebar.module.scss
-// .menu_item {
-//   margin: 0;
-
-//   // контейнер-кнопка, всё состояния в нём
-//   .menuButton {
-//     @extend .medium-text-14;
-//     padding: 0 !important;
-//     /* вместо внутреннего отступа можно задать gap между иконкой и текстом */
-//     display: inline-flex;
-//     align-items: center;
-//     gap: 8px; /* подберите своё расстояние */
-
-//     /* если у вас из базовых стилей приходят ещё margin, border */
-//     margin: 0;
-//     border: none;
-//     background: transparent;
-
-//     /* текст и иконка наследуют цвет контейнера */
-//     // color: $Light-100; 
-//     // display: flex;
-//     // align-items: center;
-//     // gap: 12px;
-//     // padding: 8px 16px;
-//     // background: transparent;
-//     // border: none;
-//     // color: $Light-100;            // базовый цвет
-//     // cursor: pointer;
-//     // transition: color 0.2s, background 0.2s;
-
-//     &:hover{
-//         color: $Accent-100; 
-//     }
-//     &:focus {
-//       color: $Light-100;       
-//       outline: 2px solid $Accent-700 ;
-//       border-radius: 2px;
-//     }
-
-//     &:active {
-//       color: $Accent-500;      
-//     }
-
-//     &:disabled {
-//       color: $Dark-100;          
-//       cursor: default;
-//       background: transparent;
-//     }
-
-//     // icon и label просто наследуют цвет контейнера
-//     .icon ,
-//     .label {
-//       color: inherit;
-//       padding-bottom: 0;
-//       border: none;
-//       svg {
-//         stroke: currentColor;
-//         fill: currentColor;
-//         width: 24px;
-//       height: 24px;
-//       }
-//     }
-//   }
-// }
-
-
-// Иконка
-// .icon {
-//   display: flex;
-//   color: $Light-100;
-//   &:hover {
-//     /* можно оставить тот же цвет или чуть светлее */
-//     color: $Accent-300
-// }
-
-// &:active {
-//     color: $Accent-500
-// }
-
-// &:focus {
-//     color: $Light-100 ;
-// }
-
-// &:disabled {
-//     color: $Dark-100 ;
-//     cursor: default;
-//     background: transparent;
-// }
-//   svg {
-//     width: 24px;
-//     height: 24px;
-//     stroke: currentColor;
-//         fill: currentColor;
-//     transition: stroke 0.2s, fill 0.2s;
-//   }
-
-
-// // // Текст
-// // .label {
-// //   color: $text-default;
-// //   font-size: 1rem;
-// //   transition: color 0.2s;
-
-// // //   &:hover {
-// // //     background-color: $hover-bg;
-// // //   }
-// // //   &:focus-visible {
-// // //     outline: 2px solid $focus-outline;
-// // //     outline-offset: 2px;
-// // //   }
-// // //   &:disabled {
-// // //     color: $text-disabled;
-// // //     cursor: default;
-// // //     background: transparent;
-// // //   }
-// //   &:hover {
-// //     /* можно оставить тот же цвет или чуть светлее */
-// //     color: $Accent-300
-// // }
-
-// // &:active {
-// //     color: $Accent-500
-// // }
-
-// // &:focus {
-// //     color: $Light-100 ;
-// // }
-
-// // &:disabled {
-// //     color: $Dark-100 ;
-// //     cursor: default;
-// //     background: transparent;
-// // }
-// // }
-
-// // Для активного состояния пункта (если навесить класс .active на .menu_item)
-// .menu_item.active {
-//   .button {
-//     color: $text-active;
-//   }
-// }
-
-// // Нижний футер, если планируется
-// .footer {
-//   padding-top: 16px;
-// }
