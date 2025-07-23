@@ -2,6 +2,8 @@
 @use '../../styles/fonts' as typo;
 
 .Label {
+  @include typo.regular-text-14;
+
   display: inline-block;
   margin-bottom: 5px;
   color: $light-900;
