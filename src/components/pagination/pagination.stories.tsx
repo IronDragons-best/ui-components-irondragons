@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import {Meta, StoryObj} from '@storybook/react'
+import {Meta} from '@storybook/react'
 
 import {Pagination} from "@/components/pagination/Pagination";
 
@@ -16,9 +16,7 @@ const meta = {
     component: Pagination,
 }satisfies Meta<typeof Pagination>;
 
-
 export default meta;
-type Story = StoryObj<typeof meta>;
 
 /** Example of the default pagination */
 export const Default = () => {
