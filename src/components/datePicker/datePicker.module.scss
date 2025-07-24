@@ -16,6 +16,7 @@
     display: flex;
     column-gap: 23px;
     align-items: center;
+    justify-content: space-between;
 
     padding: 5px 10px;
 
@@ -63,7 +64,6 @@
     &--open {
       background-color: $dark-500;
     }
-
   }
 
   &__icon {
@@ -92,7 +92,10 @@
       opacity: 1;
     }
   }
+}
 
+.fullWidth {
+  width: 100%;
 }
 
 // календарь
@@ -184,7 +187,8 @@
       inset-block-start: 15px;
       inset-inline-end: 24px;
 
-      .rdp-button_next, .rdp-button_previous {
+      .rdp-button_next,
+      .rdp-button_previous {
         padding: 8px;
         background-color: $dark-100;
         border-radius: 50%;
@@ -202,9 +206,4 @@
     --rdp-day_button-width: 36px;
     --rdp-day_button-height: 36px;
   }
-
 }
-
-
-
-
