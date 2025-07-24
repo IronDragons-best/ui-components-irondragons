@@ -1,0 +1,86 @@
+@use '../../styles/colors' as *;
+@use '../../styles/fonts' as *;
+
+@mixin tab-color($color) {
+  color: $color;
+
+  &::after {
+    background-color: $color;
+  }
+}
+
+.list {
+  display: flex;
+}
+
+.trigger {
+  @include semi-bold-text-16;
+
+  all: unset;
+
+  user-select: none;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 85px;
+  height: 36px;
+
+  color: $dark-100;
+
+  transition:
+    background-color 0.2s ease,
+    outline 0.2s ease;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: $dark-100;
+  }
+
+  // 🔵 Активная вкладка
+  &[data-state='active'] {
+    @include tab-color($accent-500);
+  }
+
+  // 🔵 Активная + disabled
+  &[data-state='active'][data-disabled] {
+    @include tab-color($accent-900);
+  }
+
+  // ⚪ Неактивная + disabled (включая inactive)
+  &[data-disabled]:not([data-state='active']) {
+    @include tab-color($dark-300);
+
+    pointer-events: none;
+  }
+
+  // 🟦 Hover
+  &:not([data-disabled]):hover {
+    background-color: rgba($accent-900, 0.15);
+  }
+
+  // 🔷 Active (нажатие)
+  &:not([data-disabled]):active {
+    background-color: rgba($accent-100, 0.15);
+  }
+
+  // 🔲 Focus (доступность)
+  &:not([data-disabled]):focus-visible {
+    border-radius: 2px;
+    outline: 2px solid $accent-700;
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}
