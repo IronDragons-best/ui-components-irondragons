@@ -4,6 +4,8 @@ type Props = {
     dataStatic?: boolean;
     width?: string;
     height?: string;
+    size?: number;
+    className?: string;
 };
-export declare const UniversalIcon: ({ name, dataStatic, width, height, }: Props) => React.ReactNode;
+export declare const UniversalIcon: ({ name, dataStatic, width, height, size, className, ...rest }: Props) => React.ReactNode;
 export {};

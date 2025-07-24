@@ -1,349 +1,495 @@
-import { jsx as e, jsxs as c, Fragment as S } from "react/jsx-runtime";
-import q, { clsx as x } from "clsx";
-import { clsx as it } from "clsx";
-import * as V from "react";
-import T, { useState as B } from "react";
-import E, { domToReact as F } from "html-react-parser";
-import { CheckIcon as H, ChevronDownIcon as P } from "@radix-ui/react-icons";
-import { Checkbox as R, Select as _, RadioGroup as v } from "radix-ui";
-import z from "react-google-recaptcha";
-const G = "_box_1cx9d_5", U = "_error_1cx9d_16", D = "_success_1cx9d_21", K = "_fullWidth_1cx9d_26", O = "_content_1cx9d_30", J = "_icon_1cx9d_36", M = "_defaultIcon_1cx9d_41", y = {
-  box: G,
-  error: U,
-  success: D,
-  fullWidth: K,
-  content: O,
-  icon: J,
-  defaultIcon: M
-}, g = ({
+import { jsx as e, jsxs as l, Fragment as V } from "react/jsx-runtime";
+import O, { clsx as x } from "clsx";
+import { clsx as Ft } from "clsx";
+import * as U from "react";
+import E, { useState as K, useMemo as J, useCallback as q } from "react";
+import Q, { domToReact as X } from "html-react-parser";
+import { CheckIcon as Y, ChevronDownIcon as Z } from "@radix-ui/react-icons";
+import { Checkbox as H, Select as g, RadioGroup as T } from "radix-ui";
+import ee from "react-google-recaptcha";
+const te = "_box_1cx9d_5", ne = "_error_1cx9d_16", ae = "_success_1cx9d_21", se = "_fullWidth_1cx9d_26", re = "_content_1cx9d_30", oe = "_icon_1cx9d_36", ce = "_defaultIcon_1cx9d_41", C = {
+  box: te,
+  error: ne,
+  success: ae,
+  fullWidth: se,
+  content: re,
+  icon: oe,
+  defaultIcon: ce
+}, I = ({
   name: t,
-  dataStatic: n = !1,
-  width: r = "24px",
-  height: a = "24px"
+  dataStatic: s = !1,
+  width: n = "24px",
+  height: a = "24px",
+  size: r,
+  className: o,
+  ...c
 }) => {
-  const [s, o] = T.useState(null);
-  return T.useEffect(() => {
-    fetch(`/assets/icons/${t}.svg`).then((l) => l.text()).then((l) => {
-      const m = {
-        replace: (u) => {
-          if (u.type === "tag" && u.name === "svg") {
-            const h = u, N = {
-              ...h.attribs,
-              ...n ? { "data-static": "true" } : { "data-static": "false" },
-              width: r,
-              height: a
+  const [p, d] = E.useState(null);
+  return E.useEffect(() => {
+    fetch(`/assets/icons/${t}.svg`).then((m) => m.text()).then((m) => {
+      const h = {
+        replace: (b) => {
+          if (b.type === "tag" && b.name === "svg") {
+            const _ = b, i = {
+              ..._.attribs,
+              ...s ? { "data-static": "true" } : { "data-static": "false" },
+              width: n,
+              height: a,
+              size: r,
+              className: o,
+              ...c
             };
-            return /* @__PURE__ */ e("svg", { ...N, children: F(h.children, m) });
+            return /* @__PURE__ */ e("svg", { ...i, children: X(_.children, h) });
           }
         }
-      }, d = E(l, m);
-      o(d);
+      }, f = Q(m, h);
+      d(f);
     });
-  }, [t, n]), s;
-}, Xe = ({
+  }, [t, s]), p;
+}, wt = ({
   children: t,
-  variant: n = "success",
-  onClose: r,
+  variant: s = "success",
+  onClose: n,
   closable: a = !0,
-  fullWidth: s = !1,
+  fullWidth: r = !1,
   ...o
 }) => {
-  const l = {
-    box: x(y.box, n === "success" ? y.success : y.error, s && y.fullWidth),
-    content: y.content,
-    icon: x(y.icon)
+  const c = {
+    box: x(C.box, s === "success" ? C.success : C.error, r && C.fullWidth),
+    content: C.content,
+    icon: x(C.icon)
   };
-  return /* @__PURE__ */ e("div", { className: l.box, ...o, children: /* @__PURE__ */ c("div", { className: l.content, children: [
-    n === "error" ? /* @__PURE__ */ c("div", { children: [
+  return /* @__PURE__ */ e("div", { className: c.box, ...o, children: /* @__PURE__ */ l("div", { className: c.content, children: [
+    s === "error" ? /* @__PURE__ */ l("div", { children: [
       /* @__PURE__ */ e("strong", { children: "Error!" }),
       " ",
       t
-    ] }) : /* @__PURE__ */ e(S, { children: t }),
-    a && /* @__PURE__ */ e("span", { className: l.icon, onClick: r, children: /* @__PURE__ */ e(g, { name: "close" }) })
+    ] }) : /* @__PURE__ */ e(V, { children: t }),
+    a && /* @__PURE__ */ e("span", { className: c.icon, onClick: n, children: /* @__PURE__ */ e(I, { name: "close" }) })
   ] }) });
-}, Q = "_primary_4txjf_51", X = "_fullWidth_4txjf_72", Y = "_secondary_4txjf_94", Z = "_outline_4txjf_137", ee = "_text_button_4txjf_180", w = {
+}, le = "_primary_4txjf_51", ie = "_fullWidth_4txjf_72", de = "_secondary_4txjf_94", _e = "_outline_4txjf_137", ue = "_text_button_4txjf_180", B = {
   "regular-link": "_regular-link_4txjf_33",
   "small-link": "_small-link_4txjf_42",
-  primary: Q,
-  fullWidth: X,
-  secondary: Y,
-  outline: Z,
-  text_button: ee
-}, Ye = ["primary", "secondary", "outline", "text_button"], j = ({
+  primary: le,
+  fullWidth: ie,
+  secondary: de,
+  outline: _e,
+  text_button: ue
+}, Ct = ["primary", "secondary", "outline", "text_button"], M = ({
   as: t,
-  children: n,
-  fullWidth: r = !1,
+  children: s,
+  fullWidth: n = !1,
   className: a,
-  variant: s = "primary",
+  variant: r = "primary",
   ...o
 }) => {
-  const l = x(w.button, w[s], r && w.fullWidth, a);
-  return /* @__PURE__ */ e(t || "button", { className: l, ...o, children: n });
-}, te = "_cardBody_1rsrz_1", re = "_fullWidth_1rsrz_20", L = {
-  cardBody: te,
-  fullWidth: re
-}, Ze = ({ children: t, fullWidth: n, size: r = "md" }) => {
-  const a = x(L.cardBody, n && L.fullWidth);
-  return /* @__PURE__ */ e("div", { className: a, "data-cardsize": r, children: t });
-}, ae = "_Root_1otx6_1", ne = "_Indicator_1otx6_65", se = "_Label_1otx6_82", $ = {
-  Root: ae,
-  Indicator: ne,
-  Label: se
-}, et = ({ label: t, idProp: n, className: r, disabled: a, ...s }) => /* @__PURE__ */ c("div", { style: { display: "flex", alignItems: "center" }, children: [
+  const c = x(B.button, B[r], n && B.fullWidth, a);
+  return /* @__PURE__ */ e(t || "button", { className: c, ...o, children: s });
+}, me = "_cardBody_1rsrz_1", he = "_fullWidth_1rsrz_20", D = {
+  cardBody: me,
+  fullWidth: he
+}, vt = ({ children: t, fullWidth: s, size: n = "md" }) => {
+  const a = x(D.cardBody, s && D.fullWidth);
+  return /* @__PURE__ */ e("div", { className: a, "data-cardsize": n, children: t });
+}, fe = "_Root_1otx6_1", pe = "_Indicator_1otx6_65", be = "_Label_1otx6_82", L = {
+  Root: fe,
+  Indicator: pe,
+  Label: be
+}, Wt = ({ label: t, idProp: s, className: n, disabled: a, ...r }) => /* @__PURE__ */ l("div", { style: { display: "flex", alignItems: "center" }, children: [
   /* @__PURE__ */ e(
-    R.Root,
+    H.Root,
     {
-      className: $.Root,
+      className: L.Root,
       defaultChecked: !0,
-      id: n,
+      id: s,
       "aria-disabled": a,
-      ...s,
-      children: /* @__PURE__ */ e(R.Indicator, { className: $.Indicator, "aria-disabled": a, children: /* @__PURE__ */ e(H, {}) })
+      ...r,
+      children: /* @__PURE__ */ e(H.Indicator, { className: L.Indicator, "aria-disabled": a, children: /* @__PURE__ */ e(Y, {}) })
     }
   ),
-  /* @__PURE__ */ e("label", { className: $.Label, htmlFor: n, "aria-disabled": a, children: t })
-] }), le = "_Label_1qj6r_51", oe = "_Icon_1qj6r_57", ce = "_Trigger_1qj6r_63", ie = "_Selected_1qj6r_123", de = "_IconWrapper_1qj6r_133", _e = "_fullWidth_1qj6r_138", me = "_Viewport_1qj6r_142", ue = "_Content_1qj6r_146", he = "_Item_1qj6r_162", i = {
-  "regular-link": "_regular-link_1qj6r_33",
-  "small-link": "_small-link_1qj6r_42",
-  Label: le,
-  Icon: oe,
-  Trigger: ce,
-  Selected: ie,
-  IconWrapper: de,
-  fullWidth: _e,
-  Viewport: me,
-  Content: ue,
-  Item: he
-}, pe = V.forwardRef(
-  ({ children: t, className: n, ...r }, a) => /* @__PURE__ */ e(_.Item, { className: q(i.Item, n), ...r, ref: a, children: /* @__PURE__ */ e(_.ItemText, { className: i.ItemContent, children: t }) })
-), fe = ({
+  /* @__PURE__ */ e("label", { className: L.Label, htmlFor: s, "aria-disabled": a, children: t })
+] }), ge = "_Label_ewe9k_51", xe = "_Icon_ewe9k_57", Ne = "_Trigger_ewe9k_63", ye = "_pagination_ewe9k_123", Ie = "_Selected_ewe9k_140", ke = "_IconWrapper_ewe9k_150", we = "_fullWidth_ewe9k_155", Ce = "_Viewport_ewe9k_159", ve = "_Content_ewe9k_163", We = "_Item_ewe9k_183", u = {
+  "regular-link": "_regular-link_ewe9k_33",
+  "small-link": "_small-link_ewe9k_42",
+  Label: ge,
+  Icon: xe,
+  Trigger: Ne,
+  pagination: ye,
+  Selected: Ie,
+  IconWrapper: ke,
+  fullWidth: we,
+  Viewport: Ce,
+  Content: ve,
+  Item: We
+}, $e = U.forwardRef(
+  ({ children: t, variant: s, className: n, ...a }, r) => /* @__PURE__ */ e(g.Item, { className: O(u[`${s}`], u.Item, n), ...a, ref: r, children: /* @__PURE__ */ e(g.ItemText, { className: u.ItemContent, children: t }) })
+), z = ({
   idProp: t,
-  name: n,
-  label: r = "",
+  name: s,
+  label: n = "",
   placeholder: a = "Select...",
-  disabled: s = !1,
+  disabled: r = !1,
   className: o,
-  value: l,
-  fullWidth: m,
+  value: c,
+  fullWidth: p,
   onValueChange: d,
-  onOpenChange: u,
+  onOpenChange: m,
   options: h,
-  ...N
+  variant: f = "default",
+  ...b
 }) => {
-  const I = h.find((p) => p.value === l);
-  return /* @__PURE__ */ c(_.Root, { onValueChange: d, onOpenChange: u, ...N, children: [
-    r && /* @__PURE__ */ e("label", { htmlFor: t, className: i.Label, children: r }),
-    /* @__PURE__ */ c(
-      _.Trigger,
+  const _ = h.find((i) => i.value === c);
+  return /* @__PURE__ */ l(g.Root, { onValueChange: d, onOpenChange: m, ...b, children: [
+    n && /* @__PURE__ */ e("label", { htmlFor: t, className: u.Label, children: n }),
+    /* @__PURE__ */ l(
+      g.Trigger,
       {
         id: t,
-        className: x(i.Trigger, m && i.fullWidth),
-        disabled: s,
-        "aria-label": r,
-        "data-label": r ? "true" : "false",
-        name: n,
+        className: x(u[`${f}`], u.Trigger, p && u.fullWidth),
+        disabled: r,
+        "aria-label": n,
+        "data-label": n ? "true" : "false",
+        name: s,
         children: [
-          I ? /* @__PURE__ */ c("div", { className: i.Selected, children: [
-            I.icon && /* @__PURE__ */ e("span", { className: i.IconWrapper, children: /* @__PURE__ */ e(g, { name: I.icon }) }),
-            I.label
-          ] }) : /* @__PURE__ */ e(_.Value, { placeholder: a }),
-          /* @__PURE__ */ e(_.Icon, { className: i.Icon, children: /* @__PURE__ */ e(P, {}) })
+          _ ? /* @__PURE__ */ l("div", { className: u.Selected, children: [
+            _.icon && /* @__PURE__ */ e("span", { className: u.IconWrapper, children: /* @__PURE__ */ e(I, { name: _.icon }) }),
+            _.label
+          ] }) : /* @__PURE__ */ e(g.Value, { placeholder: a }),
+          /* @__PURE__ */ e(g.Icon, { className: u.Icon, children: /* @__PURE__ */ e(Z, {}) })
         ]
       }
     ),
-    /* @__PURE__ */ e(_.Portal, { children: /* @__PURE__ */ e(_.Content, { className: i.Content, side: "bottom", position: "popper", children: /* @__PURE__ */ e(_.Viewport, { className: i.Viewport, children: /* @__PURE__ */ e(_.Group, { children: h.map((p) => /* @__PURE__ */ c(pe, { className: i.Selected, value: p.value, children: [
-      p.icon && /* @__PURE__ */ e("span", { children: /* @__PURE__ */ e(g, { name: p.icon }) }),
-      p.label
-    ] }, p.value)) }) }) }) })
+    /* @__PURE__ */ e(g.Portal, { children: /* @__PURE__ */ e(g.Content, { className: x(u[`${f}`], u.Content), side: "bottom", position: "popper", children: /* @__PURE__ */ e(g.Viewport, { className: u.Viewport, children: /* @__PURE__ */ e(g.Group, { children: h.map((i) => /* @__PURE__ */ l($e, { className: u.Selected, variant: f, value: i.value.toString(), children: [
+      i.icon && /* @__PURE__ */ e("span", { children: /* @__PURE__ */ e(I, { name: i.icon }) }),
+      i.label
+    ] }, i.value)) }) }) }) })
   ] });
-}, be = "_Header_18rwr_51", xe = "_Logo_18rwr_61", ge = "_Content_18rwr_67", Ne = "_IconWrapper_18rwr_73", W = {
+}, Re = "_Header_18rwr_51", Pe = "_Logo_18rwr_61", Se = "_Content_18rwr_67", Te = "_IconWrapper_18rwr_73", $ = {
   "regular-link": "_regular-link_18rwr_33",
   "small-link": "_small-link_18rwr_42",
-  Header: be,
-  Logo: xe,
-  Content: ge,
-  IconWrapper: Ne
-}, tt = ({
+  Header: Re,
+  Logo: Pe,
+  Content: Se,
+  IconWrapper: Te
+}, $t = ({
   isAuth: t,
-  isProcessingAuth: n = !1,
-  localization: r,
+  isProcessingAuth: s = !1,
+  localization: n,
   notificationCount: a = 0
 }) => {
-  const s = (o) => o > 9 ? "9+" : `${o}`;
-  return /* @__PURE__ */ c("header", { className: W.Header, children: [
-    /* @__PURE__ */ e("div", { children: /* @__PURE__ */ e("span", { className: W.Logo, children: "Inctagram" }) }),
-    /* @__PURE__ */ c("div", { className: W.Content, children: [
-      t && /* @__PURE__ */ e("div", { className: W.IconWrapper, "data-notificationcount": s(a), children: /* @__PURE__ */ e(g, { name: "outline-bell" }) }),
+  const r = (o) => o > 9 ? "9+" : `${o}`;
+  return /* @__PURE__ */ l("header", { className: $.Header, children: [
+    /* @__PURE__ */ e("div", { children: /* @__PURE__ */ e("span", { className: $.Logo, children: "Inctagram" }) }),
+    /* @__PURE__ */ l("div", { className: $.Content, children: [
+      t && /* @__PURE__ */ e("div", { className: $.IconWrapper, "data-notificationcount": r(a), children: /* @__PURE__ */ e(I, { name: "outline-bell" }) }),
       /* @__PURE__ */ e(
-        fe,
+        z,
         {
-          value: r,
+          value: n,
           name: "aaa",
           options: [
             { label: "Russian", value: "rus", icon: "Flag-Russia" },
             { label: "English", value: "eng", icon: "Flag-United-Kingdom" }
           ],
-          idProp: r
+          idProp: n
         }
       ),
-      !t && !n && /* @__PURE__ */ c(S, { children: [
-        /* @__PURE__ */ e(j, { variant: "text_button", children: "Sign in" }),
-        /* @__PURE__ */ e(j, { variant: "primary", children: "Sign up" })
+      !t && !s && /* @__PURE__ */ l(V, { children: [
+        /* @__PURE__ */ e(M, { variant: "text_button", children: "Sign in" }),
+        /* @__PURE__ */ e(M, { variant: "primary", children: "Sign up" })
       ] })
     ] })
   ] });
-}, Ie = "_wrapper_19tyg_51", ye = "_label_19tyg_60", Ce = "_inputContainer_19tyg_79", We = "_error_19tyg_109", ve = "_input_19tyg_79", we = "_iconButton_19tyg_137", $e = "_errorText_19tyg_156", ke = "_fullWidth_19tyg_163", f = {
+}, Be = "_wrapper_19tyg_51", Le = "_label_19tyg_60", Ae = "_inputContainer_19tyg_79", Ve = "_error_19tyg_109", Fe = "_input_19tyg_79", je = "_iconButton_19tyg_137", Ee = "_errorText_19tyg_156", qe = "_fullWidth_19tyg_163", y = {
   "regular-link": "_regular-link_19tyg_33",
   "small-link": "_small-link_19tyg_42",
-  wrapper: Ie,
-  label: ye,
-  inputContainer: Ce,
-  error: We,
-  input: ve,
-  iconButton: we,
-  errorText: $e,
-  fullWidth: ke
-}, rt = ({
+  wrapper: Be,
+  label: Le,
+  inputContainer: Ae,
+  error: Ve,
+  input: Fe,
+  iconButton: je,
+  errorText: Ee,
+  fullWidth: qe
+}, Rt = ({
   id: t,
-  label: n,
-  inputType: r,
+  label: s,
+  inputType: n,
   errorText: a,
-  disabled: s = !1,
+  disabled: r = !1,
   fullWidth: o = !1,
-  required: l,
-  ...m
+  required: c,
+  ...p
 }) => {
-  const [d, u] = B(!1), h = x(f.inputContainer, a && f.error, o && f.fullWidth), N = r === "password", I = r === "search", p = (A) => N ? d ? "text" : "password" : A;
-  return /* @__PURE__ */ c("div", { className: f.wrapper, children: [
-    n && /* @__PURE__ */ e(
+  const [d, m] = K(!1), h = x(y.inputContainer, a && y.error, o && y.fullWidth), f = n === "password", b = n === "search", _ = (i) => f ? d ? "text" : "password" : i;
+  return /* @__PURE__ */ l("div", { className: y.wrapper, children: [
+    s && /* @__PURE__ */ e(
       "label",
       {
-        "data-requiredfield": l,
+        "data-requiredfield": c,
         htmlFor: t,
-        className: f.label,
-        "data-disabled": s,
-        children: n
+        className: y.label,
+        "data-disabled": r,
+        children: s
       }
     ),
-    /* @__PURE__ */ c("div", { className: h, "data-disabled": s, children: [
-      I && /* @__PURE__ */ e("button", { type: "submit", className: f.iconButton, "data-disabled": s, children: /* @__PURE__ */ e(g, { name: "search" }) }),
+    /* @__PURE__ */ l("div", { className: h, "data-disabled": r, children: [
+      b && /* @__PURE__ */ e("button", { type: "submit", className: y.iconButton, "data-disabled": r, children: /* @__PURE__ */ e(I, { name: "google" }) }),
       /* @__PURE__ */ e(
         "input",
         {
           id: t,
-          type: p(r),
-          required: l,
-          className: f.input,
+          type: _(n),
+          required: c,
+          className: y.input,
           autoComplete: "off",
-          ...m
+          ...p
         }
       ),
-      N && /* @__PURE__ */ e(
+      f && /* @__PURE__ */ e(
         "button",
         {
           type: "button",
-          className: f.iconButton,
-          onClick: () => u(!d),
-          children: d ? /* @__PURE__ */ e(g, { name: "eye-outline" }) : /* @__PURE__ */ e(g, { name: "eye-off-outline" })
+          className: y.iconButton,
+          onClick: () => m(!d),
+          children: d ? /* @__PURE__ */ e(I, { name: "eye-outline" }) : /* @__PURE__ */ e(I, { name: "eye-off-outline" })
         }
       )
     ] }),
-    a && /* @__PURE__ */ e("div", { className: f.errorText, children: a })
+    a && /* @__PURE__ */ e("div", { className: y.errorText, children: a })
   ] });
-}, Te = "_Root_n6gai_51", Re = "_disabled_n6gai_57", je = "_Item_n6gai_63", Le = "_Indicator_n6gai_101", Se = "_Label_n6gai_120", C = {
+}, He = "_Root_n6gai_51", Me = "_disabled_n6gai_57", De = "_Item_n6gai_63", ze = "_Indicator_n6gai_101", Ge = "_Label_n6gai_120", W = {
   "regular-link": "_regular-link_n6gai_33",
   "small-link": "_small-link_n6gai_42",
-  Root: Te,
-  disabled: Re,
-  Item: je,
-  Indicator: Le,
-  Label: Se
-}, at = ({ options: t, defaultValue: n, disabled: r, ...a }) => /* @__PURE__ */ e(
-  v.Root,
+  Root: He,
+  disabled: Me,
+  Item: De,
+  Indicator: ze,
+  Label: Ge
+}, Pt = ({ options: t, defaultValue: s, disabled: n, ...a }) => /* @__PURE__ */ e(
+  T.Root,
   {
-    className: C.Root,
+    className: W.Root,
     defaultValue: "default",
     "aria-label": "View density",
     ...a,
-    children: t?.length && t.map((s) => /* @__PURE__ */ c(
+    children: t?.length && t.map((r) => /* @__PURE__ */ l(
       "div",
       {
-        className: r ? C.disabled : "",
+        className: n ? W.disabled : "",
         style: { display: "flex", alignItems: "center" },
         children: [
-          /* @__PURE__ */ e(v.Item, { className: C.Item, value: s.radioName, id: s.id, children: /* @__PURE__ */ e(v.Indicator, { className: C.Indicator }) }),
-          /* @__PURE__ */ e("label", { className: C.Label, htmlFor: s.id, children: s.radioName })
+          /* @__PURE__ */ e(T.Item, { className: W.Item, value: r.radioName, id: r.id, children: /* @__PURE__ */ e(T.Indicator, { className: W.Indicator }) }),
+          /* @__PURE__ */ e("label", { className: W.Label, htmlFor: r.id, children: r.radioName })
         ]
       },
-      s.id
+      r.id
     ))
   }
-), Ae = "_reCaptchaWrapper_hfn95_5", qe = "_reCaptchaError_hfn95_11", Ve = "_reCaptchaText_hfn95_15", k = {
-  reCaptchaWrapper: Ae,
-  reCaptchaError: qe,
-  reCaptchaText: Ve
-}, nt = ({ isCaptchaPassed: t, setCaptchaToken: n, siteKey: r, ...a }) => {
-  const s = (l) => {
-    t && l && n(l);
-  }, o = x(k.reCaptchaWrapper, !t && k.reCaptchaError);
-  return /* @__PURE__ */ c("div", { className: o, children: [
+), Oe = "_reCaptchaWrapper_hfn95_5", Ue = "_reCaptchaError_hfn95_11", Ke = "_reCaptchaText_hfn95_15", A = {
+  reCaptchaWrapper: Oe,
+  reCaptchaError: Ue,
+  reCaptchaText: Ke
+}, St = ({ isCaptchaPassed: t, setCaptchaToken: s, siteKey: n, ...a }) => {
+  const r = (c) => {
+    t && c && s(c);
+  }, o = x(A.reCaptchaWrapper, !t && A.reCaptchaError);
+  return /* @__PURE__ */ l("div", { className: o, children: [
     /* @__PURE__ */ e(
-      z,
+      ee,
       {
-        sitekey: r,
-        onChange: s,
+        sitekey: n,
+        onChange: r,
         theme: "dark",
         ...a
       }
     ),
-    !t && /* @__PURE__ */ e("span", { className: k.reCaptchaText, children: "Please verify that you are not a robot" })
+    !t && /* @__PURE__ */ e("span", { className: A.reCaptchaText, children: "Please verify that you are not a robot" })
   ] });
-}, Be = "_bodyTextArea_ssbwt_1", Ee = "_textArea_ssbwt_6", Fe = "_fullWidth_ssbwt_37", He = "_label_ssbwt_41", Pe = "_disabled_ssbwt_45", ze = "_error_ssbwt_49", Ge = "_errorText_ssbwt_56", b = {
-  bodyTextArea: Be,
-  textArea: Ee,
-  fullWidth: Fe,
-  label: He,
-  disabled: Pe,
-  error: ze,
-  errorText: Ge
-}, st = ["default"], lt = (t) => {
+}, Je = "_bodyTextArea_ssbwt_1", Qe = "_textArea_ssbwt_6", Xe = "_fullWidth_ssbwt_37", Ye = "_label_ssbwt_41", Ze = "_disabled_ssbwt_45", et = "_error_ssbwt_49", tt = "_errorText_ssbwt_56", k = {
+  bodyTextArea: Je,
+  textArea: Qe,
+  fullWidth: Xe,
+  label: Ye,
+  disabled: Ze,
+  error: et,
+  errorText: tt
+}, Tt = ["default"], Bt = (t) => {
   const {
-    className: n,
-    variant: r = "default",
+    className: s,
+    variant: n = "default",
     label: a,
-    error: s,
+    error: r,
     errorText: o,
-    disabled: l = !1,
-    fullWidth: m = !1,
+    disabled: c = !1,
+    fullWidth: p = !1,
     id: d,
-    ...u
+    ...m
   } = t, h = x(
-    b.textArea,
-    s ? b.error : b[r],
-    l && b.disabled,
-    m && b.fullWidth,
-    n
+    k.textArea,
+    r ? k.error : k[n],
+    c && k.disabled,
+    p && k.fullWidth,
+    s
   );
-  return /* @__PURE__ */ c("div", { className: b.bodyTextArea, children: [
-    a && /* @__PURE__ */ e("label", { className: b.label, htmlFor: d, children: a }),
-    /* @__PURE__ */ e("textarea", { className: h, disabled: l, id: d, ...u }),
-    s && o && /* @__PURE__ */ e("div", { className: b.errorText, children: o })
+  return /* @__PURE__ */ l("div", { className: k.bodyTextArea, children: [
+    a && /* @__PURE__ */ e("label", { className: k.label, htmlFor: d, children: a }),
+    /* @__PURE__ */ e("textarea", { className: h, disabled: c, id: d, ...m }),
+    r && o && /* @__PURE__ */ e("div", { className: k.errorText, children: o })
+  ] });
+}, nt = "_root_ycd9q_5", at = "_container_ycd9q_11", st = "_item_ycd9q_17", rt = "_selected_ycd9q_38", ot = "_dots_ycd9q_43", ct = "_icon_ycd9q_54", lt = "_selectBox_ycd9q_58", it = "_select_ycd9q_38", w = {
+  root: nt,
+  container: at,
+  item: st,
+  selected: rt,
+  dots: ot,
+  icon: ct,
+  selectBox: lt,
+  select: it
+}, N = {
+  container: w.container,
+  dots: w.dots,
+  icon: w.icon,
+  item: w.item,
+  pageButton(t) {
+    return x(this.item, t && w.selected);
+  },
+  root: w.root,
+  select: w.select,
+  selectBox: w.selectBox
+}, dt = ({ disabled: t, onClick: s, size: n }) => /* @__PURE__ */ e("button", { className: N.item, disabled: t, onClick: s, children: /* @__PURE__ */ e(I, { className: N.icon, name: "arrow-ios-back", size: n }) }), _t = ({ disabled: t, onClick: s, size: n }) => /* @__PURE__ */ e("button", { className: N.item, disabled: t, onClick: s, children: /* @__PURE__ */ e(I, { className: N.icon, name: "arrow-ios-forward", size: n }) }), ut = ({ disabled: t, onClick: s, page: n, selected: a }) => /* @__PURE__ */ e(
+  "button",
+  {
+    className: N.pageButton(a),
+    disabled: a || t,
+    onClick: s,
+    type: "button",
+    children: n
+  }
+), mt = () => /* @__PURE__ */ e("span", { className: N.dots, children: "…" }), ht = ({ currentPage: t, onClick: s, paginationRange: n }) => /* @__PURE__ */ e(V, { children: n.map((a, r) => {
+  const o = a === t;
+  return typeof a != "number" ? /* @__PURE__ */ e(mt, {}, r) : /* @__PURE__ */ e(ut, { onClick: s(a), page: a, selected: o }, r);
+}) }), R = (t, s) => {
+  const n = s - t + 1;
+  return Array.from({ length: n }, (a, r) => r + t);
+}, P = "...", ft = ({ count: t, onChange: s, page: n, siblings: a = 1 }) => {
+  const r = J(() => {
+    if (a + 5 >= t)
+      return R(1, t);
+    const b = Math.max(n - a, 1), _ = Math.min(n + a, t), i = b > 2, S = _ < t - 2, F = 1, G = t;
+    if (!i && S) {
+      const v = 3 + 2 * a;
+      return [...R(1, v), P, t];
+    }
+    if (i && !S) {
+      const v = 3 + 2 * a, j = R(t - v + 1, t);
+      return [F, P, ...j];
+    }
+    if (i && S) {
+      const v = R(b, _);
+      return [F, P, ...v, P, G];
+    }
+  }, [a, n, t]), o = r.at(-1), c = n === 1, p = n === o, d = q(() => {
+    s(n + 1);
+  }, [n, s]), m = q(() => {
+    s(n - 1);
+  }, [n, s]);
+  function h(f) {
+    return () => s(f);
+  }
+  return {
+    paginationRange: r,
+    // список номеров и "..." для отрисовки
+    handleMainPageClicked: h,
+    // клик по номеру страницы
+    handleNextPageClicked: d,
+    // клик "вперёд"
+    handlePreviousPageClicked: m,
+    // клик "назад"
+    isFirstPage: c,
+    // текущая — первая?
+    isLastPage: p
+    // текущая — последняя?
+  };
+}, pt = ({ onPerPageChange: t, perPage: s, perPageOptions: n }) => {
+  const a = n.map((r) => ({
+    label: r.toString(),
+    value: r
+  }));
+  return /* @__PURE__ */ l("div", { className: N.selectBox, children: [
+    "Show",
+    /* @__PURE__ */ e(
+      z,
+      {
+        variant: "pagination",
+        className: N.selectBox,
+        onValueChange: (r) => t(Number(r)),
+        options: a,
+        value: s
+      }
+    ),
+    "on page"
+  ] });
+}, Lt = ({
+  count: t,
+  onChange: s,
+  onPerPageChange: n,
+  page: a,
+  perPage: r = null,
+  perPageOptions: o,
+  siblings: c
+}) => {
+  const {
+    handleMainPageClicked: p,
+    handleNextPageClicked: d,
+    handlePreviousPageClicked: m,
+    isFirstPage: h,
+    isLastPage: f,
+    paginationRange: b
+  } = ft({
+    count: t,
+    onChange: s,
+    page: a,
+    siblings: c
+  }), _ = !!r && !!o && !!n;
+  return /* @__PURE__ */ l("div", { className: N.root, children: [
+    /* @__PURE__ */ l("div", { className: N.container, children: [
+      /* @__PURE__ */ e(dt, { disabled: h, onClick: m, size: 16 }),
+      /* @__PURE__ */ e(
+        ht,
+        {
+          currentPage: a,
+          onClick: p,
+          paginationRange: b
+        }
+      ),
+      /* @__PURE__ */ e(_t, { disabled: f, onClick: d, size: 16 })
+    ] }),
+    _ && /* @__PURE__ */ e(
+      pt,
+      {
+        onPerPageChange: n,
+        perPage: r,
+        perPageOptions: o
+      }
+    )
   ] });
 };
 export {
-  Xe as Alert,
-  j as Button,
-  Ze as Card,
-  et as Checkbox,
-  tt as Header,
-  rt as Input,
-  at as Radio,
-  nt as ReCaptcha,
-  fe as Selectbox,
-  lt as TextAreaComponent,
-  g as UniversalIcon,
-  Ye as buttonVariant,
-  it as clsx,
-  st as textAreaVariant
+  wt as Alert,
+  M as Button,
+  vt as Card,
+  Wt as Checkbox,
+  $t as Header,
+  Rt as Input,
+  Lt as Pagination,
+  Pt as Radio,
+  St as ReCaptcha,
+  z as Selectbox,
+  Bt as TextAreaComponent,
+  I as UniversalIcon,
+  Ct as buttonVariant,
+  Ft as clsx,
+  Tt as textAreaVariant
 };
 //# sourceMappingURL=index.es.js.map
