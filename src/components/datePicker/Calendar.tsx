@@ -1,6 +1,6 @@
 import { DayPicker, type DateRange } from 'react-day-picker'
 import 'react-day-picker/dist/style.css'
-import s from './DatePicker.module.scss'
+import s from './datePicker.module.scss'
 import { enGB } from 'date-fns/locale'
 
 type CalendarProps = {
@@ -9,9 +9,8 @@ type CalendarProps = {
 }
 
 export const Calendar = ({ value, onChange, ...rest }: CalendarProps) => {
-
   const modifiers = {
-    weekend: (date: Date) => [0, 6].includes(date.getDay())
+    weekend: (date: Date) => [0, 6].includes(date.getDay()),
   }
 
   return (
@@ -23,14 +22,14 @@ export const Calendar = ({ value, onChange, ...rest }: CalendarProps) => {
         weekdays: s.weekdays,
         weekday: s.weekday,
         nav_button: s.navButton,
-        chevron: s.chevron
+        chevron: s.chevron,
       }}
       modifiersClassNames={{
         selected: s.selected,
         today: s.today,
         weekend: s.weekend,
         range_start: s.rangeStart,
-        range_end: s.rangeEnd
+        range_end: s.rangeEnd,
       }}
       modifiers={modifiers}
       locale={enGB}
@@ -45,5 +44,4 @@ export const Calendar = ({ value, onChange, ...rest }: CalendarProps) => {
       {...rest}
     />
   )
-
 }
