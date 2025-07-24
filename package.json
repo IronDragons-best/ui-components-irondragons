@@ -1,7 +1,8 @@
 {
     "name": "@irondragons/ui-lib-inctagram",
     "private": false,
-    "version": "1.0.7",
+    "version": "1.0.8",
+
     "type": "module",
     "main": "dist/index.cjs",
     "module": "dist/index.es.js",
