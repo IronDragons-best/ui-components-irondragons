@@ -13,3 +13,5 @@ export * from './datePicker'
 export * from './tabs'
 
 export * from './pagination'
+
+export * from './sss'
