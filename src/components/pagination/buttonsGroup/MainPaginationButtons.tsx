@@ -11,7 +11,6 @@ export const MainPaginationButtons: FC<MainPaginationButtonsProps> = ({ currentP
                 if (typeof page !== 'number') {
                     return <Dots key={index} />
                 }
-
                 return <PageButton key={index} onClick={onClick(page)} page={page} selected={isSelected} />
             })}
         </>
