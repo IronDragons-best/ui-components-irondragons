@@ -20,6 +20,8 @@
 
   border: none;
 
+  transition: all 0.2s linear;
+
   &:disabled {
     cursor: initial;
   }
@@ -116,10 +118,11 @@
 
 .text_button {
   @include common;
+
+  padding: 0;
   color: colors.$accent-500;
   background-color: transparent;
-  padding: 0;
-  transition: all 0.3s ease;
+
 
   &:hover {
     color: colors.$accent-100;
