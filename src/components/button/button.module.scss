@@ -19,6 +19,7 @@
   text-decoration: none;
 
   border: none;
+  border-radius: 2px;
 
   transition: all 0.2s linear;
 
@@ -122,7 +123,6 @@
   padding: 0;
   color: colors.$accent-500;
   background-color: transparent;
-
 
   &:hover {
     color: colors.$accent-100;
