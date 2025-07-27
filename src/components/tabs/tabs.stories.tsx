@@ -33,11 +33,13 @@ export const DefaultTabs: Story = {
 
     return (
       <TabsComponent {...args} value={activeTab} onValueChange={setActiveTab}>
-        {args.tabs.map(tab => (
-          <Tabs.Content key={tab.id} value={tab.id}>
-            <div style={{ color: 'white' }}>Контент: {tab.label}</div>
-          </Tabs.Content>
-        ))}
+        {args.tabs
+          .filter(tab => tab.id === activeTab)
+          .map(tab => (
+            <div key={tab.id} style={{ color: 'white' }}>
+              Контент: {tab.label}
+            </div>
+          ))}
       </TabsComponent>
     )
   },

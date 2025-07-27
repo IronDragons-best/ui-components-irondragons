@@ -45,7 +45,11 @@ export const TabsComponent = ({
           </Tabs.Trigger>
         ))}
       </Tabs.List>
-      {children}
+      {tabs.map(({ id }) => (
+        <Tabs.Content key={id} value={id}>
+          {children}
+        </Tabs.Content>
+      ))}
     </Tabs.Root>
   )
 }
