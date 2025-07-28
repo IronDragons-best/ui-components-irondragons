@@ -18,6 +18,7 @@ export const UniversalIcon = ({
   height = '24px',
   size,
   className,
+  ...rest
 }: Props) => {
   const [svgElement, setSvgElement] = React.useState<React.ReactNode>(null)
 
@@ -37,6 +38,7 @@ export const UniversalIcon = ({
                 height: height,
                 size: size,
                 className: className,
+                ...rest,
               }
 
               // Правильно преобразуем XML-атрибуты
