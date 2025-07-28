@@ -63,7 +63,7 @@ export const Selectbox: FC<SelectboxProps> = ({
   const selectedOption: OptionType | undefined = options.find(opt => opt.value === value)
 
   return (
-    <Select.Root onValueChange={onValueChange} open={true} onOpenChange={onOpenChange} {...rest}>
+    <Select.Root onValueChange={onValueChange} onOpenChange={onOpenChange} {...rest}>
       {label && (
         <label htmlFor={idProp} className={s.Label}>
           {label}
