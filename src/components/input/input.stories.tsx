@@ -127,3 +127,15 @@ export const InputFullWidth: Story = {
     id: 'fullSizeInput',
   },
 }
+
+/** input location */
+export const InputLocation: Story = {
+  name: 'Input location',
+  args: {
+    label: 'location',
+    placeholder: 'location',
+    inputType: 'location',
+    fullWidth: false,
+    id: 'LocationInput',
+  },
+}

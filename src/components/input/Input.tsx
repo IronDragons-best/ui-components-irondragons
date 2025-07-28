@@ -6,7 +6,7 @@ import s from './input.module.scss'
 
 import { UniversalIcon } from '@/components'
 
-type InputVariant = 'search' | 'email' | 'password' | 'text'
+type InputVariant = 'search' | 'email' | 'password' | 'text'  | 'location'
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   /** Defines the visual style of the input (e.g., "search", "password", "text"). */
@@ -35,6 +35,7 @@ export const Input = ({
 
   const isPassword = inputType === 'password'
   const isSearch = inputType === 'search'
+  const isLocation = inputType === 'location'
 
   const currentInputType = (variants: InputVariant) => {
     if (isPassword) {
@@ -70,6 +71,11 @@ export const Input = ({
           autoComplete={'off'}
           {...rest}
         />
+        {isLocation && (
+          <button type={'submit'} className={s.iconButton} data-disabled={disabled}>
+            <UniversalIcon name={'pin-outline'} />
+          </button>
+        )}
 
         {isPassword && (
           <button
