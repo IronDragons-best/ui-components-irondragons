@@ -1,21 +1,21 @@
-import {ComponentPropsWithoutRef, FC} from 'react'
+import { ComponentPropsWithoutRef, FC } from 'react'
 
-import {ChevronDownIcon} from '@radix-ui/react-icons'
-import {Select} from 'radix-ui'
+import { ChevronDownIcon } from '@radix-ui/react-icons'
+import { Select } from 'radix-ui'
 
 import '../../styles/index.scss'
 
 import s from './selectbox.module.scss'
 
-import {SelectItem} from './SelectItem'
-import {UniversalIcon} from "../common/unversalIcon/UniversalIcon";
-import {clsx} from "clsx";
+import { SelectItem } from './SelectItem'
+import { UniversalIcon } from '../common/unversalIcon/UniversalIcon'
+import { clsx } from 'clsx'
 
 type LanguageType = 'rus' | 'eng'
 
 type OptionType = {
-  value: LanguageType | string | number,
-  label: string,
+  value: LanguageType | string | number
+  label: string
   icon?: string
 }
 
@@ -29,8 +29,8 @@ type SelectboxProps = {
   /** Placeholder text shown when no option is selected */
   placeholder?: string
   /** Initial value */
-  value?: string | number;
-  variant?: 'default' | 'pagination';
+  value?: string | number
+  variant?: 'default' | 'pagination'
   /** Label displayed above the select input */
   label?: string
   /** Disables the select input */
@@ -46,24 +46,24 @@ type SelectboxProps = {
 } & Omit<ComponentPropsWithoutRef<typeof Select.Root>, 'value' | 'onValueChange' | 'children'>
 
 export const Selectbox: FC<SelectboxProps> = ({
-                                                idProp,
-                                                name,
-                                                label = '',
-                                                placeholder = 'Select...',
-                                                disabled = false,
-                                                className,
-                                                value,
-                                                fullWidth,
-                                                onValueChange,
-                                                onOpenChange,
-                                                options,
-                                                variant = 'default',
-                                                ...rest
-                                              }: SelectboxProps) => {
-  const selectedOption: OptionType | undefined = options.find(opt => opt.value === value);
+  idProp,
+  name,
+  label = '',
+  placeholder = 'Select...',
+  disabled = false,
+  className,
+  value,
+  fullWidth,
+  onValueChange,
+  onOpenChange,
+  options,
+  variant = 'default',
+  ...rest
+}: SelectboxProps) => {
+  const selectedOption: OptionType | undefined = options.find(opt => opt.value === value)
 
   return (
-    <Select.Root onValueChange={onValueChange} onOpenChange={onOpenChange} {...rest}>
+    <Select.Root onValueChange={onValueChange} open={true} onOpenChange={onOpenChange} {...rest}>
       {label && (
         <label htmlFor={idProp} className={s.Label}>
           {label}
@@ -80,25 +80,40 @@ export const Selectbox: FC<SelectboxProps> = ({
         {selectedOption ? (
           <div className={s.Selected}>
             {selectedOption.icon && (
-              <span className={s.IconWrapper}><UniversalIcon name={selectedOption.icon} /></span>
+              <span className={s.IconWrapper}>
+                <UniversalIcon name={selectedOption.icon} />
+              </span>
             )}
             {selectedOption.label}
           </div>
         ) : (
-          <Select.Value placeholder={placeholder}/>
+          <Select.Value placeholder={placeholder} />
         )}
         <Select.Icon className={s.Icon}>
-          <ChevronDownIcon/>
+          <ChevronDownIcon />
         </Select.Icon>
       </Select.Trigger>
 
       <Select.Portal>
-        <Select.Content className={clsx(s[`${variant}`], s.Content)} side={'bottom'} position={'popper'}>
+        <Select.Content
+          className={clsx(s[`${variant}`], s.Content)}
+          side={'bottom'}
+          position={'popper'}
+        >
           <Select.Viewport className={s.Viewport}>
             <Select.Group>
               {options.map(option => (
-                <SelectItem className={s.Selected} key={option.value} variant={variant} value={option.value.toString()}>
-                  {option.icon && <span><UniversalIcon name={option.icon}/></span>}
+                <SelectItem
+                  className={s.Selected}
+                  key={option.value}
+                  variant={variant}
+                  value={option.value.toString()}
+                >
+                  {option.icon && (
+                    <span>
+                      <UniversalIcon name={option.icon} />
+                    </span>
+                  )}
                   {option.label}
                 </SelectItem>
               ))}
