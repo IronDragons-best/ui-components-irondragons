@@ -40,7 +40,7 @@ export const Calendar = ({ value, onChange, ...rest }: CalendarProps) => {
       selected={value}
       onSelect={onChange}
       required
-      disabled={{ before: new Date() }}
+      // disabled={{ before: new Date() }}
       {...rest}
     />
   )
