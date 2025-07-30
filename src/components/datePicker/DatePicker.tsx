@@ -64,7 +64,7 @@ export const DatePicker = ({
           document.getElementById(inputId)?.focus()
         }}
       >
-        {open ? label : 'Date select'}
+        {label}
       </label>
       <Popover.Root open={open} onOpenChange={setOpen}>
         <Popover.Trigger
