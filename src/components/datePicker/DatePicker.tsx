@@ -56,14 +56,7 @@ export const DatePicker = ({
 
   return (
     <div className={s.datePicker}>
-      <label
-        htmlFor={inputId}
-        className={s.datePicker__label}
-        onClick={e => {
-          e.preventDefault()
-          document.getElementById(inputId)?.focus()
-        }}
-      >
+      <label htmlFor={inputId} className={s.datePicker__label}>
         {label}
       </label>
       <Popover.Root open={open} onOpenChange={setOpen}>
