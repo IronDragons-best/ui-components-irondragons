@@ -120,6 +120,7 @@
 .text_button {
   @include common;
 
+  margin: 0;
   padding: 0;
   color: colors.$accent-500;
   background-color: transparent;
