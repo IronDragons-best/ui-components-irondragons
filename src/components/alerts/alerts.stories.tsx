@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { Alert } from './'
+import { useState } from 'react'
 
 const meta = {
   parameters: {
@@ -26,8 +27,32 @@ export const Success: Story = {
     children: 'Your settings are saved',
     variant: 'success',
     fullWidth: false,
-    closable: true,
+    withCloseIcon: true,
     isOpen: true,
+  },
+}
+
+export const ClosableWithState = {
+  render: () => {
+    const [isOpen, setIsOpen] = useState(false)
+
+    const handleClose = () => {
+      setIsOpen(false)
+    }
+
+    return (
+      <>
+        <button onClick={() => setIsOpen(true)}>open</button>
+        <Alert
+          children="This alert can be closed"
+          variant="success"
+          fullWidth
+          withCloseIcon
+          isOpen={isOpen}
+          onClose={handleClose}
+        />
+      </>
+    )
   },
 }
 
@@ -37,7 +62,7 @@ export const Error: Story = {
     children: 'Server is not available',
     variant: 'error',
     fullWidth: false,
-    closable: true,
+    withCloseIcon: true,
     isOpen: true,
   },
 }

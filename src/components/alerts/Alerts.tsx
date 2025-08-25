@@ -1,4 +1,4 @@
-import { ComponentProps, FC, ReactNode, useEffect, useState } from 'react'
+import { ComponentProps, FC, ReactNode, useEffect } from 'react'
 
 import { clsx } from 'clsx'
 
@@ -19,11 +19,11 @@ export type AlertProps = {
   /**
    * Callback fired when the close button is clicked.
    */
-  onClose?: () => void
+  onClose: () => void
   /**
    * **Required**: If true, the alert can be closed via a close button.
    */
-  closable: boolean
+  withCloseIcon?: boolean
   /**
    * If true, the alert stretches to the full width of its container.
    */
@@ -35,9 +35,9 @@ export const Alert: FC<AlertProps> = ({
   children,
   variant = 'success',
   onClose,
-  closable = true,
+  withCloseIcon = true,
   fullWidth = false,
-  isOpen,
+  isOpen = false,
   ...rest
 }) => {
   const classNames = {
@@ -45,17 +45,17 @@ export const Alert: FC<AlertProps> = ({
     content: s.content,
     icon: clsx(s.icon),
   }
-  const [toggleAlert, setToggleAlert] = useState(isOpen)
-
   useEffect(() => {
-    const timerId = setTimeout(() => {
-      setToggleAlert(false)
-    }, 5000)
+    let timerId: any
+    if (isOpen) {
+      timerId = setTimeout(onClose, 5000)
+    }
+
     return () => clearTimeout(timerId)
-  }, [])
+  }, [isOpen])
 
   return (
-    <div className={classNames.box} {...rest} data-isopen={toggleAlert}>
+    <div className={classNames.box} {...rest} data-isopen={isOpen}>
       <div className={classNames.content}>
         {variant === 'error' ? (
           <div>
@@ -64,7 +64,7 @@ export const Alert: FC<AlertProps> = ({
         ) : (
           <>{children}</>
         )}
-        {closable && (
+        {withCloseIcon && (
           <span className={classNames.icon} onClick={onClose}>
             <UniversalIcon name={'close'} />
           </span>
