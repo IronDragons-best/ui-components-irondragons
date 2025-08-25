@@ -4,7 +4,7 @@ import { clsx } from 'clsx'
 
 import s from './alerts.module.scss'
 
-import { UniversalIcon } from '../common/unversalIcon/UniversalIcon'
+import { UniversalIcon } from '@/components'
 
 export type AlertProps = {
   /**
@@ -28,6 +28,7 @@ export type AlertProps = {
    * If true, the alert stretches to the full width of its container.
    */
   fullWidth?: boolean
+  isOpen: boolean
 } & ComponentProps<'div'>
 
 export const Alert: FC<AlertProps> = ({
@@ -36,6 +37,7 @@ export const Alert: FC<AlertProps> = ({
   onClose,
   closable = true,
   fullWidth = false,
+  isOpen = false,
   ...rest
 }) => {
   const classNames = {
@@ -45,7 +47,7 @@ export const Alert: FC<AlertProps> = ({
   }
 
   return (
-    <div className={classNames.box} {...rest}>
+    <div className={classNames.box} {...rest} data-isopen={isOpen}>
       <div className={classNames.content}>
         {variant === 'error' ? (
           <div>
