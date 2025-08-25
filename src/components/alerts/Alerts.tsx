@@ -37,7 +37,7 @@ export const Alert: FC<AlertProps> = ({
   onClose,
   closable = true,
   fullWidth = false,
-  isOpen = false,
+  isOpen,
   ...rest
 }) => {
   const classNames = {
