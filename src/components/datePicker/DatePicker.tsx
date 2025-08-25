@@ -1,10 +1,9 @@
-import { format } from 'date-fns'
-import { UniversalIcon } from '@/components'
+import {format} from 'date-fns'
 import s from './datePicker.module.scss'
-import { Calendar } from './Calendar'
-import { Popover } from 'radix-ui'
-import { useState } from 'react'
-import { DateRange } from 'react-day-picker'
+import {Calendar} from './Calendar'
+import {Popover} from 'radix-ui'
+import {useState} from 'react'
+import {DateRange} from 'react-day-picker'
 
 type Props = {
   /** Initial value */
@@ -24,14 +23,14 @@ type Props = {
 }
 
 export const DatePicker = ({
-  value,
-  label,
-  onChange,
-  hasError,
-  errorText,
-  disabled = false,
-  fullWidth = false,
-}: Props) => {
+                             value,
+                             label,
+                             onChange,
+                             hasError,
+                             errorText,
+                             disabled = false,
+                             fullWidth = false,
+                           }: Props) => {
   const inputId = 'datepicker-trigger'
   const [open, setOpen] = useState(false)
 
@@ -70,13 +69,6 @@ export const DatePicker = ({
           aria-describedby={hasError && errorText ? `${inputId}-error` : undefined}
         >
           <span className={s.datePicker__dateValue}>{getDisplayValue(value)}</span>
-          <div className={s.datePicker__icon}>
-            {open ? (
-              <UniversalIcon name={'calendar'} />
-            ) : (
-              <UniversalIcon name={'calendar-outline'} />
-            )}
-          </div>
         </Popover.Trigger>
 
         <Popover.Content
@@ -85,7 +77,7 @@ export const DatePicker = ({
           align="start"
           side="bottom"
         >
-          <Calendar value={value} onChange={onChange} />
+          <Calendar value={value} onChange={onChange}/>
         </Popover.Content>
       </Popover.Root>
 

@@ -12,6 +12,8 @@ type Props = {
     hasError?: boolean;
     /** Shows the error status Error message under the component if `hasError` = true */
     errorText?: string;
+    /** If true, the input to the full width of its container */
+    fullWidth?: boolean;
 };
-export declare const DatePicker: ({ value, label, onChange, hasError, errorText, disabled, }: Props) => import("react/jsx-runtime").JSX.Element;
+export declare const DatePicker: ({ value, label, onChange, hasError, errorText, disabled, fullWidth, }: Props) => import("react/jsx-runtime").JSX.Element;
 export {};

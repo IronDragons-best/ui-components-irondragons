@@ -20,3 +20,5 @@ export declare const DefaultSearch: Story;
 export declare const InputsWithError: Story;
 /** Full size input */
 export declare const InputFullWidth: Story;
+/** input location */
+export declare const InputLocation: Story;
