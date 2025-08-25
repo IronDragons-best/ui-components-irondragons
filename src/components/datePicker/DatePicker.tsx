@@ -1,6 +1,7 @@
 import {format} from 'date-fns'
 import { UniversalIcon } from '@/components'
 import s from './datePicker.module.scss'
+import '../../styles/globalCalndarStyle.scss'
 import {Calendar} from './Calendar'
 import {Popover} from 'radix-ui'
 import {useState} from 'react'
