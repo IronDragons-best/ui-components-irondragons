@@ -1,4 +1,4 @@
-import { ComponentProps, FC, ReactNode } from 'react'
+import { ComponentProps, FC, ReactNode, useEffect, useState } from 'react'
 
 import { clsx } from 'clsx'
 
@@ -45,9 +45,17 @@ export const Alert: FC<AlertProps> = ({
     content: s.content,
     icon: clsx(s.icon),
   }
+  const [toggleAlert, setToggleAlert] = useState(isOpen)
+
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setToggleAlert(false)
+    }, 5000)
+    return () => clearTimeout(timerId)
+  }, [])
 
   return (
-    <div className={classNames.box} {...rest} data-isopen={isOpen}>
+    <div className={classNames.box} {...rest} data-isopen={toggleAlert}>
       <div className={classNames.content}>
         {variant === 'error' ? (
           <div>
