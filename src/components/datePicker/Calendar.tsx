@@ -26,11 +26,11 @@ export const Calendar = ({ value, onChange, ...rest }: CalendarProps) => {
         chevron: s.chevron,
       }}
       modifiersClassNames={{
-        selected: s.selected as any,
-        today: s.today as any,
-        weekend: s.weekend as any,
-        range_start: s.rangeStart as any,
-        range_end: s.rangeEnd as any,
+        selected: s.selected,
+        today: s.today,
+        weekend: s.weekend,
+        range_start: s.rangeStart,
+        range_end: s.rangeEnd,
       }}
       modifiers={modifiers}
       locale={enGB}

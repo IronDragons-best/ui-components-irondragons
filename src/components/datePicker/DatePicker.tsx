@@ -1,4 +1,5 @@
 import {format} from 'date-fns'
+import { UniversalIcon } from '@/components'
 import s from './datePicker.module.scss'
 import {Calendar} from './Calendar'
 import {Popover} from 'radix-ui'
@@ -69,6 +70,13 @@ export const DatePicker = ({
           aria-describedby={hasError && errorText ? `${inputId}-error` : undefined}
         >
           <span className={s.datePicker__dateValue}>{getDisplayValue(value)}</span>
+          <div className={s.datePicker__icon}>
+            {open ? (
+              <UniversalIcon name={'calendar'} />
+            ) : (
+              <UniversalIcon name={'calendar-outline'} />
+            )}
+          </div>
         </Popover.Trigger>
 
         <Popover.Content
