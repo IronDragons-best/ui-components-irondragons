@@ -3,7 +3,7 @@ import { UniversalIcon } from '@/components'
 import s from './datePicker.module.scss'
 import { Calendar } from './Calendar'
 import { Popover } from 'radix-ui'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { DateRange } from 'react-day-picker'
 
 type Props = {
@@ -18,7 +18,7 @@ type Props = {
   /** Shows the error status */
   hasError?: boolean
   /** Shows the error status Error message under the component if `hasError` = true */
-  errorText?: string
+  errorText?: string | React.ReactNode
   /** If true, the input to the full width of its container */
   fullWidth?: boolean
 }
