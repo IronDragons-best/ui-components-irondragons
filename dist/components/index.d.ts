@@ -9,4 +9,6 @@ export * from './reCaptcha';
 export * from './selectbox';
 export * from './textArea';
 export * from './common/unversalIcon';
+export * from './datePicker';
+export * from './tabs';
 export * from './pagination';

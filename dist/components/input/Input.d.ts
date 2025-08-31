@@ -1,5 +1,5 @@
 import { InputHTMLAttributes } from 'react';
-type InputVariant = 'search' | 'email' | 'password' | 'text';
+type InputVariant = 'search' | 'email' | 'password' | 'text' | 'location';
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
     /** Defines the visual style of the input (e.g., "search", "password", "text"). */
     inputType: InputVariant;

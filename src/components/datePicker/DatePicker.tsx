@@ -1,4 +1,4 @@
-import { format } from 'date-fns'
+import {format} from 'date-fns'
 import { UniversalIcon } from '@/components'
 import s from './datePicker.module.scss'
 import { Calendar } from './Calendar'
@@ -24,14 +24,14 @@ type Props = {
 }
 
 export const DatePicker = ({
-  value,
-  label,
-  onChange,
-  hasError,
-  errorText,
-  disabled = false,
-  fullWidth = false,
-}: Props) => {
+                             value,
+                             label,
+                             onChange,
+                             hasError,
+                             errorText,
+                             disabled = false,
+                             fullWidth = false,
+                           }: Props) => {
   const inputId = 'datepicker-trigger'
   const [open, setOpen] = useState(false)
 
@@ -85,7 +85,7 @@ export const DatePicker = ({
           align="start"
           side="bottom"
         >
-          <Calendar value={value} onChange={onChange} />
+          <Calendar value={value} onChange={onChange}/>
         </Popover.Content>
       </Popover.Root>
 

@@ -22,5 +22,8 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 /** Example of a success Alert */
 export declare const Success: Story;
+export declare const ClosableWithState: {
+    render: () => import("react/jsx-runtime").JSX.Element;
+};
 /** Example of the error Alert */
 export declare const Error: Story;

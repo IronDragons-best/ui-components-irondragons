@@ -12,14 +12,15 @@ export type AlertProps = {
     /**
      * Callback fired when the close button is clicked.
      */
-    onClose?: () => void;
+    onClose: () => void;
     /**
      * **Required**: If true, the alert can be closed via a close button.
      */
-    closable: boolean;
+    withCloseIcon?: boolean;
     /**
      * If true, the alert stretches to the full width of its container.
      */
     fullWidth?: boolean;
+    isOpen: boolean;
 } & ComponentProps<'div'>;
 export declare const Alert: FC<AlertProps>;
